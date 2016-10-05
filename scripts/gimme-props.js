@@ -38,6 +38,16 @@ function initializeJQuery(){
 		}
 	})
 
+	$(window).on('swipeleft', function(event){
+		$(curSlide).animate({
+			left:-10000
+		}, 300)
+		$(nxtSlide).animate({
+			left:0
+		}, 300)
+		event.preventDefault();
+	})
+
 }
 
 window.onload = function(){
