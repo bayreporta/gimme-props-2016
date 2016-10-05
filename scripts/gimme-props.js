@@ -1,3 +1,7 @@
+/* VARIABLES
+--------------------------------------------------------*/
+var curSlide = '#intro'; var nxtSlide = '#cookie';
+
 /* COOKIE CONTROL
 --------------------------------------------------------*/
 function createCookie(cname, cvalue, exdays) {
@@ -18,3 +22,24 @@ function grabCookie(cname) {
     return "";
 }
 
+function initializeJQuery(){
+
+	/* LISTENING FOR SLIDE TRANSITIONS
+	--------------------------------------------------------*/
+	$(document).on('keydown', function(event){
+		if (event.which == 39){
+			$(curSlide).animate({
+				left:-10000
+			}, 300)
+			$(nxtSlide).animate({
+				left:0
+			}, 300)
+			event.preventDefault();
+		}
+	})
+
+}
+
+window.onload = function(){
+	initializeJQuery();
+}
