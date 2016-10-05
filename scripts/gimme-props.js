@@ -44,6 +44,7 @@ function initTransitions(){
 					left:0
 				}, 300)
 				event.preventDefault();
+				configureSlides('right');
 			}
 		}
 	});
@@ -59,6 +60,7 @@ function initTransitions(){
 					left:0
 				}, 300)
 				event.preventDefault();
+				configureSlides('left');				
 			}
 		}
 	});
@@ -74,6 +76,7 @@ function initTransitions(){
 					top:0
 				}, 300)
 				event.preventDefault();
+				configureSlides('up');				
 			}
 		}
 	});
@@ -89,6 +92,7 @@ function initTransitions(){
 					top:0
 				}, 300)
 				event.preventDefault();
+				configureSlides('down');				
 			}
 		}
 	});
@@ -103,6 +107,7 @@ function initTransitions(){
 				left:0
 			}, 300)
 			event.preventDefault();
+			configureSlides('right');
 		}
 	})
 
@@ -116,6 +121,8 @@ function initTransitions(){
 				left:0
 			}, 300)
 			event.preventDefault();
+			configureSlides('left');
+
 		}
 	})
 	
@@ -129,6 +136,8 @@ function initTransitions(){
 				left:0
 			}, 300)
 			event.preventDefault();
+			configureSlides('down');
+
 		}
 	})
 
@@ -142,12 +151,17 @@ function initTransitions(){
 				left:0
 			}, 300)
 			event.preventDefault();
+			configureSlides('up');
 		}
 	})
 }
 
-function slideLineup(){
+function configureSlides(direct){
+	leftSlide, rightSlide, upSlide, downSlide = null;
 
+	if (curSlide == '#intro' && direct == 'right'){
+		curSlide = '#cookie'; leftSlide = ''; rightSlide = '';
+	}
 }
 
 window.onload = function(){
