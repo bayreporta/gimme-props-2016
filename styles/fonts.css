@@ -28,6 +28,12 @@
 
 @font-face {
 	font-family:'merriweather';
+	src: url('fonts/merriweather/MerriweatherSans-Light.ttf');
+	font-weight:300;
+}
+
+@font-face {
+	font-family:'merriweather';
 	src: url('fonts/merriweather/MerriweatherSans-Bold.ttf');
 	font-weight:700;
 }

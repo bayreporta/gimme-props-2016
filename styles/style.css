@@ -2,10 +2,20 @@
 _________________________________________*/
 
 body, html {font-size:100%;}
+h1,h2,h3,h4 {font-family: 'raleway',san-serif;}
+p, li, ol, span, a {
+	font-family: merriweather, sans-serif;
+    font-size: 1rem;
+    margin: 1rem 0;
+    font-weight:300;
+}
 h1 {
-	font-size: 3rem;
-    font-family: 'raleway',san-serif;
+	font-size: 5rem;    
     font-weight:900;
+}
+h2 {
+	margin: 1rem 0;
+    font-size: 2rem;
 }
 
 #container {
@@ -15,8 +25,48 @@ h1 {
 	position: relative;
 }
 
+/* SPECIAL CLASSES
+_________________________________________*/
+
 .hide {display:none;}
 .show {display:block;}
+
+.txtcenter {text-align: center;}
+
+.relative {
+	position:relative;
+	height:100%;
+}
+.abscenter {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+/* COLOR CLASSES
+_________________________________________*/
+
+.darkblue {
+	background-color:rgba(39, 86, 123,1);
+	color:#fff;
+}
+
+/* INTRO SLIDE
+_________________________________________*/
+#intro img {
+	width: 60%;
+    display: block;
+    margin: 60 auto;
+}
+
+@media screen and (max-width:767px){
+	#intro img {
+		width: 100%;
+	    display: block;
+	    margin: 60 auto;
+	}
+}
 
 /* PROP QUESTIONS
 _________________________________________*/
@@ -37,14 +87,9 @@ _________________________________________*/
 		height: 100%;
 	}
 
-#question {
-	position:relative;
-	height:98%;
-}
+#question {height:98%;}
 
 	#question>div {
-		position: absolute;
-	    left: 50%;
 	    transform: translate(-50%, -40%);
     	top: 40%;
 	    width:80%;
