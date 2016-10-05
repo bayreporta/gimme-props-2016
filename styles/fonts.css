@@ -21,3 +21,20 @@
 	font-style:italic;
 }
 
+@font-face {
+	font-family:'merriweather';
+	src: url('fonts/merriweather/MerriweatherSans-Regular.ttf');
+}
+
+@font-face {
+	font-family:'merriweather';
+	src: url('fonts/merriweather/MerriweatherSans-Bold.ttf');
+	font-weight:700;
+}
+
+@font-face {
+	font-family:'merriweather';
+	src: url('fonts/merriweather/MerriweatherSans-Italic.ttf');
+	font-style:italic;
+}
+
