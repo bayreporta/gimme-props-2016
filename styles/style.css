@@ -70,13 +70,35 @@ _________________________________________*/
     top: 50%;
     transform: translateY(-50%);
     opacity: .3;
+    width: 100px;
+    z-index: 100;
+}
+.upcaret {
+	top: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    width: 100px;
+    z-index: 100;
+}
+.downcaret {
+	bottom: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    width: 100px;
+    z-index: 100;
 }
 .leftcaret {
 	left: 0;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    opacity: .3;
+    opacity: 0;
+    width: 100px;
+    z-index: 100;
 } 
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){

@@ -24,8 +24,6 @@ function grabCookie(cname) {
 
 function initializeJQuery(){
 	initTransitions();
-	
-
 }
 
 function initTransitions(){
@@ -159,8 +157,11 @@ function initTransitions(){
 function configureSlides(direct){
 	leftSlide, rightSlide, upSlide, downSlide = null;
 
+	//forgive me conditional gods
 	if (curSlide == '#intro' && direct == 'right'){
 		curSlide = '#cookie'; leftSlide = ''; rightSlide = '';
+		$('.rightcaret').add('.leftcaret').animate({opacity:.3}, 300);
+		$('.upcaret').add('.downcaret').animate({opacity:0}, 300);
 	}
 }
 
