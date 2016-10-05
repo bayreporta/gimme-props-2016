@@ -44,8 +44,18 @@ _________________________________________*/
 	left: 50%;
 	transform: translate(-50%, -50%);
     top: 50%;
+    width: 80%;
 }
 .startpos {left:10000px;}
+
+.rightcaret {}
+.leftcaret {} 
+
+@media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
+	.abscenter {		
+	    width: 100%;
+	}
+}
 
 /* COLOR CLASSES
 _________________________________________*/
@@ -58,18 +68,11 @@ _________________________________________*/
 /* INTRO SLIDE
 _________________________________________*/
 #intro img {
-	width: 60%;
+	width: 40%;
     display: block;
     margin: 60 auto;
 }
 
-@media screen and (max-width:767px){
-	#intro img {
-		width: 100%;
-	    display: block;
-	    margin: 60 auto;
-	}
-}
 
 /* PROP QUESTIONS
 _________________________________________*/
