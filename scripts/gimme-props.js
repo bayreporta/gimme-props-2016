@@ -1,6 +1,6 @@
 /* VARIABLES
 --------------------------------------------------------*/
-var curSlide = '#intro'; var nxtSlide = '#cookie';
+var curSlide = '#intro'; var rightSlide = '#cookie'; var leftSlide = null; var upSlide = null; var downSlide = null;
 
 /* COOKIE CONTROL
 --------------------------------------------------------*/
@@ -23,30 +23,130 @@ function grabCookie(cname) {
 }
 
 function initializeJQuery(){
+	initTransitions();
+	
+
+}
+
+function initTransitions(){
 
 	/* LISTENING FOR SLIDE TRANSITIONS
 	--------------------------------------------------------*/
+
+	// key right
 	$(document).on('keydown', function(event){
-		if (event.which == 39){
-			$(curSlide).animate({
+		if (rightSlide != null){
+			if (event.which == 39){
+				$(curSlide).animate({
+					left:-10000
+				}, 300)
+				$(rightSlide).animate({
+					left:0
+				}, 300)
+				event.preventDefault();
+			}
+		}
+	});
+
+	// key left
+	$(document).on('keydown', function(event){
+		if (leftSlide != null){
+			if (event.which == 37){
+				$(curSlide).animate({
+					left:10000
+				}, 300)
+				$(leftSlide).animate({
+					left:0
+				}, 300)
+				event.preventDefault();
+			}
+		}
+	});
+
+	// key up
+	$(document).on('keydown', function(event){
+		if (upSlide != null){
+			if (event.which == 38){
+				$(curSlide).animate({
+					top:10000
+				}, 300)
+				$(upSlide).animate({
+					top:0
+				}, 300)
+				event.preventDefault();
+			}
+		}
+	});
+
+	// key down
+	$(document).on('keydown', function(event){
+		if (downSlide != null){
+			if (event.which == 40){
+				$(curSlide).animate({
+					top:-10000
+				}, 300)
+				$(upSlide).animate({
+					top:0
+				}, 300)
+				event.preventDefault();
+			}
+		}
+	});
+
+	//swipe left
+	$(window).on('swipeleft', function(event){
+		if (rightSlide != null){
+				$(curSlide).animate({
 				left:-10000
 			}, 300)
-			$(nxtSlide).animate({
+			$(rightSlide).animate({
 				left:0
 			}, 300)
 			event.preventDefault();
 		}
 	})
 
-	$(window).on('swipeleft', function(event){
-		$(curSlide).animate({
-			left:-10000
-		}, 300)
-		$(nxtSlide).animate({
-			left:0
-		}, 300)
-		event.preventDefault();
+	//swipe right
+	$(window).on('swiperight', function(event){
+		if (leftSlide != null){
+				$(curSlide).animate({
+				left:10000
+			}, 300)
+			$(leftSlide).animate({
+				left:0
+			}, 300)
+			event.preventDefault();
+		}
 	})
+	
+	//swipe up
+	$(window).on('swipeup', function(event){
+		if (downSlide != null){
+			$(curSlide).animate({
+				top:-10000
+			}, 300)
+			$(downSlide).animate({
+				left:0
+			}, 300)
+			event.preventDefault();
+		}
+	})
+
+	//swipe down
+	$(window).on('swipeup', function(event){
+		if (upSlide != null){
+			$(curSlide).animate({
+				top:10000
+			}, 300)
+			$(upSlide).animate({
+				left:0
+			}, 300)
+			event.preventDefault();
+		}
+	})
+}
+
+function slideLineup(){
 
 }
 

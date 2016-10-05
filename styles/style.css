@@ -30,6 +30,22 @@ h2 {
 	position: relative;
 }
 
+@media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
+	h1 {
+		font-size: 8rem;
+	}
+
+	h2 {
+		font-size: 4rem;
+		margin:4rem 0;
+	}
+
+	p, li, ol, span, a {
+	    font-size: 2rem;
+	    margin: 2rem 0;
+	}
+}
+
 /* SPECIAL CLASSES
 _________________________________________*/
 
@@ -48,12 +64,24 @@ _________________________________________*/
 }
 .startpos {left:10000px;}
 
-.rightcaret {}
-.leftcaret {} 
+.rightcaret {
+	right: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .3;
+}
+.leftcaret {
+	left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .3;
+} 
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
 	.abscenter {		
-	    width: 100%;
+	    width: 95%;
 	}
 }
 
@@ -71,6 +99,12 @@ _________________________________________*/
 	width: 40%;
     display: block;
     margin: 60 auto;
+}
+
+@media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
+	#intro img {
+		width: 75%;
+    }
 }
 
 
