@@ -65,45 +65,44 @@ _________________________________________*/
     top: 50%;
     width: 80%;
 }
+.xcenter {
+	position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top:15px;
+    height:100%;
+}
 
 .startpos {z-index:-1;left:10000;}
 .higher {z-index:50;}
 
+.rightcaret, .leftcaret, .upcaret, .downcaret {
+    position: absolute;
+    opacity: 0;
+    width: 50px;
+    z-index: 100;
+}
 .rightcaret {
 	right: 0;
-    position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    opacity: .3;
-    width: 100px;
-    z-index: 100;
+    display:block;
+    opacity:.3;
 }
 .upcaret {
 	top: 0;
-    position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    width: 100px;
-    z-index: 100;
+    transform: translateX(-50%);    
 }
 .downcaret {
 	bottom: 0;
-    position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 0;
-    width: 100px;
-    z-index: 100;
 }
 .leftcaret {
 	left: 0;
-    position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    opacity: 0;
-    width: 100px;
-    z-index: 100;
 } 
 
 

@@ -1,6 +1,7 @@
 /* GLOBAL VARIABLES
 --------------------------------------------------------*/
 var curSlide = '#intro'; var rightSlide = '#about'; var leftSlide = null; var upSlide = null; var downSlide = null;
+var propSelected = null; var tutorial = false; var propSlide = null;
 var lockSlide = false;
 
 /* COOKIE CONTROL
@@ -194,13 +195,20 @@ function configureSlides(direct){
 		dropCookie('no');
 	}
 	//PROP LIST MAIN
-	else if (curSlide == '#yescookie' && direct == 'left' || curSlide == '#nocookie' && direct == 'right'){   
-		curSlide = '#proplist'; downSlide = '#proplist59';
+	else if (curSlide == '#yescookie' && direct == 'left' || curSlide == '#nocookie' && direct == 'right' || curSlide == '#proplist59' && direct == 'up'){   
+		destroyCoins();
+		curSlide = '#proplist'; downSlide = '#proplist59';tutorial = false;
 		$('.downcaret').animate({opacity:.3}, 300); $('.rightcaret').add('.leftcaret').add('.upcaret').animate({opacity:0}, 300);
+	}
+	//TUTORIAL MASTER
+	else if (tutorial == true && direct == 'right'){   
+		destroyCoins();
+		curSlide = '#tutorial'; rightSlide = propSelected; tutorial = false;
+		$('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').add('.upcaret').add('.downcaret').animate({opacity:0}, 300);
 	}
 	//PROP LIST 59
 	else if (curSlide == '#proplist' && direct == 'down'){   
-		curSlide = '#proplist59'; upSlide = '#proplist';
+		curSlide = '#proplist59'; upSlide = '#proplist'; rightSlide = '#tutorial'; propSelected = 59;propSlide = '#p59';tutorial = true;
 		$('.downcaret').add('.upcaret').add('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').animate({opacity:0}, 300);
 		rainingCoins();
 	}
@@ -211,7 +219,11 @@ function configureSlides(direct){
 	$(leftSlide).css({left:-10000,top:0,'z-index':0});
 	$(rightSlide).css({left:10000,top:0,'z-index':0});
 
-	console.log(lockSlide);
+
+}
+
+function loadProp(propSelected){
+
 
 }
 
@@ -254,7 +266,15 @@ function rainingCoins(){
 		$('.coins').remove();
 	});
 	$('#proplist59 svg:last-of-type').css({top:-200, left:'20%'}).animate({top:3000},5000);
+}
 
+function destroyCoins(){
+	$('#proplist59 svg:last-of-type').dequeue();
+	$('#proplist59 svg:eq(1)').dequeue();
+	$('#proplist59 svg:eq(2)').dequeue();
+	$('#proplist59 svg:eq(3)').dequeue();
+	$('#proplist59 svg:eq(4)').dequeue();
+	$('.coins').remove();
 }
 
 /* ONLOAD CONTROL
