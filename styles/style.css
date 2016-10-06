@@ -26,10 +26,12 @@ h1 {
 h2 {
 	margin: 1rem 0;
     font-size: 2rem;
+    line-height: 2.8rem;
 }
 h3 {
 	font-size: 1.4rem;
 	margin: 1rem 0;
+	line-height: 1.8rem;
 }
 
 #container {
@@ -42,6 +44,7 @@ h3 {
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
 	h1 {font-size: 8rem;}
 	h2 {font-size: 4rem;margin:4rem 0;}
+	h3 {font-size:3rem;line-height: 4rem;}
 	p, li, ol, span, a {font-size: 2rem;line-height: 3rem;}
 	p {margin: 9rem 0;}
 }
@@ -105,7 +108,11 @@ _________________________________________*/
 
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
-	.abscenter {width: 95%;}
+	.abscenter {width: 90%;}
+}
+
+@media screen and (min-width: 1280px){
+	.abscenter {width: 30%;}
 }
 
 /* COLOR CLASSES
@@ -148,17 +155,52 @@ _________________________________________*/
 .cookie {width:50%;}
 .cookie svg {fill: rgba(123, 76, 39,1);}
 
-#yescookie .cookie {
+#yescookie .cookie, #nocookie .cookie {
 	width:30%;
     top: -200px;
 }
-#yescookie>div:last-of-type {top:115%;}
+
+#yescookie>div:last-of-type, #nocookie>div:last-of-type {top:115%;}
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
 	.cookie {width:70%;}
 }
 
+/* PROP LIST
+_________________________________________*/
 
+#proplist59>div:first-of-type {
+	position: absolute;
+    bottom: 0;
+    width: 50%;
+}
+	#proplist59>div:first-of-type svg {
+		fill:#fff;
+	}
+
+#proplist59>div:last-of-type {
+	position: absolute;
+    right: 2%;
+    top: 10%;
+}
+
+.coins {
+	width: 100px;
+    fill: gold;
+    position: absolute;
+    z-index: 50;
+}
+
+@media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
+	#proplist59>div:first-of-type {width:100%;}
+	#proplist59>div:last-of-type {
+		position: absolute;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    width: 80%;
+	    top: 10%;
+	}
+}
 
 /* PROP QUESTIONS
 _________________________________________*/
