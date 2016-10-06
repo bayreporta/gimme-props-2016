@@ -178,6 +178,7 @@ function configureSlides(direct){
 		curSlide = '#cookie'; leftSlide = '#yescookie'; rightSlide = '#nocookie';
 		$('.rightcaret').add('.leftcaret').animate({opacity:.3}, 300);$('.upcaret').add('.downcaret').animate({opacity:0}, 300);
 		$('html').css('background-color', '#fff');
+		lockSlide = true;
 		setTimeout(noshCookie, 1300);
 	}	
 	//YES COOKIE
@@ -235,6 +236,7 @@ function noshCookie(){
 	setTimeout(function(){		
 		$('#cookie>div:eq(1)').animate({top:2000},200, function(){
 			$('#cookie>div:eq(2)').fadeIn(1);
+			lockSlide = false;
 			$(this).remove();
 		});
 	},500);
