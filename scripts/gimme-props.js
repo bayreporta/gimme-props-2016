@@ -1,4 +1,4 @@
-/* VARIABLES
+/* GLOBAL VARIABLES
 --------------------------------------------------------*/
 var curSlide = '#intro'; var rightSlide = '#cookie'; var leftSlide = null; var upSlide = null; var downSlide = null;
 
@@ -22,6 +22,8 @@ function grabCookie(cname) {
     return "";
 }
 
+/* INITIALIZATION CONTROL
+--------------------------------------------------------*/
 function initializeJQuery(){
 	initTransitions();
 }
@@ -154,6 +156,8 @@ function initTransitions(){
 	})
 }
 
+/* SLIDE CONTROL
+--------------------------------------------------------*/
 function configureSlides(direct){
 	leftSlide, rightSlide, upSlide, downSlide = null;
 
@@ -162,9 +166,23 @@ function configureSlides(direct){
 		curSlide = '#cookie'; leftSlide = ''; rightSlide = '';
 		$('.rightcaret').add('.leftcaret').animate({opacity:.3}, 300);
 		$('.upcaret').add('.downcaret').animate({opacity:0}, 300);
+		setTimeout(noshCookie, 1300);
 	}
 }
 
+/* ANIMATION CONTROL
+--------------------------------------------------------*/
+function noshCookie(){
+	$('#cookie>div:eq(0)').hide();
+	$('#cookie>div:eq(1)').show();
+	setTimeout(function(){
+		$('#cookie>div:eq(2)').fadeIn(300);
+		$('#cookie>div:eq(1)').animate({top:1000},200, function(){$(this).remove();});
+	},500);
+}
+
+/* ONLOAD CONTROL
+--------------------------------------------------------*/
 window.onload = function(){
 	initializeJQuery();
 }

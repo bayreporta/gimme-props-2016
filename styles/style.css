@@ -48,7 +48,7 @@ h2 {
 
 /* SPECIAL CLASSES
 _________________________________________*/
-
+.hide {display: none;}
 .txtcenter {text-align: center;}
 .relative {
 	position:absolute;
@@ -124,11 +124,20 @@ _________________________________________*/
 }
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
-	#intro img {
-		width: 75%;
-    }
+	#intro img {width: 75%;}
 }
 
+/* COOKIE SLIDE
+_________________________________________*/
+#cookie>div:first-of-type, #cookie>div:nth-of-type(2) {width:50%;}
+
+#cookie svg {
+	fill: rgba(123, 76, 39,1);
+}
+
+@media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
+	#cookie>div:first-of-type, #cookie>div:nth-of-type(2) {width:90%;}
+}
 
 /* PROP QUESTIONS
 _________________________________________*/
