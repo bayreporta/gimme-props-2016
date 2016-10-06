@@ -167,7 +167,7 @@ function configureSlides(direct){
 		$('.rightcaret').add('.downcaret').animate({opacity:.3}, 300);$('.upcaret').add('.leftcaret').animate({opacity:0}, 300);
 	}
 	else if (curSlide == '#about' && direct == 'right' || curSlide == '#whoweare' && direct == 'right'){   //TO COOKIE
-		curSlide = '#cookie'; leftSlide = ''; rightSlide = '';
+		curSlide = '#cookie'; leftSlide = '#yescookie'; rightSlide = '#nocookie';
 		$('.rightcaret').add('.leftcaret').animate({opacity:.3}, 300);$('.upcaret').add('.downcaret').animate({opacity:0}, 300);
 		$('html').css('background-color', '#fff');
 		setTimeout(noshCookie, 1300);
@@ -175,6 +175,19 @@ function configureSlides(direct){
 	else if (curSlide == '#about' && direct == 'down'){   //TO WHO WE ARE
 		curSlide = '#whoweare'; upSlide = '#about'; rightSlide = '#cookie';
 		$('.rightcaret').add('.upcaret').animate({opacity:.3}, 300);$('.leftcaret').add('.downcaret').animate({opacity:0}, 300);
+	}
+	else if (curSlide == '#cookie' && direct == 'left'){   //YES COOKIE
+		curSlide = '#yescookie'; leftSlide = '#proplist';
+		$('.rightcaret').add('.leftcaret').add('.upcaret').add('.downcaret').animate({opacity:0}, 300);
+		dropCookie();
+	}
+	else if (curSlide == '#cookie' && direct == 'right'){   //NO COOKIE
+		curSlide = '#nocookie'; rightSlide = '#proplist';
+		$('.rightcaret').add('.leftcaret').add('.upcaret').add('.downcaret').animate({opacity:0}, 300);
+	}
+	else if (curSlide == '#cookie' && direct == 'left'){   //PROP LIST MAIN
+		curSlide = '#proplist'; 
+		$('.rightcaret').add('.leftcaret').add('.upcaret').add('.downcaret').animate({opacity:0}, 300);
 	}
 
 	//configure next slides
@@ -191,11 +204,19 @@ function noshCookie(){
 	$('#cookie>div:eq(0)').hide();
 	$('#cookie>div:eq(1)').show();
 	setTimeout(function(){		
-		$('#cookie>div:eq(1)').animate({top:10000},200, function(){
+		$('#cookie>div:eq(1)').animate({top:2000},200, function(){
 			$('#cookie>div:eq(2)').fadeIn(1);
 			$(this).remove();
 		});
 	},500);
+}
+
+function dropCookie(){
+	$('#yescookie .cookie').animate({top:2000}, 2000, function(){
+		$('#yescookie').animate({left:10000}, 300);
+		$('#proplist').animate({left:0},300);
+		configureSlides('left');
+	});
 }
 
 /* ONLOAD CONTROL

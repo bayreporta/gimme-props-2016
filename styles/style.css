@@ -62,7 +62,9 @@ _________________________________________*/
     top: 50%;
     width: 80%;
 }
-.startpos {z-index:-1;left:-10000;}
+
+.startpos {z-index:-1;left:10000;}
+.higher {z-index:50;}
 
 .rightcaret {
 	right: 0;
@@ -101,6 +103,7 @@ _________________________________________*/
     z-index: 100;
 } 
 
+
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
 	.abscenter {width: 95%;}
 }
@@ -110,6 +113,14 @@ _________________________________________*/
 
 .darkblue, .darkblue a, .darkblue p, .darkblue li, .darkblue span {
 	background-color:rgba(39, 86, 123,1);
+	color:#fff;
+}
+.darkred, .darkred a, .darkred p, .darkred li, .darkred span {
+	background-color:#7b272c;
+	color:#fff;
+}
+.darkgreen, .darkgreen a, .darkgreen p, .darkgreen li, .darkgreen span {
+	background-color:#2c7b27;
 	color:#fff;
 }
 
@@ -127,22 +138,27 @@ _________________________________________*/
 	#intro img {width: 75%;}
 }
 
-/* COOKIE SLIDE
+/* ABOUT SLIDE
 _________________________________________*/
 #about p {width:75%;margin-left:auto;margin-right:auto;}
 
 
-/* COOKIE SLIDE
+/* COOKIE QUESTIONS
 _________________________________________*/
-#cookie>div:first-of-type, #cookie>div:nth-of-type(2) {width:50%;}
+.cookie {width:50%;}
+.cookie svg {fill: rgba(123, 76, 39,1);}
 
-#cookie svg {
-	fill: rgba(123, 76, 39,1);
+#yescookie .cookie {
+	width:30%;
+    top: -200px;
 }
+#yescookie>div:last-of-type {top:115%;}
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
-	#cookie>div:first-of-type, #cookie>div:nth-of-type(2) {width:70%;}
+	.cookie {width:70%;}
 }
+
+
 
 /* PROP QUESTIONS
 _________________________________________*/
