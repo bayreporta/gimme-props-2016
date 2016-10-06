@@ -88,7 +88,7 @@ function initTransitions(){
 				$(curSlide).animate({
 					top:-10000
 				}, 300)
-				$(upSlide).animate({
+				$(downSlide).animate({
 					top:0
 				}, 300)
 				event.preventDefault();
@@ -133,7 +133,7 @@ function initTransitions(){
 				top:-10000
 			}, 300)
 			$(downSlide).animate({
-				left:0
+				top:0
 			}, 300)
 			event.preventDefault();
 			configureSlides('down');
@@ -142,13 +142,13 @@ function initTransitions(){
 	})
 
 	//swipe down
-	$(window).on('swipeup', function(event){
+	$(window).on('swipedown', function(event){
 		if (upSlide != null){
 			$(curSlide).animate({
 				top:10000
 			}, 300)
 			$(upSlide).animate({
-				left:0
+				top:0
 			}, 300)
 			event.preventDefault();
 			configureSlides('up');
@@ -162,16 +162,27 @@ function configureSlides(direct){
 	leftSlide, rightSlide, upSlide, downSlide = null;
 
 	//forgive me conditional gods
-	if (curSlide == '#intro' && direct == 'right'){
-		curSlide = '#about'; rightSlide = '#cookie';
-		$('.rightcaret').animate({opacity:.3}, 300);$('.upcaret').add('.leftcaret').add('.downcaret').animate({opacity:0}, 300);
+	if (curSlide == '#intro' && direct == 'right' || curSlide == '#whoweare' && direct == 'up'){    //TO ABOUT
+		curSlide = '#about'; rightSlide = '#cookie'; downSlide = '#whoweare';
+		$('.rightcaret').add('.downcaret').animate({opacity:.3}, 300);$('.upcaret').add('.leftcaret').animate({opacity:0}, 300);
 	}
-	else if (curSlide == '#about' && direct == 'right'){
+	else if (curSlide == '#about' && direct == 'right' || curSlide == '#whoweare' && direct == 'right'){   //TO COOKIE
 		curSlide = '#cookie'; leftSlide = ''; rightSlide = '';
 		$('.rightcaret').add('.leftcaret').animate({opacity:.3}, 300);$('.upcaret').add('.downcaret').animate({opacity:0}, 300);
 		$('html').css('background-color', '#fff');
 		setTimeout(noshCookie, 1300);
 	}
+	else if (curSlide == '#about' && direct == 'down'){   //TO WHO WE ARE
+		curSlide = '#whoweare'; upSlide = '#about'; rightSlide = '#cookie';
+		$('.rightcaret').add('.upcaret').animate({opacity:.3}, 300);$('.leftcaret').add('.downcaret').animate({opacity:0}, 300);
+	}
+
+	//configure next slides
+	$(upSlide).css({left:0,top:-10000,'z-index':0});
+	$(downSlide).css({left:0,top:10000,'z-index':0});
+	$(leftSlide).css({left:-10000,top:0,'z-index':0});
+	$(rightSlide).css({left:10000,top:0,'z-index':0});
+
 }
 
 /* ANIMATION CONTROL

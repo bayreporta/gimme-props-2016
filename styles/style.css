@@ -8,15 +8,15 @@ html {
 	user-select: none;
 	background-color:rgba(39, 86, 123,1);
 }
-strong {font-weight:700;}
-em {font-style:italic;}
+strong {font-weight:700;} em {font-style:italic;}
 h1,h2,h3,h4 {font-family: 'raleway',san-serif;}
 p, li, ol, span, a {
 	font-family: merriweather, sans-serif;
     font-size: 1rem;
     margin: 1rem 0;
     font-weight:300;
-    line-height: 1.3rem;
+    line-height: 1.6rem;
+    color:#111;
 }
 p {margin: 5rem 0;}
 h1 {
@@ -26,6 +26,10 @@ h1 {
 h2 {
 	margin: 1rem 0;
     font-size: 2rem;
+}
+h3 {
+	font-size: 1.4rem;
+	margin: 1rem 0;
 }
 
 #container {
@@ -38,7 +42,7 @@ h2 {
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
 	h1 {font-size: 8rem;}
 	h2 {font-size: 4rem;margin:4rem 0;}
-	p, li, ol, span, a {font-size: 2rem;line-height: 2.6rem;}
+	p, li, ol, span, a {font-size: 2rem;line-height: 3rem;}
 	p {margin: 9rem 0;}
 }
 
@@ -58,7 +62,7 @@ _________________________________________*/
     top: 50%;
     width: 80%;
 }
-.startpos {left:10000px;}
+.startpos {z-index:-1;left:-10000;}
 
 .rightcaret {
 	right: 0;
@@ -104,7 +108,7 @@ _________________________________________*/
 /* COLOR CLASSES
 _________________________________________*/
 
-.darkblue {
+.darkblue, .darkblue a, .darkblue p, .darkblue li, .darkblue span {
 	background-color:rgba(39, 86, 123,1);
 	color:#fff;
 }
