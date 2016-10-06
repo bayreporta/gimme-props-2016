@@ -6,14 +6,19 @@ html {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	background-color:rgba(39, 86, 123,1);
 }
+strong {font-weight:700;}
+em {font-style:italic;}
 h1,h2,h3,h4 {font-family: 'raleway',san-serif;}
 p, li, ol, span, a {
 	font-family: merriweather, sans-serif;
     font-size: 1rem;
     margin: 1rem 0;
     font-weight:300;
+    line-height: 1.3rem;
 }
+p {margin: 5rem 0;}
 h1 {
 	font-size: 5rem;    
     font-weight:900;
@@ -31,19 +36,10 @@ h2 {
 }
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
-	h1 {
-		font-size: 8rem;
-	}
-
-	h2 {
-		font-size: 4rem;
-		margin:4rem 0;
-	}
-
-	p, li, ol, span, a {
-	    font-size: 2rem;
-	    margin: 2rem 0;
-	}
+	h1 {font-size: 8rem;}
+	h2 {font-size: 4rem;margin:4rem 0;}
+	p, li, ol, span, a {font-size: 2rem;line-height: 2.6rem;}
+	p {margin: 9rem 0;}
 }
 
 /* SPECIAL CLASSES
@@ -102,9 +98,7 @@ _________________________________________*/
 } 
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
-	.abscenter {		
-	    width: 95%;
-	}
+	.abscenter {width: 95%;}
 }
 
 /* COLOR CLASSES
@@ -114,6 +108,8 @@ _________________________________________*/
 	background-color:rgba(39, 86, 123,1);
 	color:#fff;
 }
+
+.yellowtxt {color:#e2dfa4;}
 
 /* INTRO SLIDE
 _________________________________________*/
@@ -129,6 +125,11 @@ _________________________________________*/
 
 /* COOKIE SLIDE
 _________________________________________*/
+#about p {width:75%;margin-left:auto;margin-right:auto;}
+
+
+/* COOKIE SLIDE
+_________________________________________*/
 #cookie>div:first-of-type, #cookie>div:nth-of-type(2) {width:50%;}
 
 #cookie svg {
@@ -136,7 +137,7 @@ _________________________________________*/
 }
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
-	#cookie>div:first-of-type, #cookie>div:nth-of-type(2) {width:90%;}
+	#cookie>div:first-of-type, #cookie>div:nth-of-type(2) {width:70%;}
 }
 
 /* PROP QUESTIONS

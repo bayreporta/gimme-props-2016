@@ -1,6 +1,6 @@
 /* GLOBAL VARIABLES
 --------------------------------------------------------*/
-var curSlide = '#intro'; var rightSlide = '#cookie'; var leftSlide = null; var upSlide = null; var downSlide = null;
+var curSlide = '#intro'; var rightSlide = '#about'; var leftSlide = null; var upSlide = null; var downSlide = null;
 
 /* COOKIE CONTROL
 --------------------------------------------------------*/
@@ -163,9 +163,13 @@ function configureSlides(direct){
 
 	//forgive me conditional gods
 	if (curSlide == '#intro' && direct == 'right'){
+		curSlide = '#about'; rightSlide = '#cookie';
+		$('.rightcaret').animate({opacity:.3}, 300);$('.upcaret').add('.leftcaret').add('.downcaret').animate({opacity:0}, 300);
+	}
+	else if (curSlide == '#about' && direct == 'right'){
 		curSlide = '#cookie'; leftSlide = ''; rightSlide = '';
-		$('.rightcaret').add('.leftcaret').animate({opacity:.3}, 300);
-		$('.upcaret').add('.downcaret').animate({opacity:0}, 300);
+		$('.rightcaret').add('.leftcaret').animate({opacity:.3}, 300);$('.upcaret').add('.downcaret').animate({opacity:0}, 300);
+		$('html').css('background-color', '#fff');
 		setTimeout(noshCookie, 1300);
 	}
 }
@@ -175,9 +179,11 @@ function configureSlides(direct){
 function noshCookie(){
 	$('#cookie>div:eq(0)').hide();
 	$('#cookie>div:eq(1)').show();
-	setTimeout(function(){
-		$('#cookie>div:eq(2)').fadeIn(300);
-		$('#cookie>div:eq(1)').animate({top:1000},200, function(){$(this).remove();});
+	setTimeout(function(){		
+		$('#cookie>div:eq(1)').animate({top:10000},200, function(){
+			$('#cookie>div:eq(2)').fadeIn(1);
+			$(this).remove();
+		});
 	},500);
 }
 
