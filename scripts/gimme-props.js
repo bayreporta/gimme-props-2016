@@ -3,6 +3,7 @@
 var curSlide = '#intro'; var rightSlide = '#about'; var leftSlide = null; var upSlide = null; var downSlide = null;
 var propSelected = null; var tutorial = false; var propSlide = null;
 var lockSlide = false;
+var propData = new Object;
 
 /* COOKIE CONTROL
 --------------------------------------------------------*/
@@ -28,6 +29,7 @@ function grabCookie(cname) {
 --------------------------------------------------------*/
 function initializeJQuery(){
 	initTransitions();
+	initJSON();
 }
 
 function initTransitions(){
@@ -152,9 +154,12 @@ function initTransitions(){
 			configureSlides('up');
 		}
 	})
+}
 
-
-	
+function initJSON(){
+	$.getJSON('scripts/json/prop59.json', function(data){
+		propData['prop59'] = data.prop59;
+	});
 }
 
 /* SLIDE CONTROL
@@ -197,21 +202,19 @@ function configureSlides(direct){
 	}
 	//PROP LIST MAIN
 	else if (curSlide == '#yescookie' && direct == 'left' || curSlide == '#nocookie' && direct == 'right' || curSlide == '#proplist59' && direct == 'up'){   
-		destroyCoins();
-		curSlide = '#proplist'; downSlide = '#proplist59';tutorial = false;
+		clearAnimations(); curSlide = '#proplist'; downSlide = '#proplist59'; tutorial = false;
 		$('.downcaret').animate({opacity:.3}, 300); $('.rightcaret').add('.leftcaret').add('.upcaret').animate({opacity:0}, 300);
 	}
 	//TUTORIAL MASTER
-	else if (tutorial == true && direct == 'right'){   
-		destroyCoins();
-		curSlide = '#tutorial'; rightSlide = propSelected; tutorial = false;
+	else if (tutorial == true && direct == 'right'){ 
+		clearAnimations(); curSlide = '#tutorial'; tutorial = false;
 		$('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').add('.upcaret').add('.downcaret').animate({opacity:0}, 300);
 	}
 	//PROP LIST 59
 	else if (curSlide == '#proplist' && direct == 'down'){   
-		curSlide = '#proplist59'; upSlide = '#proplist'; rightSlide = '#tutorial'; propSelected = 59;propSlide = '#p59';tutorial = true;
-		$('.downcaret').add('.upcaret').add('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').animate({opacity:0}, 300);
 		rainingCoins();
+		curSlide = '#proplist59'; upSlide = '#proplist'; rightSlide = '#tutorial'; propSelected = 59;tutorial = true;
+		$('.downcaret').add('.upcaret').add('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').animate({opacity:0}, 300);
 	}
 
 	//configure next slides
@@ -223,13 +226,19 @@ function configureSlides(direct){
 
 }
 
+
 function loadProp(propSelected){
 
+	//define the rightSlide as first slide
 
 }
 
 /* ANIMATION CONTROL
 --------------------------------------------------------*/
+function clearAnimations(){
+	destroyCoins();
+}
+
 function noshCookie(){
 	$('#cookie>div:eq(0)').hide();
 	$('#cookie>div:eq(1)').show();
