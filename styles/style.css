@@ -216,7 +216,7 @@ _________________________________________*/
 	}
 
 	.propprogress>div>div {
-		width:50%;
+		width:0%;
 		background-color:darkgreen;
 		height: 100%;
 	}
@@ -229,6 +229,7 @@ _________________________________________*/
     left: 0;
     bottom: 5%;
     opacity:.3;
+    display:none;
 }
 
 .propcaretright {
@@ -238,6 +239,7 @@ _________________________________________*/
     right: 0;
     bottom: 5%;
     opacity:.3;
+    display:none;
 }
 
 .propquestion {
@@ -248,10 +250,18 @@ _________________________________________*/
     position: absolute;
 }
 
-	.propquestion h1 {
+	.propquestion h1:first-of-type {
+		text-align: center;
+    	font-size: 10rem;
+    	margin: 10rem 0;
+	}
+
+	.propquestion h1:last-of-type {
 		font-size: 4rem;
    	 	line-height: 5rem;
 	}
+
+	
 
 .propchoice {
 	position: absolute;

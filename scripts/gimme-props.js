@@ -1,9 +1,8 @@
 /* GLOBAL VARIABLES
 --------------------------------------------------------*/
 var curSlide = '#intro'; var rightSlide = '#about'; var leftSlide = null; var upSlide = null; var downSlide = null;
-var propSelected = null; var tutorial = false; var propSlide = null;
-var lockSlide = false;
-var propData = new Object;
+var propSelected = null; var tutorial = false; var propSlide = null; var lockSlide = false;
+var propData = new Object; var points;
 
 /* COOKIE CONTROL
 --------------------------------------------------------*/
@@ -207,15 +206,16 @@ function configureSlides(direct){
 	}
 	//TUTORIAL MASTER
 	else if (tutorial == true && direct == 'right'){ 
-		clearAnimations(); curSlide = '#tutorial'; tutorial = false;
+		clearAnimations(); loadProp(propSelected); curSlide = '#tutorial'; tutorial = false;
 		$('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').add('.upcaret').add('.downcaret').animate({opacity:0}, 300);
 	}
 	//PROP LIST 59
 	else if (curSlide == '#proplist' && direct == 'down'){   
 		rainingCoins();
-		curSlide = '#proplist59'; upSlide = '#proplist'; rightSlide = '#tutorial'; propSelected = 59;tutorial = true;
+		curSlide = '#proplist59'; upSlide = '#proplist'; rightSlide = '#tutorial'; propSelected = 'prop59';tutorial = true;
 		$('.downcaret').add('.upcaret').add('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').animate({opacity:0}, 300);
 	}
+	//conditional for all prop interactions
 
 	//configure next slides
 	$(upSlide).css({left:0,top:-10000,'z-index':0});
@@ -227,8 +227,29 @@ function configureSlides(direct){
 }
 
 
-function loadProp(propSelected){
+function loadProp(p){
+	var d = propData[p];
+	points = 0;
 	
+	//build slides
+	for (var i = 0 ; i < d.length ; i++){
+		//check if obj exists
+		if (!d[i].hasOwnProperty('lefttext')){d[i]['lefttext'] = '';}
+		if (!d[i].hasOwnProperty('subtext')){d[i]['subtext'] = '';}
+		if (!d[i].hasOwnProperty('righttext')){d[i]['righttext'] = '';}
+		if (!d[i].hasOwnProperty('victoryslide')){d[i]['victoryslide'] = false;}
+
+		//input template
+		$('#container').append('<section id="'+ d[i].slideid +'" class="relative startpos '+ p +'"><div class="propprogress"><div><div></div></div></div><div class="propquestion"><h1>'+ d[i].maintext +'</h1></div><div class="propchoice"><h3>'+ d[i].lefttext +'</h3><h3>'+ d[i].subtext +'</h3><h3>'+ d[i].righttext +'</h3></div></section>');
+
+		//add victory text template if applies
+		if (d[i].victoryslide == true){
+			$(d[i].slideid + '.propquestion').prepend('<h1></h1>');
+		}
+
+	}
+
+
 
 	//define the rightSlide as first slide
 
