@@ -73,7 +73,7 @@ _________________________________________*/
     height:100%;
 }
 
-.startpos {z-index:-1;left:10000;}
+.startpos {left:10000;}
 .higher {z-index:50;}
 
 .rightcaret, .leftcaret, .upcaret, .downcaret {
@@ -168,16 +168,16 @@ _________________________________________*/
 /* PROP LIST
 _________________________________________*/
 
-#proplist59>div:first-of-type {
+#prop59>div:first-of-type {
 	position: absolute;
     bottom: 0;
     width: 50%;
 }
-	#proplist59>div:first-of-type svg {
+	#prop59>div:first-of-type svg {
 		fill:#fff;
 	}
 
-#proplist59>div:last-of-type {
+#prop59>div:last-of-type {
 	position: absolute;
     right: 2%;
     top: 10%;
@@ -191,8 +191,8 @@ _________________________________________*/
 }
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
-	#proplist59>div:first-of-type {width:100%;}
-	#proplist59>div:last-of-type {
+	#prop59>div:first-of-type {width:100%;}
+	#prop59>div:last-of-type {
 		position: absolute;
 	    left: 50%;
 	    transform: translateX(-50%);
