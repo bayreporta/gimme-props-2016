@@ -228,6 +228,7 @@ function configureSlides(direct){
 
 
 function loadProp(propSelected){
+	
 
 	//define the rightSlide as first slide
 
