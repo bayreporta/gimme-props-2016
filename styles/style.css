@@ -7,7 +7,7 @@ html {
 	-ms-user-select: none;
 	user-select: none;
 	/*background-color:rgba(39, 86, 123,1);*/
-	
+
 }
 strong {font-weight:700;} em {font-style:italic;}
 h1,h2,h3,h4 {font-family: 'raleway',san-serif;}
@@ -44,8 +44,8 @@ h3 {
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
 	h1 {font-size: 8rem;}
-	h2 {font-size: 4rem;margin:4rem 0;}
-	h3 {font-size:3rem;line-height: 4rem;}
+	h2 {font-size: 4rem;margin:4rem 0;line-height: 5rem;}
+	h3 {font-size:2rem;line-height: 3rem;}
 	p, li, ol, span, a {font-size: 2rem;line-height: 3rem;}
 	p {margin: 9rem 0;}
 }
@@ -131,6 +131,11 @@ _________________________________________*/
 	color:#fff;
 }
 
+.darkgray, .darkgray a, .darkgray p, .darkgray li, .darkgray span {
+	background-color:#555;
+	color:#fff;
+}
+
 .yellowtxt {color:#e2dfa4;}
 
 /* INTRO SLIDE
@@ -186,7 +191,7 @@ _________________________________________*/
 
 .coins {
 	width: 100px;
-    fill: gold;
+    fill: #c5c558;
     position: absolute;
     z-index: 50;
 }
@@ -202,26 +207,37 @@ _________________________________________*/
 	}
 }
 
-/* PROP QUESTIONS
+/* TUTORIAL SLIDE
 _________________________________________*/
 
-.propprogress {
-	height:2%;
-	max-height:15px;
+#tutorial h1 {
+	margin-bottom: 5rem;
 }
-	
-	.propprogress>div {
-		width:100%;
-		height:80%;
-		margin: 10 auto;
-	}
 
-	.propprogress>div>div {
-		width:0%;
-		background-color:darkgreen;
-		height: 100%;
-	}
+/* PROP QUESTIONS
+_________________________________________*/
+.propheader {
+	overflow: hidden;
+}
 
+.propheader svg {
+	width: 10%;
+    position: absolute;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+    opacity: .4;
+    top: 0;
+    max-width: 100px;
+}
+
+.propheader h2 {
+	text-align: center;
+	text-transform: uppercase;
+    font-family: 'cabin',san-serif;
+    color: #333;
+    margin-top: 1.5rem;
+}
 
 .propcaretleft {
 	position: absolute;
@@ -283,3 +299,19 @@ _________________________________________*/
    	}
 	.propchoice h3:last-of-type {right:0;}
 
+
+@media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
+	.propheader svg {
+		width: 15%;	    
+	    top: 25px;
+	}
+
+	.propquestion h1:last-of-type {
+		font-size: 5rem;
+   	 	line-height: 7rem;
+	}
+
+	.propchoice {
+	    bottom: 9%;	    
+	}
+}
