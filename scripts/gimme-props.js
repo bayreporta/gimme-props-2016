@@ -188,7 +188,7 @@ function configureSlides(direct){
 		}
 
 		//configure next slides
-		curSlide = propData[propSelected][propID].slideid; leftSlide = propData[propSelected][propID].leftslide; rightSlide = propData[propSelected][propID].rightslide;
+		curSlide = '#' + propData[propSelected][propID].slideid; leftSlide = '#' + propData[propSelected][propID].leftslide; rightSlide = '#' + propData[propSelected][propID].rightslide;
 
 
 		/*get back on the path man
@@ -243,7 +243,7 @@ function configureSlides(direct){
 	}
 	//TUTORIAL MASTER
 	else if (tutorial == true && direct == 'right'){ 
-		clearAnimations(); loadProp(propSelected); curSlide = '#tutorial'; tutorial = false;rightSlide = propSlide;
+		clearAnimations(); loadProp(propSelected); curSlide = '#tutorial'; tutorial = false;rightSlide = '#' + propSlide;
 		$('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').add('.upcaret').add('.downcaret').animate({opacity:0}, 300);
 	}
 	//PROP LIST 59
@@ -285,24 +285,6 @@ function loadProp(p){
 
 	//define the rightSlide as first slide
 	propSlide = d[0].slideid;
-
-	//unbind slide transitions and reinitialize
-	$(document).off('keydown');
-	$(document).on('keydown', '.prop59', function(event){
-		if (rightSlide != null && lockSlide == false){
-			if (event.which == 39){
-				$(curSlide).animate({
-					left:-10000
-				}, 300)
-				$(rightSlide).animate({
-					left:0
-				}, 300)
-				event.preventDefault();
-				configureSlides('right');
-			}
-		}
-	});
-
 
 }
 
