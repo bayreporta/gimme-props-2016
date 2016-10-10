@@ -1,6 +1,6 @@
 /* GLOBAL VARIABLES
 --------------------------------------------------------*/
-var curSlide = '#intro', rightSlide = '#about', leftSlide = null, upSlide = null, downSlide = null, propSlide = null;
+var curSlide = '#nocookie', rightSlide = '#proplist', leftSlide = null, upSlide = null, downSlide = null, propSlide = null;
 var propSelected = null, propID, tutorial = false, lockSlide = false, propMode = false, firstPropPass;
 var propData = new Object, points;
 
@@ -175,21 +175,38 @@ function configureSlides(direct){
 		//first pass with prop?
 		if (firstPropPass == true){
 			$('.rightcaret').animate({opacity:0}, 300);
+			$('.propcaretright').add('.propcaretleft').fadeIn(300);
 			firstPropPass = false;
 		}
 		else {
+			//calculate points
+			calcPoints(propData[propSelected][propID], direct);
+
 			//grab slide ids for next ones - establishes new propID
 			if (direct == 'left'){
 				propID = parseInt(propData[propSelected][propID].leftid);	
 			}
 			else if (direct == 'right'){
 				propID = parseInt(propData[propSelected][propID].rightid);
-			}
+			}		
 		}
 
 		//configure next slides
-		curSlide = '#' + propData[propSelected][propID].slideid; leftSlide = '#' + propData[propSelected][propID].leftslide; rightSlide = '#' + propData[propSelected][propID].rightslide;
+		curSlide = '#' + propData[propSelected][propID].slideid; leftSlide = '#' + propData[propSelected][propID].leftslide; rightSlide = '#' + propData[propSelected][propID].rightslide;		
 
+		//check victory conditions
+		if (propData[propSelected][propID].victoryslide == true){
+			var text;
+
+			if (points < 0){text = "OPPOSE IT!"}
+			else if (points > 0){text = "SUPPORT IT!"}
+			else if (points == 0){text = "GO EITHER WAY"}
+
+			$('<h1/>',{
+				'text': text
+			}).prependTo(curSlide + ' .propquestion');
+
+		}
 
 		/*get back on the path man
 		if (propSlide == '#results'){
@@ -261,6 +278,10 @@ function configureSlides(direct){
 	$(rightSlide).css({left:10000,top:0,'z-index':0});
 }
 
+function calcPoints(d, direct){
+	if (direct == 'left'){points += parseInt(d.leftpoints)}
+	else if (direct == 'right'){points += parseInt(d.rightpoints)}
+}
 
 function loadProp(p){
 	var d = propData[p];
@@ -274,13 +295,48 @@ function loadProp(p){
 		if (!d[i].hasOwnProperty('righttext')){d[i]['righttext'] = '';}
 		if (!d[i].hasOwnProperty('victoryslide')){d[i]['victoryslide'] = false;}
 
-		//input template
-		$('#container').append('<section id="'+ d[i].slideid +'" class="relative startpos '+ p +'"><div class="propprogress"><div><div></div></div></div><div class="propquestion"><h1>'+ d[i].maintext +'</h1></div><div class="propchoice"><h3>'+ d[i].lefttext +'</h3><h3>'+ d[i].subtext +'</h3><h3>'+ d[i].righttext +'</h3></div></section>');
+		//base template
+			//base section
+			$('<section/>', {
+				'id': 		d[i].slideid,
+				'class': 	'relative startpos ' + p,
+			}).appendTo('#container');
 
-		//add victory text template if applies
-		if (d[i].victoryslide == true){
-			$(d[i].slideid + '.propquestion').prepend('<h1></h1>');
-		}
+			//<div class="propprogress"><div><div></div></div></div>
+
+			//prop question shell
+			$('<div/>', {
+				'class': 'propquestion',
+			}).appendTo('#' + d[i].slideid);
+
+			//prop question type
+			if (d[i].victoryslide == true){				
+				$('<h2/>', {
+					'text': d[i].maintext
+				}).appendTo('#' + d[i].slideid + ' .propquestion');
+			}	
+			else if (d[i].victoryslide == false){
+				$('<h1/>', {
+					'text': d[i].maintext
+				}).appendTo('#' + d[i].slideid + ' .propquestion');
+			}
+
+			//prop choice
+			$('<div/>', {
+				'class': 'propchoice'
+			}).appendTo('#' + d[i].slideid);
+
+			$('<h3/>', {
+				'text': d[i].lefttext
+			}).appendTo('#' + d[i].slideid + ' .propchoice');
+
+			$('<h3/>', {
+				'text': d[i].subtext
+			}).appendTo('#' + d[i].slideid + ' .propchoice');
+
+			$('<h3/>', {
+				'text': d[i].righttext
+			}).appendTo('#' + d[i].slideid + ' .propchoice');
 	}
 
 	//define the rightSlide as first slide
