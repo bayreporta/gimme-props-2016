@@ -87,7 +87,6 @@ function configureSlides(direct){
 	else if (s.curSlide == '#about' && direct == 'right' || s.curSlide == '#whoweare' && direct == 'right'){  
 		s.curSlide = '#cookie'; s.leftSlide = '#yescookie'; s.rightSlide = '#nocookie';
 		$('.rightcaret').add('.leftcaret').animate({opacity:.3}, 300);$('.upcaret').add('.downcaret').animate({opacity:0}, 300);
-		$('html').css('background-color', '#fff');
 		s.lockSlide = true;
 		setTimeout(noshCookie, 1300);
 	}	
@@ -252,7 +251,7 @@ function loadProp(p){
 
 			//prop question type
 			if (d[i].victoryslide == true){				
-				$('<h2/>', {
+				$('<h2/>', {	
 					'text': d[i].maintext
 				}).appendTo('#' + d[i].slideid + ' .propquestion');
 			}	

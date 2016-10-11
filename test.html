@@ -1,42 +1,14 @@
-<html style="background-color:#fff;">
-	<head>
-		<title>Gimme Props 2016</title>
-	</head>
-	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
-	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-	<link rel="stylesheet" type="text/css" href="/styles/reset.css">
-	<link rel="stylesheet" type="text/css" href="/styles/fonts.css">
-	<link rel="stylesheet" type="text/css" href="/styles/style.css">
-	<body>
-		<div id="container">
-			<!-- CARETS -->
-			<div class="propcaretright"><img src="../assets/right-caret.svg"></div>
-			<div class="propcaretleft"><img src="../assets/left-caret.svg"></div>
-		
+<div id="test" up="boo"></div>
 
-			<!-- INTRO -->
-			<section id="" class="relative">
-				<div class="propprogress">
-					<div>
-						<div>
-						</div>
-					</div>
-				</div>
-				<div class="propquestion">
-					<h1>SUPPORT!</h1>
-					<h1>Well, there you have it! Advise the Legislature. Have a field day.</h1>
-				</div>
-				<div class="propchoice">
-					<h3>I'm the left choice!</h3>
-					<h3>I'm sometimes relevant...</h3>
-					<h3>I'm the right choice!</h3>
-				</div>
-			</section>			
-		</div>
-	</body>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script src="/scripts/jquery.mobile.custom.min.js"></script>
-	<script src="/scripts/jquerymobile-swipeupdown.js"></script>	
-	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="/scripts/gimme-props.js"></script>
-</html>
+<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+<script type="text/javascript">
+	var test = $('#test');
+
+	console.log(test.attr('up'));
+	console.log(test.attr('down')); 
+
+	if (test.attr('up') != undefined){
+		console.log('yes')
+	}
+
+</script>
