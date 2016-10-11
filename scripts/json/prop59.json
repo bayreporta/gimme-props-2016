@@ -63,13 +63,14 @@
         "maintext": "Well, that was easy. Remember, this prop just advises the Legislature; it doesn't actually overturn it.",
         "lefttext": "Bummerfest.",
         "righttext": "Waste of time.",
-        "leftslide": "proplist",
+        "leftslide": "resources",
         "leftid": -1,
-        "rightslide": "proplist",
+        "rightslide": "resources",
         "rightid": -1,
         "leftpoints": 0,
         "rightpoints": 0,
-        "victoryslide": true
+        "victoryslide": true,
+        "victorycond": "support"
     },
     {
         "propid": 59,
@@ -78,19 +79,20 @@
         "maintext": "Well, that was easy. Remember, this prop just advises but, hey, you still win.",
         "lefttext": "I like winning.",
         "righttext": "Down with Prop 59!",
-        "leftslide": "proplist",
+        "leftslide": "resources",
         "leftid": -1,
-        "rightslide": "proplist",
+        "rightslide": "resources",
         "rightid": -1,
         "leftpoints": 0,
         "rightpoints": 0,
-        "victoryslide": true
+        "victoryslide": true,
+        "victorycond": "oppose"
     },
     {
         "propid": 59,
         "id": 6,
         "slideid": "prop596",
-        "maintext": "Seriously? Abridged version: 2010 SCOTUS decision that allows unions and corporations to spend as much cash influencing elections as they want.",
+        "maintext": "Seriously? Abridged version: 2010 SCOTUS decision that allows unions and corporations spend as much cash influencing elections as they want.",
         "subtext": "Swipe to continue.",
         "leftslide": "prop597",
         "leftid": 7,
@@ -162,13 +164,14 @@
         "maintext": "Well, there you have it! Advise the Legislature. Have a field day.",
         "lefttext": "I like field days.",
         "righttext": "Don't tell me what to do!",
-        "leftslide": "proplist",
+        "leftslide": "resources",
         "leftid": -1,
-        "rightslide": "proplist",
+        "rightslide": "resources",
         "rightid": -1,
         "leftpoints": 0,
         "rightpoints": 0,
-        "victoryslide": true
+        "victoryslide": true,
+        "victorycond": "default"
     },
     {
         "propid": 59,
@@ -176,13 +179,14 @@
         "slideid": "prop5912",
         "maintext": "Totally understand. Time is precious, and there are 16 other props to explore that actually do something.",
         "subtext": "Swipe to continue.",
-        "leftslide": "proplist",
+        "leftslide": "resources",
         "leftid": -1,
-        "rightslide": "proplist",
+        "rightslide": "resources",
         "rightid": -1,
         "leftpoints": 0,
         "rightpoints": 0,
-        "victoryslide": true
+        "victoryslide": true,
+        "victorycond": "default"
     }
 ]
 }

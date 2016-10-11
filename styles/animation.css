@@ -41,3 +41,63 @@ _________________________________________*/
 	0% {transform: rotate(0deg);}
 	100% {transform: rotate(90deg);}
 }
+
+
+/* COIN ANIMATIONS - PROP 52
+_________________________________________*/
+#prop52>div[data="coin"] {
+	-webkit-animation-name: givetake;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-play-state: paused;
+
+	-ms-animation-name: givetake;
+	-ms-animation-duration: 2s;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-play-state: paused;
+
+
+	-moz-animation-name: givetake;
+	-moz-animation-duration: 2s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-play-state: paused;
+
+
+	animation-name: givetake;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-play-state: paused;
+
+}
+
+@-webkit-keyframes givetake {
+	0% {left: 20%;bottom: 35%;}
+	25% {left: 75%;bottom: 35%;}
+	50% {left: 75%;bottom: 10%;}
+	75% {left:20%;bottom:10%;}
+	100% {left: 20%;bottom: 35%;}
+}
+
+@-ms-keyframes givetake {
+	0% {left: 20%;bottom: 35%;}
+	25% {left: 75%;bottom: 35%;}
+	50% {left: 75%;bottom: 10%;}
+	75% {left:20%;bottom:10%;}
+	100% {left: 20%;bottom: 35%;}
+}
+
+@-moz-keyframes givetake {
+	0% {left: 20%;bottom: 35%;}
+	25% {left: 75%;bottom: 35%;}
+	50% {left: 75%;bottom: 10%;}
+	75% {left:20%;bottom:10%;}
+	100% {left: 20%;bottom: 35%;}
+}
+
+@keyframes givetake {
+	0% {left: 20%;bottom: 35%;}
+	25% {left: 75%;bottom: 35%;}
+	50% {left: 75%;bottom: 10%;}
+	75% {left:20%;bottom:10%;}
+	100% {left: 20%;bottom: 35%;}
+}

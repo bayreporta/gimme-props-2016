@@ -6,9 +6,8 @@ html {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	/*background-color:rgba(39, 86, 123,1);*/
-
 }
+section {background-color:#fff;}
 strong {font-weight:700;} em {font-style:italic;}
 h1,h2,h3,h4 {font-family: 'raleway',san-serif;}
 p, li, ol, span, a {
@@ -42,12 +41,54 @@ h3 {
 	position: relative;
 }
 
+#menu {
+	position: fixed;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    display:none;
+    z-index:10;
+}
+
+	#menu>div:first-of-type {
+		position: absolute;
+		width: 30px;
+	    right: 15px;
+	    cursor: pointer;
+	}
+
+	#menu>div:first-of-type svg, #menu>div:last-of-type svg {
+    	fill: #ddd;    	
+	}
+
+	#menu>div:first-of-type:hover svg, #menu>div:last-of-type:hover svg {
+    	fill: #aaa;
+	}
+
+	#menu>div:last-of-type {
+		position: absolute;
+	    width: 33px;
+	    right: 70px;
+	    cursor: pointer;
+	}
+
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
 	h1 {font-size: 8rem;}
 	h2 {font-size: 4rem;margin:4rem 0;line-height: 5rem;}
 	h3 {font-size:2rem;line-height: 3rem;}
 	p, li, ol, span, a {font-size: 2rem;line-height: 3rem;}
 	p {margin: 9rem 0;}
+
+	#menu>div:first-of-type {
+		width: 50px;
+	}
+
+	#menu>div:last-of-type {
+		width: 54px;
+    	right: 100px;
+	}
 }
 
 /* SPECIAL CLASSES
@@ -118,28 +159,44 @@ _________________________________________*/
 /* COLOR CLASSES
 _________________________________________*/
 
-.darkblue, .darkblue a, .darkblue p, .darkblue li, .darkblue span, .darkblue svg {
-	background-color:rgba(39, 86, 123,1);
-	color:#fff;
+.svg-white svg {
 	fill:#fff;
 }
-.darkred, .darkred a, .darkred p, .darkred li, .darkred span, .darkblue svg {
+
+.darkblue, .darkblue a, .darkblue p, .darkblue li, .darkblue span {
+	background-color:#27567b;
+	color:#fff;
+}
+.darkred, .darkred a, .darkred p, .darkred li, .darkred span {
 	background-color:#7b272c;
 	color:#fff;
 }
-.darkgreen, .darkgreen a, .darkgreen p, .darkgreen li, .darkgreen span, .darkblue svg {
+.darkgreen, .darkgreen a, .darkgreen p, .darkgreen li, .darkgreen span {
 	background-color:#2c7b27;
 	color:#fff;
 }
 
-.darkgray, .darkgray a, .darkgray p, .darkgray li, .darkgray span, .darkblue svg {
+.darkgray, .darkgray a, .darkgray p, .darkgray li, .darkgray span {
 	background-color:#555;
 	color:#fff;
 }
 
-.yellowtxt {color:#e2dfa4;}
+.darkpurple, .darkpurple a, .darkpurple p, .darkpurple li, .darkpurple span {
+	background-color:#272c7b;
+	color:#fff;
+}
 
-.svg-white {fill:#fff;}
+.darkorange, .darkorange a, .darkorange p, .darkorange li, .darkorange span {
+	background-color:#ffa500;
+	color:#fff;
+}
+
+.darkpink, .darkpink a, .darkpink p, .darkpink li, .darkpink span {
+	background-color:#b5397f;
+	color:#fff;
+}
+
+.yellowtxt {color:#e2dfa4;}
 
 /* INTRO SLIDE
 _________________________________________*/
@@ -191,10 +248,39 @@ _________________________________________*/
     left: 50px;
 }
 
+#prop52>div[data="hospital"]{
+	position: absolute;
+    bottom: 0;
+    width: 50%;
+    max-width: 567px;
+}
+
+#prop52>div[data="coin"]{
+	position: absolute;
+	width:10%;
+	max-width: 100px;
+	bottom: 50%;	
+	left:0;
+	z-index:-1;
+}
+
+#prop52>div[data="coin"] svg {
+	fill: #c5c558 !important;
+}
+
+#prop52>div[data="capitol"]{
+	position: absolute;
+    bottom: 40px;
+    width: 40%;
+    right: 5%;
+    max-width: 520px;
+}
+
 #prop59>div:first-of-type {
 	position: absolute;
     bottom: 0;
     width: 50%;
+    right:0;
 }
 	
 .proptitle-right {
@@ -211,21 +297,40 @@ _________________________________________*/
 
 .coins {
 	width: 100px;
-    fill: #c5c558;
+    fill: #c5c558 !important;
     position: absolute;
     z-index: 50;
 }
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
-	#prop59>div:first-of-type {width:100%;}
-	#prop59>div:last-of-type {
+	#prop59>div:first-of-type, #prop51>div:first-of-type {width:100%;}
+	.proptitle-right, .proptitle-left {
 		position: absolute;
 	    left: 50%;
 	    transform: translateX(-50%);
 	    width: 80%;
 	    top: 10%;
 	}
+
+	#prop51>div:nth-of-type(2) {
+		width: 30%;
+	    bottom: 50%;
+	}
+
 }
+
+/* RESOURCES SLIDE
+_________________________________________*/
+#resources h3 {
+	margin:2em 0;
+}
+
+@media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
+
+}
+
+
+
 
 /* TUTORIAL SLIDE
 _________________________________________*/
@@ -237,7 +342,9 @@ _________________________________________*/
 /* PROP QUESTIONS
 _________________________________________*/
 .propheader {
-	overflow: hidden;
+	position: absolute;
+    z-index: 100;
+    width: 100%;
 }
 
 .propheader svg {
