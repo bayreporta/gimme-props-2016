@@ -1,224 +1,229 @@
 /* SLIDE CONTROL
 --------------------------------------------------------*/
 function configureSlides(direct){
-	leftSlide = null; rightSlide = null; upSlide = null; downSlide = null;
+	var s = gimmeProps.slides, p = gimmeProps.propstate;
+
+	//empty all slides
+	s.leftSlide = null; s.rightSlide = null; s.upSlide = null; s.downSlide = null;
 
 	//hide title
-	if (disappearing == true){
+	if (p.disappearing == true){
 		setTimeout(function(){
-			$('.' + propSelected).add('.propheader').remove();
+			$('.' + p.propSelected).add('.propheader').remove();
 		}, 300);
-		disappearing = false;
+		p.disappearing = false;
 	}
 
 	//forgive me conditional gods
 	//PROPS ALL
-	if (propMode == true){   
+	if (p.propMode == true){   
 
 		//first pass with prop?
-		if (firstPropPass == true){
+		if (p.firstPropPass == true){
 			$('.rightcaret').animate({opacity:0}, 300);
 			$('.propcaretright').add('.propcaretleft').fadeIn(300);
-			firstPropPass = false;
+			p.firstPropPass = false;
 		}
 		else {
 			//calculate points
-			calcPoints(propData[propSelected][propID], direct);
+			calcPoints(gimmeProps.data.props[p.propSelected][p.propID], direct);
 
-			//grab slide ids for next ones - establishes new propID
+			//grab slide ids for next ones - establishes new p.propID
 			if (direct == 'left'){
-				propID = parseInt(propData[propSelected][propID].leftid);	
+				p.propID = parseInt(gimmeProps.data.props[p.propSelected][p.propID].leftid);	
 			}
 			else if (direct == 'right'){
-				propID = parseInt(propData[propSelected][propID].rightid);
+				p.propID = parseInt(gimmeProps.data.props[p.propSelected][p.propID].rightid);
 			}		
 		}
 
 		//configure next slides
-		curSlide = '#' + propData[propSelected][propID].slideid; leftSlide = '#' + propData[propSelected][propID].leftslide; rightSlide = '#' + propData[propSelected][propID].rightslide;		
+		s.curSlide = '#' + gimmeProps.data.props[p.propSelected][p.propID].slideid; s.leftSlide = '#' + gimmeProps.data.props[p.propSelected][p.propID].leftslide; s.rightSlide = '#' + gimmeProps.data.props[p.propSelected][p.propID].rightslide;		
 
 		//check victory conditions
-		if (propData[propSelected][propID].victoryslide == true){
+		if (gimmeProps.data.props[p.propSelected][p.propID].victoryslide == true){
 			
 			//Add appropriate text
 			var text;
 
-			if (points < 0){
+			if (p.points < 0){
 				text = "OPPOSE IT!";
-				$(curSlide).addClass('darkred');
+				$(s.curSlide).addClass('darkred');
 			}
-			else if (points > 0){
+			else if (p.points > 0){
 				text = "SUPPORT IT!";
-				$(curSlide).addClass('darkgreen');
+				$(s.curSlide).addClass('darkgreen');
 			}
-			else if (points == 0){
+			else if (p.points == 0){
 				text = "GO EITHER WAY";
-				$(curSlide).addClass('darkgray');
+				$(s.curSlide).addClass('darkgray');
 			}
 
 			$('<h1/>',{
 				'text': text,
 				'style': 'font-size:8rem;line-height: 9rem;'
-			}).prependTo(curSlide + ' .propquestion');
+			}).prependTo(s.curSlide + ' .propquestion');
 
-			propMode = false;
-			returning = true;
+			p.propMode = false;
+			p.returning = true;
 		}
 	}
 	//RETURNING TO PROP
-	else if (returning == true){   
-		curSlide = '#resources'; leftSlide = '#' + propSelected; rightSlide = '#' + propSelected; returning = false; disappearing = true;		
+	else if (p.returning == true){   
+		s.curSlide = '#resources'; s.leftSlide = '#' + p.propSelected; s.rightSlide = '#' + p.propSelected; p.returning = false; p.disappearing = true;		
 		$('.rightcaret').add('.leftcaret').animate({opacity:.3}, 300); $('.propcaretleft').add('.propcaretright').fadeOut(300);
 	}
 	//ABOUT
-	else if (curSlide == '#intro' && direct == 'right' || curSlide == '#whoweare' && direct == 'up'){    
-		curSlide = '#about'; rightSlide = '#cookie'; downSlide = '#whoweare';
+	else if (s.curSlide == '#intro' && direct == 'right' || s.curSlide == '#whoweare' && direct == 'up'){    
+		s.curSlide = '#about'; s.rightSlide = '#cookie'; s.downSlide = '#whoweare';
 		$('.rightcaret').add('.downcaret').animate({opacity:.3}, 300);$('.upcaret').add('.leftcaret').animate({opacity:0}, 300);
 	}
 	//WHO WE ARE
-	else if (curSlide == '#about' && direct == 'down'){   
-		curSlide = '#whoweare'; upSlide = '#about'; rightSlide = '#cookie';
+	else if (s.curSlide == '#about' && direct == 'down'){   
+		s.curSlide = '#whoweare'; s.upSlide = '#about'; s.rightSlide = '#cookie';
 		$('.rightcaret').add('.upcaret').animate({opacity:.3}, 300);$('.leftcaret').add('.downcaret').animate({opacity:0}, 300);
 	}
 	//COOKIE
-	else if (curSlide == '#about' && direct == 'right' || curSlide == '#whoweare' && direct == 'right'){  
-		curSlide = '#cookie'; leftSlide = '#yescookie'; rightSlide = '#nocookie';
+	else if (s.curSlide == '#about' && direct == 'right' || s.curSlide == '#whoweare' && direct == 'right'){  
+		s.curSlide = '#cookie'; s.leftSlide = '#yescookie'; s.rightSlide = '#nocookie';
 		$('.rightcaret').add('.leftcaret').animate({opacity:.3}, 300);$('.upcaret').add('.downcaret').animate({opacity:0}, 300);
 		$('html').css('background-color', '#fff');
-		lockSlide = true;
+		s.lockSlide = true;
 		setTimeout(noshCookie, 1300);
 	}	
 	//YES COOKIE
-	else if (curSlide == '#cookie' && direct == 'left'){   
-		curSlide = '#yescookie'; leftSlide = '#proplist';
+	else if (s.curSlide == '#cookie' && direct == 'left'){   
+		s.curSlide = '#yescookie'; s.leftSlide = '#proplist';
 		$('.rightcaret').add('.leftcaret').add('.upcaret').add('.downcaret').animate({opacity:0}, 300);
-		lockSlide = true;
+		s.lockSlide = true;
 		dropCookie('yes');
 	}
 	//NO COOKIE
-	else if (curSlide == '#cookie' && direct == 'right'){   
-		curSlide = '#nocookie'; rightSlide = '#proplist';
+	else if (s.curSlide == '#cookie' && direct == 'right'){   
+		s.curSlide = '#nocookie'; s.rightSlide = '#proplist';
 		$('.rightcaret').add('.leftcaret').add('.upcaret').add('.downcaret').animate({opacity:0}, 300);
-		lockSlide = true;
+		s.lockSlide = true;
 		dropCookie('no');
 	}
 	//PROP LIST MAIN _____________________________________________________________________//
 
-	else if (curSlide == '#yescookie' && direct == 'left' || curSlide == '#nocookie' && direct == 'right' || curSlide == '#prop51' && direct == 'up'){   
-		clearAnimations(); curSlide = '#proplist'; downSlide = '#prop51'; tutorial = false;
+	else if (s.curSlide == '#yescookie' && direct == 'left' || s.curSlide == '#nocookie' && direct == 'right' || s.curSlide == '#prop51' && direct == 'up'){   
+		clearAnimations(); s.curSlide = '#proplist'; s.downSlide = '#prop51'; p.tutorial = false;
 		$('#menu').fadeIn(300);		
 		$('.downcaret').animate({opacity:.3}, 300); $('.rightcaret').add('.leftcaret').add('.upcaret').animate({opacity:0}, 300);
 
 	}
-	//TUTORIAL MASTER
-	else if (tutorial == true && direct == 'right'){ 
-		clearAnimations(); loadProp(propSelected); curSlide = '#tutorial'; tutorial = false;rightSlide = '#' + propSlide;
+	//p.tutorial MASTER
+	else if (p.tutorial == true && direct == 'right'){ 
+		clearAnimations(); loadProp(p.propSelected); s.curSlide = '#tutorial'; p.tutorial = false;s.rightSlide = '#' + s.propSlide;
 		$('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').add('.upcaret').add('.downcaret').animate({opacity:0}, 300);
 	}
 	//PROP LIST 51
-	else if (curSlide == '#resources' && propSelected == 'prop51' || curSlide == '#proplist' && direct == 'down' || curSlide == '#prop52' && direct == 'up' || curSlide == '#prop65' && direct == 'down'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop51' || s.curSlide == '#proplist' && direct == 'down' || s.curSlide == '#prop52' && direct == 'up' || s.curSlide == '#prop65' && direct == 'down'){   
 		clearAnimations(); dropHammer(true);
-		curSlide = '#prop51'; upSlide = '#prop65'; downSlide = '#prop52'; propSelected = 'prop51'; tutorial = true;
+		s.curSlide = '#prop51'; s.upSlide = '#prop65'; s.downSlide = '#prop52'; p.propSelected = 'prop51'; p.tutorial = true;
 		$('.downcaret').add('.upcaret').add('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').animate({opacity:0}, 300);
 	}	
 	//PROP LIST 52
-	else if (curSlide == '#resources' && propSelected == 'prop52' || curSlide == '#prop51' && direct == 'down' || curSlide == '#prop53' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop52' || s.curSlide == '#prop51' && direct == 'down' || s.curSlide == '#prop53' && direct == 'up'){   
 		clearAnimations(); moveCoins(true);
-		curSlide = '#prop52'; upSlide = '#prop51'; downSlide = '#prop53'; propSelected = 'prop52'; tutorial = true;
+		s.curSlide = '#prop52'; s.upSlide = '#prop51'; s.downSlide = '#prop53'; p.propSelected = 'prop52'; p.tutorial = true;
 	}	
 	//PROP LIST 53
-	else if (curSlide == '#resources' && propSelected == 'prop53' || curSlide == '#prop52' && direct == 'down' || curSlide == '#prop54' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop53' || s.curSlide == '#prop52' && direct == 'down' || s.curSlide == '#prop54' && direct == 'up'){   
 		clearAnimations();
-		curSlide = '#prop53'; upSlide = '#prop52'; downSlide = '#prop54'; propSelected = 'prop53'; tutorial = true;
+		s.curSlide = '#prop53'; s.upSlide = '#prop52'; s.downSlide = '#prop54'; p.propSelected = 'prop53'; p.tutorial = true;
 	}	
 	//PROP LIST 54
-	else if (curSlide == '#resources' && propSelected == 'prop54' || curSlide == '#prop53' && direct == 'down' || curSlide == '#prop55' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop54' || s.curSlide == '#prop53' && direct == 'down' || s.curSlide == '#prop55' && direct == 'up'){   
 		clearAnimations();
-		curSlide = '#prop54'; upSlide = '#prop53'; downSlide = '#prop55'; propSelected = 'prop54'; tutorial = true;
+		s.curSlide = '#prop54'; s.upSlide = '#prop53'; s.downSlide = '#prop55'; p.propSelected = 'prop54'; p.tutorial = true;
 	}	
 	//PROP LIST 55
-	else if (curSlide == '#resources' && propSelected == 'prop55' || curSlide == '#prop54' && direct == 'down' || curSlide == '#prop56' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop55' || s.curSlide == '#prop54' && direct == 'down' || s.curSlide == '#prop56' && direct == 'up'){   
 		clearAnimations();
-		curSlide = '#prop55'; upSlide = '#prop54'; downSlide = '#prop56'; propSelected = 'prop55'; tutorial = true;
+		s.curSlide = '#prop55'; s.upSlide = '#prop54'; s.downSlide = '#prop56'; p.propSelected = 'prop55'; p.tutorial = true;
 	}	
 	//PROP LIST 56
-	else if (curSlide == '#resources' && propSelected == 'prop56' || curSlide == '#prop55' && direct == 'down' || curSlide == '#prop57' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop56' || s.curSlide == '#prop55' && direct == 'down' || s.curSlide == '#prop57' && direct == 'up'){   
 		clearAnimations();
-		curSlide = '#prop56'; upSlide = '#prop55'; downSlide = '#prop57'; propSelected = 'prop56'; tutorial = true;
+		s.curSlide = '#prop56'; s.upSlide = '#prop55'; s.downSlide = '#prop57'; p.propSelected = 'prop56'; p.tutorial = true;
 	}	
 	//PROP LIST 57
-	else if (curSlide == '#resources' && propSelected == 'prop57' || curSlide == '#prop56' && direct == 'down' || curSlide == '#prop58' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop57' || s.curSlide == '#prop56' && direct == 'down' || s.curSlide == '#prop58' && direct == 'up'){   
 		clearAnimations();
-		curSlide = '#prop57'; upSlide = '#prop56'; downSlide = '#prop58'; propSelected = 'prop57'; tutorial = true;
+		s.curSlide = '#prop57'; s.upSlide = '#prop56'; s.downSlide = '#prop58'; p.propSelected = 'prop57'; p.tutorial = true;
 	}	
 	//PROP LIST 58
-	else if (curSlide == '#resources' && propSelected == 'prop58' || curSlide == '#prop57' && direct == 'down' || curSlide == '#prop59' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop58' || s.curSlide == '#prop57' && direct == 'down' || s.curSlide == '#prop59' && direct == 'up'){   
 		clearAnimations();
-		curSlide = '#prop58'; upSlide = '#prop57'; downSlide = '#prop59'; propSelected = 'prop58'; tutorial = true;
+		s.curSlide = '#prop58'; s.upSlide = '#prop57'; s.downSlide = '#prop59'; p.propSelected = 'prop58'; p.tutorial = true;
 	}	
 	//PROP LIST 59
-	else if (curSlide == '#resources' && propSelected == 'prop59' || curSlide == '#prop58' && direct == 'down' || curSlide == '#prop60' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop59' || s.curSlide == '#prop58' && direct == 'down' || s.curSlide == '#prop60' && direct == 'up'){   
 		clearAnimations(); rainingCoins(); 
-		curSlide = '#prop59'; upSlide = '#prop58'; downSlide = '#prop60'; rightSlide = '#tutorial'; propSelected = 'prop59';tutorial = true;
+		s.curSlide = '#prop59'; s.upSlide = '#prop58'; s.downSlide = '#prop60'; s.rightSlide = '#tutorial'; p.propSelected = 'prop59';p.tutorial = true;
 	}	
 	//PROP LIST 60
-	else if (curSlide == '#resources' && propSelected == 'prop60' || curSlide == '#prop59' && direct == 'down'  || curSlide == '#prop61' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop60' || s.curSlide == '#prop59' && direct == 'down'  || s.curSlide == '#prop61' && direct == 'up'){   
 		clearAnimations();
-		curSlide = '#prop60'; upSlide = '#prop59'; downSlide = '#prop61'; propSelected = 'prop60';tutorial = true;
+		s.curSlide = '#prop60'; s.upSlide = '#prop59'; s.downSlide = '#prop61'; p.propSelected = 'prop60';p.tutorial = true;
 	}	
 	//PROP LIST 61
-	else if (curSlide == '#resources' && propSelected == 'prop61' || curSlide == '#prop60' && direct == 'down'  || curSlide == '#prop62' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop61' || s.curSlide == '#prop60' && direct == 'down'  || s.curSlide == '#prop62' && direct == 'up'){   
 		clearAnimations();
-		curSlide = '#prop61'; upSlide = '#prop60'; downSlide = '#prop62'; propSelected = 'prop61';tutorial = true;
+		s.curSlide = '#prop61'; s.upSlide = '#prop60'; s.downSlide = '#prop62'; p.propSelected = 'prop61';p.tutorial = true;
 	}	
 	//PROP LIST 62 AND 66
-	else if (curSlide == '#resources' && propSelected == 'prop62' || curSlide == '#prop61' && direct == 'down'  || curSlide == '#prop63' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop62' || s.curSlide == '#prop61' && direct == 'down'  || s.curSlide == '#prop63' && direct == 'up'){   
 		clearAnimations();
-		curSlide = '#prop62'; upSlide = '#prop61'; downSlide = '#prop63'; propSelected = 'prop62';tutorial = true;
+		s.curSlide = '#prop62'; s.upSlide = '#prop61'; s.downSlide = '#prop63'; p.propSelected = 'prop62';p.tutorial = true;
 	}
 	//PROP LIST 63
-	else if (curSlide == '#resources' && propSelected == 'prop63' || curSlide == '#prop62' && direct == 'down'  || curSlide == '#prop64' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop63' || s.curSlide == '#prop62' && direct == 'down'  || s.curSlide == '#prop64' && direct == 'up'){   
 		clearAnimations();
-		curSlide = '#prop63'; upSlide = '#prop62'; downSlide = '#prop64'; propSelected = 'prop63';tutorial = true;
+		s.curSlide = '#prop63'; s.upSlide = '#prop62'; s.downSlide = '#prop64'; p.propSelected = 'prop63';p.tutorial = true;
 	}	
 	//PROP LIST 64
-	else if (curSlide == '#resources' && propSelected == 'prop64' || curSlide == '#prop63' && direct == 'down'  || curSlide == '#prop65' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop64' || s.curSlide == '#prop63' && direct == 'down'  || s.curSlide == '#prop65' && direct == 'up'){   
 		clearAnimations();
-		curSlide = '#prop64'; upSlide = '#prop63'; downSlide = '#prop65'; propSelected = 'prop64';tutorial = true;
+		s.curSlide = '#prop64'; s.upSlide = '#prop63'; s.downSlide = '#prop65'; p.propSelected = 'prop64';p.tutorial = true;
 	}	
 	//PROP LIST 65 AND 67
-	else if (curSlide == '#resources' && propSelected == 'prop65' || curSlide == '#prop64' && direct == 'down'  || curSlide == '#prop51' && direct == 'up'){   
+	else if (s.curSlide == '#resources' && p.propSelected == 'prop65' || s.curSlide == '#prop64' && direct == 'down'  || s.curSlide == '#prop51' && direct == 'up'){   
 		clearAnimations();
-		curSlide = '#prop65'; upSlide = '#prop64'; downSlide = '#prop51'; propSelected = 'prop65';tutorial = true;
+		s.curSlide = '#prop65'; s.upSlide = '#prop64'; s.downSlide = '#prop51'; p.propSelected = 'prop65';p.tutorial = true;
 		$('.downcaret').add('.upcaret').add('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').animate({opacity:0}, 300);
 	}	
 
 	//configure next slides
-	$(upSlide).css({left:0,top:-10000,'z-index':0});
-	$(downSlide).css({left:0,top:10000,'z-index':0});
-	$(leftSlide).css({left:-10000,top:0,'z-index':0});
-	$(rightSlide).css({left:10000,top:0,'z-index':0});
+	$(s.upSlide).css({left:0,top:-10000,'z-index':0});
+	$(s.downSlide).css({left:0,top:10000,'z-index':0});
+	$(s.leftSlide).css({left:-10000,top:0,'z-index':0});
+	$(s.rightSlide).css({left:10000,top:0,'z-index':0});
 }
 
 function loadProp(p){
-	var d = propData[p];
-	points = 0;	propID = 0; propMode = true; firstPropPass = true;
+	var d = gimmeProps.data.props[p];
+	gimmeProps.propstate.points = 0;	gimmeProps.propstate.propID = 0; gimmeProps.propstate.propMode = true; gimmeProps.propstate.firstPropPass = true;
+
+	var resources = parseResources(59);
 
 	//populate resource slide
-	$('#resources a:eq(0)').attr('href', d.resources.kqed);
-	$('#resources a:eq(1)').attr('href', d.resources.ballotfyi);
-	$('#resources a:eq(2)').attr('href', d.resources.ballotpedia);
+	$('#resources a:eq(0)').attr('href', resources.kqed);
+	$('#resources a:eq(1)').attr('href', resources.ballotfyi);
+	$('#resources a:eq(2)').attr('href', resources.ballotpedia);
 
 	//add prop header
 	$('<div/>', {
 		'class': 'propheader'
 	}).appendTo('#container');
 
-	$('.propheader').append(propTitles[propSelected].icon);
-	$('.propheader svg').css('fill', propTitles[propSelected].color)
+	$('.propheader').append(gimmeProps.header[gimmeProps.propstate.propSelected].icon);
+	$('.propheader svg').css('fill', gimmeProps.header[gimmeProps.propstate.propSelected].color)
 
 	$('<h2/>', {
-		'text': propTitles[propSelected].name 
+		'text': gimmeProps.header[gimmeProps.propstate.propSelected].name 
 	}).appendTo('.propheader');
 
 
@@ -276,5 +281,5 @@ function loadProp(p){
 	}
 
 	//define the rightSlide as first slide
-	propSlide = d[0].slideid;
+	gimmeProps.slides.propSlide = d[0].slideid;
 }

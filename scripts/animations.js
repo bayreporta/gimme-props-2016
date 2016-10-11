@@ -50,7 +50,7 @@ function noshCookie(){
 	setTimeout(function(){		
 		$('#cookie>div:eq(1)').animate({top:2000},200, function(){
 			$('#cookie>div:eq(2)').fadeIn(1);
-			lockSlide = false;
+			gimmeProps.slides.lockSlide = false;
 			$(this).remove();
 		});
 	},500);
@@ -68,7 +68,7 @@ function dropCookie(d){
 			$('#proplist').animate({left:0},300);
 			configureSlides('right');
 		}
-		lockSlide = false;
+		gimmeProps.slides.lockSlide = false;
 	});
 }
 
