@@ -79,7 +79,13 @@ function configureSlides(s, p, direct){
 	if ($thisSlide.attr('downslide') != undefined){s.downSlide = $(thisSlide.attr('downslide'));}
 	if ($thisSlide.attr('leftslide') != undefined){s.leftSlide = $(thisSlide.attr('leftslide'));}
 	if ($thisSlide.attr('rightslide') != undefined){s.rightSlide = $(thisSlide.attr('rightslide'));}
+}
 
-	
-
+function populateSlides(d){
+	for (var i=0; i < d.length ; i++){
+		if (d[i].leftid != undefined)){$(d[i].targetid).attr('leftslide', d[i].leftid);}
+		if (d[i].rightid != undefined)){$(d[i].targetid).attr('rightslide', d[i].leftid);}
+		if (d[i].upid != undefined)){$(d[i].targetid).attr('upslide', d[i].leftid);}
+		if (d[i].downid != undefined)){$(d[i].targetid).attr('downslide', d[i].leftid);}
+	}
 }

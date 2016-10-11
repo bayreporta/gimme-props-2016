@@ -199,6 +199,10 @@ function initTransitions(){
 }
 
 function initJSON(){
+	$.getJSON('scripts/json/slidecontrol.json', function(data){
+		populateSlides(data);
+	});
+
 	$.getJSON('scripts/json/prop59.json', function(data){
 		gimmeProps.data.props['prop59'] = data.prop59;
 	});
