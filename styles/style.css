@@ -373,8 +373,7 @@ _________________________________________*/
     z-index: 100;
     left: 0;
     bottom: 5%;
-    opacity:.3;
-    display:none;
+    opacity:0;
 }
 
 .propcaretright {
@@ -383,8 +382,7 @@ _________________________________________*/
     z-index: 100;
     right: 0;
     bottom: 5%;
-    opacity:.3;
-    display:none;
+    opacity:0;
 }
 
 .propquestion {

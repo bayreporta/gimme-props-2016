@@ -5,9 +5,8 @@ var gimmeProps = {
 		points: 0,
 		propID: 0,
 		propSelected: null,
-		returning: false,
-		disappearing: false,
-		propMode: false
+		propMode: false,
+		returning: false
 	},
 	slides:{
 		curSlide: '#nocookie',

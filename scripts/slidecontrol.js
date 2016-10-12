@@ -1,159 +1,151 @@
-/* SLIDE CONTROL
---------------------------------------------------------*/
-function configureSlides(direct){
+function slideControl(direct){
 	var s = gimmeProps.slides, p = gimmeProps.propstate;
 
 	//empty all slides
 	s.leftSlide = null; s.rightSlide = null; s.upSlide = null; s.downSlide = null;
 
-	//hide title
-	if (p.disappearing == true){
+	//entering back into proplist land? hide header
+	if (s.curSlide == '#resources'){
 		setTimeout(function(){
 			$('.' + p.propSelected).add('.propheader').remove();
 		}, 300);
-		p.disappearing = false;
 	}
 
-	//forgive me conditional gods
-	//PROPS ALL
-	if (p.propMode == true){   
+	//run function based on what type of slide we are dealing with
+	if (p.returning == true){
+		//configure slides
+		s.curSlide = '#resources';		
+		s.leftSlide = '#' + p.propSelected;s.rightSlide = '#' + p.propSelected;
 
-		//first pass with prop?
-		if (p.firstPropPass == true){
-			$('.rightcaret').animate({opacity:0}, 300);
-			$('.propcaretright').add('.propcaretleft').fadeIn(300);
-			p.firstPropPass = false;
+		//configure resource elem
+		$('#resources').attr({
+			'leftslide': '#' + p.propSelected,
+			'rightslide': '#' + p.propSelected
+		})
+
+		//carets
+		$('.rightcaret').add('.leftcaret').animate({opacity:.3}, 300); $('.propcaretleft').add('.propcaretright').animate({opacity:0}, 300);
+		
+		//done
+		p.returning = false;
+	}
+	else if (p.propMode == true){configurePropSlides(s, p, direct);}
+	else {configureSlides(s, p, direct);}
+
+	//activate menu if proplist
+	if (s.curSlide == '#proplist'){$('#menu').fadeIn(300);}
+
+	//reset next slides position
+	resetSlidePosition(s);
+}
+
+function configurePropSlides(s, p, direct){
+	var d = gimmeProps.data.props[p.propSelected];
+
+	//if first time in, switch up carets
+	if (s.curSlide == '#tutorial'){
+		console.log('ssdsd')
+		$('.rightcaret').animate({opacity:0}, 300);
+		$('.propcaretright').add('.propcaretleft').animate({opacity:.3}, 300);;
+	}
+	//otherwise calculate points and determine next slides	
+	else {
+
+		//calculate points
+		calcPoints(d[p.propID], direct);
+
+		//grab slide ids for next ones - establishes new p.propID
+		if (direct == 'left'){p.propID = parseInt(d[p.propID].leftid);}
+		else if (direct == 'right'){p.propID = parseInt(d[p.propID].rightid);}		
+	}
+
+	//configure next slides
+	s.curSlide = '#' + d[p.propID].slideid; 
+	s.leftSlide = '#' + d[p.propID].leftslide; 
+	s.rightSlide = '#' + d[p.propID].rightslide;		
+
+	//check victory conditions
+	if (d[p.propID].victoryslide == true){
+		
+		//Add appropriate text
+		var text;
+		if (p.points < 0){
+			text = "OPPOSE";
+			$(s.curSlide).addClass('darkred');
 		}
-		else {
-			//calculate points
-			calcPoints(gimmeProps.data.props[p.propSelected][p.propID], direct);
-
-			//grab slide ids for next ones - establishes new p.propID
-			if (direct == 'left'){
-				p.propID = parseInt(gimmeProps.data.props[p.propSelected][p.propID].leftid);	
-			}
-			else if (direct == 'right'){
-				p.propID = parseInt(gimmeProps.data.props[p.propSelected][p.propID].rightid);
-			}		
+		else if (p.points > 0){
+			text = "SUPPORT";
+			$(s.curSlide).addClass('darkgreen');
+		}
+		else if (p.points == 0){
+			text = "GO EITHER WAY";
+			$(s.curSlide).addClass('darkgray');
 		}
 
-		//configure next slides
-		s.curSlide = '#' + gimmeProps.data.props[p.propSelected][p.propID].slideid; s.leftSlide = '#' + gimmeProps.data.props[p.propSelected][p.propID].leftslide; s.rightSlide = '#' + gimmeProps.data.props[p.propSelected][p.propID].rightslide;		
+		//adding flavor text
+		$('<h1/>',{
+			'text': text,
+			'style': 'font-size:8rem;line-height: 9rem;'
+		}).prependTo(s.curSlide + ' .propquestion');
 
-		//check victory conditions
-		if (gimmeProps.data.props[p.propSelected][p.propID].victoryslide == true){
-			
-			//Add appropriate text
-			var text;
-
-			if (p.points < 0){
-				text = "OPPOSE IT!";
-				$(s.curSlide).addClass('darkred');
-			}
-			else if (p.points > 0){
-				text = "SUPPORT IT!";
-				$(s.curSlide).addClass('darkgreen');
-			}
-			else if (p.points == 0){
-				text = "GO EITHER WAY";
-				$(s.curSlide).addClass('darkgray');
-			}
-
-			$('<h1/>',{
-				'text': text,
-				'style': 'font-size:8rem;line-height: 9rem;'
-			}).prependTo(s.curSlide + ' .propquestion');
-
-			p.propMode = false;
-			p.returning = true;
-		}
+		//leaving prop mode
+		p.propMode = false;
+		p.returning = true;
 	}
-	//RETURNING TO PROP
-	else if (p.returning == true){   
-		s.curSlide = '#resources'; s.leftSlide = '#' + p.propSelected; s.rightSlide = '#' + p.propSelected; p.returning = false; p.disappearing = true;		
-		$('.rightcaret').add('.leftcaret').animate({opacity:.3}, 300); $('.propcaretleft').add('.propcaretright').fadeOut(300);
-	}
+}
 
+function configureSlides(s, p, direct){
+	//grab element of current slide
+	var $prevSlide = $(s.curSlide);
 
-	}
-	//PROP LIST MAIN _____________________________________________________________________//
+	//update current slide
+	if (direct == 'up'){s.curSlide = $prevSlide.attr('upslide');}
+	else if (direct == 'down'){s.curSlide = $prevSlide.attr('downslide');}
+	else if (direct == 'left'){s.curSlide = $prevSlide.attr('leftslide');}
+	else if (direct == 'right'){s.curSlide = $prevSlide.attr('rightslide');}
 
-		p.tutorial = false;
-		$('#menu').fadeIn(300);		
-		$('.downcaret').animate({opacity:.3}, 300); $('.rightcaret').add('.leftcaret').add('.upcaret').animate({opacity:0}, 300);
+	//update directional slides and carets
+	var $thisSlide = $(s.curSlide);
 
-	}
-	//p.tutorial MASTER
-	else if (p.tutorial == true && direct == 'right'){ 
-		loadProp(p.propSelected); s.curSlide = '#tutorial'; p.tutorial = false;s.rightSlide = '#' + s.propSlide;
-		$('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').add('.upcaret').add('.downcaret').animate({opacity:0}, 300);
-	}
-	//PROP LIST 51
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop51' || s.curSlide == '#proplist' && direct == 'down' || s.curSlide == '#prop52' && direct == 'up' || s.curSlide == '#prop65' && direct == 'down'){   
-		dropHammer(true);
-		s.curSlide = '#prop51'; s.upSlide = '#prop65'; s.downSlide = '#prop52'; p.propSelected = 'prop51'; p.tutorial = true;
-		$('.downcaret').add('.upcaret').add('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').animate({opacity:0}, 300);
-	}	
-	//PROP LIST 52
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop52' || s.curSlide == '#prop51' && direct == 'down' || s.curSlide == '#prop53' && direct == 'up'){   
-		 moveCoins(true);
-		s.curSlide = '#prop52'; s.upSlide = '#prop51'; s.downSlide = '#prop53'; p.propSelected = 'prop52'; p.tutorial = true;
-	}	
-	//PROP LIST 53
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop53' || s.curSlide == '#prop52' && direct == 'down' || s.curSlide == '#prop54' && direct == 'up'){   
-		s.curSlide = '#prop53'; s.upSlide = '#prop52'; s.downSlide = '#prop54'; p.propSelected = 'prop53'; p.tutorial = true;
-	}	
-	//PROP LIST 54
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop54' || s.curSlide == '#prop53' && direct == 'down' || s.curSlide == '#prop55' && direct == 'up'){   
-		s.curSlide = '#prop54'; s.upSlide = '#prop53'; s.downSlide = '#prop55'; p.propSelected = 'prop54'; p.tutorial = true;
-	}	
-	//PROP LIST 55
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop55' || s.curSlide == '#prop54' && direct == 'down' || s.curSlide == '#prop56' && direct == 'up'){   
-		s.curSlide = '#prop55'; s.upSlide = '#prop54'; s.downSlide = '#prop56'; p.propSelected = 'prop55'; p.tutorial = true;
-	}	
-	//PROP LIST 56
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop56' || s.curSlide == '#prop55' && direct == 'down' || s.curSlide == '#prop57' && direct == 'up'){   
-		s.curSlide = '#prop56'; s.upSlide = '#prop55'; s.downSlide = '#prop57'; p.propSelected = 'prop56'; p.tutorial = true;
-	}	
-	//PROP LIST 57
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop57' || s.curSlide == '#prop56' && direct == 'down' || s.curSlide == '#prop58' && direct == 'up'){   
-		s.curSlide = '#prop57'; s.upSlide = '#prop56'; s.downSlide = '#prop58'; p.propSelected = 'prop57'; p.tutorial = true;
-	}	
-	//PROP LIST 58
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop58' || s.curSlide == '#prop57' && direct == 'down' || s.curSlide == '#prop59' && direct == 'up'){   
-		s.curSlide = '#prop58'; s.upSlide = '#prop57'; s.downSlide = '#prop59'; p.propSelected = 'prop58'; p.tutorial = true;
-	}	
-	//PROP LIST 59
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop59' || s.curSlide == '#prop58' && direct == 'down' || s.curSlide == '#prop60' && direct == 'up'){   
-		rainingCoins(); 
-		s.curSlide = '#prop59'; s.upSlide = '#prop58'; s.downSlide = '#prop60'; s.rightSlide = '#tutorial'; p.propSelected = 'prop59';p.tutorial = true;
-	}	
-	//PROP LIST 60
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop60' || s.curSlide == '#prop59' && direct == 'down'  || s.curSlide == '#prop61' && direct == 'up'){   
-		s.curSlide = '#prop60'; s.upSlide = '#prop59'; s.downSlide = '#prop61'; p.propSelected = 'prop60';p.tutorial = true;
-	}	
-	//PROP LIST 61
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop61' || s.curSlide == '#prop60' && direct == 'down'  || s.curSlide == '#prop62' && direct == 'up'){   
-		s.curSlide = '#prop61'; s.upSlide = '#prop60'; s.downSlide = '#prop62'; p.propSelected = 'prop61';p.tutorial = true;
-	}	
-	//PROP LIST 62 AND 66
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop62' || s.curSlide == '#prop61' && direct == 'down'  || s.curSlide == '#prop63' && direct == 'up'){   
-		s.curSlide = '#prop62'; s.upSlide = '#prop61'; s.downSlide = '#prop63'; p.propSelected = 'prop62';p.tutorial = true;
-	}
-	//PROP LIST 63
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop63' || s.curSlide == '#prop62' && direct == 'down'  || s.curSlide == '#prop64' && direct == 'up'){   
-		s.curSlide = '#prop63'; s.upSlide = '#prop62'; s.downSlide = '#prop64'; p.propSelected = 'prop63';p.tutorial = true;
-	}	
-	//PROP LIST 64
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop64' || s.curSlide == '#prop63' && direct == 'down'  || s.curSlide == '#prop65' && direct == 'up'){   
-		s.curSlide = '#prop64'; s.upSlide = '#prop63'; s.downSlide = '#prop65'; p.propSelected = 'prop64';p.tutorial = true;
-	}	
-	//PROP LIST 65 AND 67
-	else if (s.curSlide == '#resources' && p.propSelected == 'prop65' || s.curSlide == '#prop64' && direct == 'down'  || s.curSlide == '#prop51' && direct == 'up'){   
-		s.curSlide = '#prop65'; s.upSlide = '#prop64'; s.downSlide = '#prop51'; p.propSelected = 'prop65';p.tutorial = true;
-		$('.downcaret').add('.upcaret').add('.rightcaret').animate({opacity:.3}, 300); $('.leftcaret').animate({opacity:0}, 300);
-	}	
+	if ($thisSlide.attr('upslide') != undefined){s.upSlide = $($thisSlide.attr('upslide'));$('.upcaret').animate({opacity:.3}, 300);}
+	else {$('.upcaret').animate({opacity:0}, 300);}
 
+	if ($thisSlide.attr('downslide') != undefined){s.downSlide = $($thisSlide.attr('downslide'));$('.downcaret').animate({opacity:.3}, 300);}
+	else {$('.downcaret').animate({opacity:0}, 300);}
+
+	if ($thisSlide.attr('leftslide') != undefined){s.leftSlide = $($thisSlide.attr('leftslide'));$('.leftcaret').animate({opacity:.3}, 300);}
+	else {$('.leftcaret').animate({opacity:0}, 300);}
+
+	if ($thisSlide.attr('rightslide') != undefined){s.rightSlide = $($thisSlide.attr('rightslide'));$('.rightcaret').animate({opacity:.3}, 300);}
+	else {$('.rightcaret').animate({opacity:0}, 300);}
+
+	//lock slide if applicable
+	if ($($thisSlide).attr('lockslide') == 'true'){s.lockSlide = true;}
+
+	//clear animations if applicable
+	if ($($thisSlide).attr('clearanimation') == 'true'){clearAnimations();}
+
+	//animation control if applicable
+	if ($($thisSlide).attr('animation') == 'true'){toggleAnimation(s.curSlide);}
+
+	//load prop data if tutorial
+	if (s.curSlide == '#tutorial'){initProp($prevSlide.attr('id'),s,p);}
+}
+
+function populateSlides(d){
+	//provide base slide elems directional slides
+	for (var i=0; i < d.length ; i++){
+		if (d[i].leftid != undefined){$(d[i].targetid).attr('leftslide', d[i].leftid);}
+		if (d[i].rightid != undefined){$(d[i].targetid).attr('rightslide', d[i].rightid);}		
+		if (d[i].upid != undefined){$(d[i].targetid).attr('upslide', d[i].upid);}		
+		if (d[i].downid != undefined){$(d[i].targetid).attr('downslide', d[i].downid);}
+		if (d[i].lockslide != false){$(d[i].targetid).attr('lockslide', 'true');}		
+		if (d[i].animation != false){$(d[i].targetid).attr('animation', 'true');}		
+		if (d[i].clearanimation != false){$(d[i].targetid).attr('clearanimation', 'true');}		
+	}
+}
+
+function resetSlidePosition(s){
 	//configure next slides
 	$(s.upSlide).css({left:0,top:-10000,'z-index':0});
 	$(s.downSlide).css({left:0,top:10000,'z-index':0});
@@ -161,27 +153,36 @@ function configureSlides(direct){
 	$(s.rightSlide).css({left:10000,top:0,'z-index':0});
 }
 
-function loadProp(p){
-	var d = gimmeProps.data.props[p];
-	gimmeProps.propstate.points = 0;	gimmeProps.propstate.propID = 0; gimmeProps.propstate.propMode = true; gimmeProps.propstate.firstPropPass = true;
+function initProp(prev,s,p){
+	//configure prop data
+	prev = prev.split('#');
+	p.propSelected = prev[0]; //lock in which prop we are exploring
+	var d = gimmeProps.data.props[p.propSelected]; //grab data for selected prop
+	p.points = 0; //reset points for quiz
+	p.propID = 0; //first slide of the prop stack
+	p.propMode = true; //activate prop slide transitions
 
-	var resources = parseResources(59);
+	//configure next slide
+	s.rightSlide = '#' + p.propSelected + '0';	
 
-	//populate resource slide
-	$('#resources a:eq(0)').attr('href', resources.kqed);
-	$('#resources a:eq(1)').attr('href', resources.ballotfyi);
-	$('#resources a:eq(2)').attr('href', resources.ballotpedia);
+	//populate resources
+	parseResources(d[0].propID);
+	
+	//load prop slides
+	loadPropSlides(d, p.propSelected);
+}
 
+function loadPropSlides(d, p){
 	//add prop header
 	$('<div/>', {
 		'class': 'propheader'
 	}).appendTo('#container');
 
-	$('.propheader').append(gimmeProps.header[gimmeProps.propstate.propSelected].icon);
-	$('.propheader svg').css('fill', gimmeProps.header[gimmeProps.propstate.propSelected].color)
+	$('.propheader').append(gimmeProps.header[p].icon);
+	$('.propheader svg').css('fill', gimmeProps.header[p].color)
 
 	$('<h2/>', {
-		'text': gimmeProps.header[gimmeProps.propstate.propSelected].name 
+		'text': gimmeProps.header[p].name 
 	}).appendTo('.propheader');
 
 
@@ -237,7 +238,10 @@ function loadProp(p){
 				'text': d[i].righttext
 			}).appendTo('#' + d[i].slideid + ' .propchoice');
 	}
-
-	//define the rightSlide as first slide
-	gimmeProps.slides.propSlide = d[0].slideid;
 }
+
+
+	
+	
+
+	
