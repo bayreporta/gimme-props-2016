@@ -192,7 +192,7 @@ function initTransitions(){
 	})
 
 	//click right
-	$('.rightcaret').add('.proprightcaret').on('click', function(event){
+	$('.rightcaret').add('.propcaretright').on('click', function(event){
 		if (gimmeProps.slides.rightSlide != null && gimmeProps.slides.lockSlide == false){
 			changeBackground();
 			$(gimmeProps.slides.curSlide).animate({
@@ -207,7 +207,7 @@ function initTransitions(){
 	})
 
 	//click left
-	$('.leftcaret').add('.propleftcaret').on('click', function(event){
+	$('.leftcaret').add('.propcaretleft').on('click', function(event){
 		if (gimmeProps.slides.leftSlide != null && gimmeProps.slides.lockSlide == false){
 			changeBackground();
 			$(gimmeProps.slides.curSlide).animate({
@@ -253,7 +253,7 @@ function initTransitions(){
 }
 
 function initMenu(){
-	$('#home').on('click', function(){
+	$('#deets').on('click', function(){
 		//teleportation time
 		$(gimmeProps.slides.curSlide).animate({top:-10000}, 300);
 		$('#proplist').css({

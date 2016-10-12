@@ -85,9 +85,10 @@ h3 {
 
 	#menu {height:100px;}
 
-	#menu>div:first-of-type {
-		width: 50px;
-		right:80px;
+	#directions {
+		width: 70%;
+    	font-size: 2rem;
+    	top: 20px;
 	}
 
 	#menu>div:last-of-type {
@@ -160,7 +161,7 @@ _________________________________________*/
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
 	.abscenter {width: 90%;}
 
-	.rightcaret, .leftcaret, .upcaret, .downcaret {
+	.rightcaret, .leftcaret, .upcaret, .downcaret, .propcaretleft, .propcaretright {
 	    width: 140px;
 	}
 }
@@ -390,6 +391,7 @@ _________________________________________*/
 
 .propcaretleft {
 	position: absolute;
+	cursor:pointer;
     width: 50px;
     z-index: 100;
     left: 0;
@@ -399,6 +401,7 @@ _________________________________________*/
 
 .propcaretright {
 	position: absolute;
+	cursor:pointer;
     width: 50px;
     z-index: 100;
     right: 0;
