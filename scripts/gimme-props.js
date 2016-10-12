@@ -9,11 +9,11 @@ var gimmeProps = {
 		returning: false
 	},
 	slides:{
-		curSlide: '#nocookie',
+		curSlide: '#intro',
 		upSlide: null,
 		downSlide: null,
 		leftSlide: null,
-		rightSlide: '#proplist',
+		rightSlide: '#about',
 		lockSlide: false
 	},
 	data:{
@@ -172,7 +172,6 @@ function initTransitions(){
 			$(gimmeProps.slides.downSlide).animate({
 				top:0
 			}, 300)
-			event.preventDefault();
 			slideControl('down');
 
 		}
@@ -188,7 +187,66 @@ function initTransitions(){
 			$(gimmeProps.slides.upSlide).animate({
 				top:0
 			}, 300)
+			slideControl('up');
+		}
+	})
+
+	//click right
+	$('.rightcaret').add('.proprightcaret').on('click', function(event){
+		if (gimmeProps.slides.rightSlide != null && gimmeProps.slides.lockSlide == false){
+			changeBackground();
+			$(gimmeProps.slides.curSlide).animate({
+				left:-10000
+			}, 300)
+			$(gimmeProps.slides.rightSlide).animate({
+				left:0
+			}, 300)
 			event.preventDefault();
+			slideControl('right');
+		}
+	})
+
+	//click left
+	$('.leftcaret').add('.propleftcaret').on('click', function(event){
+		if (gimmeProps.slides.leftSlide != null && gimmeProps.slides.lockSlide == false){
+			changeBackground();
+			$(gimmeProps.slides.curSlide).animate({
+				left:10000
+			}, 300)
+			$(gimmeProps.slides.leftSlide).animate({
+				left:0
+			}, 300)
+			event.preventDefault();
+			slideControl('left');
+
+		}
+	})
+	
+	//click down
+	$('.downcaret').on('click', function(event){
+		if (gimmeProps.slides.downSlide != null && gimmeProps.slides.lockSlide == false){
+			changeBackground();
+			$(gimmeProps.slides.curSlide).animate({
+				top:-10000
+			}, 300)
+			$(gimmeProps.slides.downSlide).animate({
+				top:0
+			}, 300)
+			slideControl('down');
+
+		}
+	})
+
+	//click up
+	$('.upcaret').on('click', function(event){
+		if (gimmeProps.slides.upSlide != null && gimmeProps.slides.lockSlide == false){
+			changeBackground();
+			$(gimmeProps.slides.curSlide).animate({
+				top:10000
+			}, 300)
+			$(gimmeProps.slides.upSlide).animate({
+				top:0
+			}, 300)
 			slideControl('up');
 		}
 	})

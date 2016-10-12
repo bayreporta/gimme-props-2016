@@ -1,5 +1,5 @@
 {
-    "prop56":[
+    "prop56": [
     {
         "propid": 56,
         "id": 0,
@@ -46,7 +46,7 @@
         "propid": 56,
         "id": 3,
         "slideid": "prop563",
-        "maintext": "Well, you luck is ending, cause this prop would include e-cigs in tobacco taxes, $3.37 to be exact.",
+        "maintext": "Well, your luck is ending, cause this prop would include e-cigs in tobacco taxes, $3.37 to be exact.",
         "lefttext": "It's cool.",
         "righttext": "WTF? Nope.",
         "leftslide": "prop564",
@@ -60,12 +60,13 @@
         "propid": 56,
         "id": 4,
         "slideid": "prop564",
-        "maintext": "Oh wow, that generous of you. But do you care where the tax money goes?",
+        "maintext": "Oh wow, that's generous of you. But do you care where the tax money goes?",
         "lefttext": "Not particularly.",
         "righttext": "Actually, I do.",
         "leftslide": "prop566",
         "leftid": 6,
-        "rightslide": 565,
+        "rightslide": "prop5610",
+        "rightid": 10,
         "leftpoints": 50,
         "rightpoints": 0
     },

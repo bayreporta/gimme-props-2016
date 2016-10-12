@@ -59,12 +59,12 @@ h3 {
 	    cursor: pointer;
 	}
 
-	#menu>div:first-of-type svg, #menu>div:last-of-type svg {
-    	fill: #ddd;    	
-	}
+	#menu>div:first-of-type i, #menu>div:last-of-type i {color: #ddd;}
+	#menu>div:first-of-type i {font-size: 2rem;}
+	#menu>div:last-of-type i {font-size: 2.3rem;}
 
-	#menu>div:first-of-type:hover svg, #menu>div:last-of-type:hover svg {
-    	fill: #aaa;
+	#menu>div:first-of-type:hover i, #menu>div:last-of-type:hover i {
+    	color: #aaa;
 	}
 
 	#menu>div:last-of-type {
@@ -81,14 +81,20 @@ h3 {
 	p, li, ol, span, a {font-size: 2rem;line-height: 3rem;}
 	p {margin: 9rem 0;}
 
+	#menu {height:100px;}
+
 	#menu>div:first-of-type {
 		width: 50px;
+		right:80px;
 	}
 
 	#menu>div:last-of-type {
 		width: 54px;
-    	right: 100px;
+    	right: 190px;
 	}
+
+	#menu>div:first-of-type i {font-size: 5rem;}
+	#menu>div:last-of-type i {font-size: 5.7rem;}
 }
 
 /* SPECIAL CLASSES
@@ -151,6 +157,10 @@ _________________________________________*/
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
 	.abscenter {width: 90%;}
+
+	.rightcaret, .leftcaret, .upcaret, .downcaret {
+	    width: 140px;
+	}
 }
 
 
@@ -232,6 +242,14 @@ _________________________________________*/
 
 /* PROP LIST
 _________________________________________*/
+
+#proplist p {
+	margin:2rem 0;
+}
+
+#proplist i {
+	font-size: 3rem;
+}
 
 #prop51>div:first-of-type {
 	position: absolute;
@@ -491,7 +509,7 @@ _________________________________________*/
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
 	#results h1 {
-		margin: 6rem 0;
+		margin: 12rem 0 6rem 0;
 		font-size: 7rem;
 	}
 

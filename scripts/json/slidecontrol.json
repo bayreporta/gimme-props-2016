@@ -25,15 +25,17 @@
     {
         "targetid": "#yescookie",
         "leftid": "#proplist",
-        "lockslide": true,
+        "rightid": "#proplist",
+        "lockslide": false,
         "animation": true,
         "clearanimation": false
     },
     {
         "targetid": "#nocookie",
+        "leftid": "#proplist",
         "rightid": "#proplist",
-        "lockslide": true,
-        "animation": true,
+        "lockslide": false,
+        "animation": false,
         "clearanimation": false
     },
     {

@@ -70,6 +70,7 @@ function configurePropSlides(s, p, direct){
 				if (d[i].id == d[p.propID].rightid){
 					if (d[i].victorycond == search){
 						$('#' + p.propSelected + d[p.propID].rightid + ' h2').text(d[i].maintext);
+						$('#' + p.propSelected + d[p.propID].rightid + ' h3:eq(1)').text(d[i].subtext);
 					}					
 				}			
 			}
@@ -134,16 +135,16 @@ function configureSlides(s, p, direct){
 	//update directional slides and carets
 	var $thisSlide = $(s.curSlide);
 
-	if ($thisSlide.attr('upslide') != undefined){s.upSlide = $($thisSlide.attr('upslide'));$('.upcaret').animate({opacity:.3}, 300);}
+	if ($thisSlide.attr('upslide') != undefined){s.upSlide = $($thisSlide).attr('upslide');$('.upcaret').animate({opacity:.3}, 300);}
 	else {$('.upcaret').animate({opacity:0}, 300);}
 
-	if ($thisSlide.attr('downslide') != undefined){s.downSlide = $($thisSlide.attr('downslide'));$('.downcaret').animate({opacity:.3}, 300);}
+	if ($thisSlide.attr('downslide') != undefined){s.downSlide = $($thisSlide).attr('downslide');$('.downcaret').animate({opacity:.3}, 300);}
 	else {$('.downcaret').animate({opacity:0}, 300);}
 
-	if ($thisSlide.attr('leftslide') != undefined){s.leftSlide = $($thisSlide.attr('leftslide'));$('.leftcaret').animate({opacity:.3}, 300);}
+	if ($thisSlide.attr('leftslide') != undefined){s.leftSlide = $($thisSlide).attr('leftslide');$('.leftcaret').animate({opacity:.3}, 300);}
 	else {$('.leftcaret').animate({opacity:0}, 300);}
 
-	if ($thisSlide.attr('rightslide') != undefined){s.rightSlide = $($thisSlide.attr('rightslide'));$('.rightcaret').animate({opacity:.3}, 300);}
+	if ($thisSlide.attr('rightslide') != undefined){s.rightSlide = $($thisSlide).attr('rightslide');$('.rightcaret').animate({opacity:.3}, 300);}
 	else {$('.rightcaret').animate({opacity:0}, 300);}
 
 	//lock slide if applicable
