@@ -203,6 +203,8 @@ function initMenu(){
 				'overflow-x': 'hidden'
 			});
 			$('html').css('background-color', '#fff');
+			$('.rightcaret').add('.leftcaret').add('.upcaret').add('.downcaret').css('z-index', '-1');
+			gimmeProps.slides.lockSlide = true;
 		}
 		else {
 			$('#results').attr('state', 'off').fadeOut(500);
@@ -210,7 +212,39 @@ function initMenu(){
 				'overflow': 'hidden',
 				'overflow-x': 'hidden'
 			});
+			$('.rightcaret').add('.leftcaret').add('.upcaret').add('.downcaret').css('z-index', '100');			
+			gimmeProps.slides.lockSlide = false;			
 		}
+	});
+
+	$('#home').on('click', function(){
+		//teleportation time
+		$(gimmeProps.slides.curSlide).animate({top:-10000}, 300);
+		$('#proplist').css({
+			top:-10000,
+			left:0	
+		}).animate({top:0},300);
+
+		//check if you are on the prop result screen
+		if ($('#results').attr('state') == 'on'){
+			$('#deets').click();
+		}
+		
+		//next slides
+		gimmeProps.slides.curSlide = '#proplist';
+		gimmeProps.slides.downSlide = '#prop51';
+		$('.downcaret').animate({opacity:.3}, 300);$('.rightcaret').add('.leftcaret').add('.upcaret').css('opacity', 0)
+		$('.propcaretleft').add('.propcaretright').animate({opacity:0}, 300);
+
+
+		//reset if in prop mode
+		gimmeProps.propstate.propMode = false;
+		$('.' + gimmeProps.propstate.propSelected).remove();
+		setTimeout(function(){
+			$('.' + gimmeProps.propstate.propSelected).add('.propheader').remove();
+		}, 300);
+
+
 	});
 }
 

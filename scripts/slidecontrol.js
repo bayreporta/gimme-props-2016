@@ -93,14 +93,20 @@ function configurePropSlides(s, p, direct){
 		if (p.points < 0){
 			text = "OPPOSE";
 			$(s.curSlide).addClass('darkred');
+			$('.prop-result[data="'+ p.propSelected +'"] .circle').css('background-color', '#7b272c');
+			$('.prop-result[data="'+ p.propSelected +'"] .circle i').removeClass('fa-question').removeClass('fa-check').addClass('fa-times');
 		}
 		else if (p.points > 0){
 			text = "SUPPORT";
 			$(s.curSlide).addClass('darkgreen');
+			$('.prop-result[data="'+ p.propSelected +'"] .circle').css('background-color', '#2c7b27');
+			$('.prop-result[data="'+ p.propSelected +'"] .circle i').removeClass('fa-question').removeClass('fa-times').addClass('fa-check');
 		}
 		else if (p.points == 0){
 			text = "GO EITHER WAY";
 			$(s.curSlide).addClass('darkgray');
+			$('.prop-result[data="'+ p.propSelected +'"] .circle').css('background-color', '#666666');
+			$('.prop-result[data="'+ p.propSelected +'"] .circle i').removeClass('fa-times').removeClass('fa-check').addClass('fa-question');
 		}
 
 		//adding flavor text
