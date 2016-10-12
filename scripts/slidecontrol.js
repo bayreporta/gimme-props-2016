@@ -94,14 +94,12 @@ function configurePropSlides(s, p, direct){
 		if (p.points < 0){
 			text = "OPPOSE";
 			$(s.curSlide).addClass('darkred');
-			$('.prop-result[data="'+ p.propSelected +'"] .circle').css('background-color', '#7b272c');
-			$('.prop-result[data="'+ p.propSelected +'"] .circle i').removeClass('fa-question').removeClass('fa-check').addClass('fa-times');
+			$('#' + p.propSelected + ' .circle i').css('color', '#7b272c').removeClass('fa-question').removeClass('fa-check').addClass('fa-times');
 		}
 		else if (p.points > 0){
 			text = "SUPPORT";
 			$(s.curSlide).addClass('darkgreen');
-			$('.prop-result[data="'+ p.propSelected +'"] .circle').css('background-color', '#2c7b27');
-			$('.prop-result[data="'+ p.propSelected +'"] .circle i').removeClass('fa-question').removeClass('fa-times').addClass('fa-check');
+			$('#' + p.propSelected + ' .circle i').css('color', '#2c7b27').removeClass('fa-question').removeClass('fa-times').addClass('fa-check');
 		}
 		else if (p.points == 0){
 			text = "GO EITHER WAY";
@@ -153,6 +151,10 @@ function configureSlides(s, p, direct){
 	//clear animations if applicable
 	if ($($thisSlide).attr('clearanimation') == 'true'){clearAnimations();}
 
+	//turn on tutorial if applicable
+	if ($($thisSlide).attr('tutorial') == 'true'){$('#directions').fadeIn(300);}
+	else {$('#directions').fadeOut(300);}
+
 	//animation control if applicable
 	if ($($thisSlide).attr('animation') == 'true'){toggleAnimation(s.curSlide);}
 
@@ -170,6 +172,7 @@ function populateSlides(d){
 		if (d[i].lockslide != false){$(d[i].targetid).attr('lockslide', 'true');}		
 		if (d[i].animation != false){$(d[i].targetid).attr('animation', 'true');}		
 		if (d[i].clearanimation != false){$(d[i].targetid).attr('clearanimation', 'true');}		
+		if (d[i].tutorial != false){$(d[i].targetid).attr('tutorial', 'true');}		
 	}
 }
 

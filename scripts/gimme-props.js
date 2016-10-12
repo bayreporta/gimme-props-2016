@@ -253,28 +253,6 @@ function initTransitions(){
 }
 
 function initMenu(){
-	$('#deets').on('click', function(){
-		if ($('#results').attr('state') == 'off'){
-			$('#results').attr('state', 'on').fadeIn(500);
-			$('#container').css({
-				'overflow': 'scroll',
-				'overflow-x': 'hidden'
-			});
-			$('html').css('background-color', '#fff');
-			$('.rightcaret').add('.leftcaret').add('.upcaret').add('.downcaret').css('z-index', '-1');
-			gimmeProps.slides.lockSlide = true;
-		}
-		else {
-			$('#results').attr('state', 'off').fadeOut(500);
-			$('#container').css({
-				'overflow': 'hidden',
-				'overflow-x': 'hidden'
-			});
-			$('.rightcaret').add('.leftcaret').add('.upcaret').add('.downcaret').css('z-index', '100');			
-			gimmeProps.slides.lockSlide = false;			
-		}
-	});
-
 	$('#home').on('click', function(){
 		//teleportation time
 		$(gimmeProps.slides.curSlide).animate({top:-10000}, 300);

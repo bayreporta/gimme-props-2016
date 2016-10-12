@@ -4,7 +4,8 @@
         "rightid": "#about",
         "lockslide": false,
         "animation": false,
-        "clearanimation": false
+        "clearanimation": false,
+        "tutorial": false
     },
     {
         "targetid": "#about",
@@ -12,7 +13,8 @@
         "downid": "#whoweare",
         "lockslide": false,
         "animation": false,
-        "clearanimation": false
+        "clearanimation": false,
+        "tutorial": false
     },
     {
         "targetid": "#cookie",
@@ -20,7 +22,8 @@
         "rightid": "#nocookie",
         "lockslide": true,
         "animation": true,
-        "clearanimation": false
+        "clearanimation": false,
+        "tutorial": false
     },
     {
         "targetid": "#yescookie",
@@ -28,7 +31,8 @@
         "rightid": "#proplist",
         "lockslide": false,
         "animation": true,
-        "clearanimation": false
+        "clearanimation": false,
+        "tutorial": false
     },
     {
         "targetid": "#nocookie",
@@ -36,7 +40,8 @@
         "rightid": "#proplist",
         "lockslide": false,
         "animation": false,
-        "clearanimation": false
+        "clearanimation": false,
+        "tutorial": false
     },
     {
         "targetid": "#whoweare",
@@ -44,14 +49,16 @@
         "upid": "#about",
         "lockslide": false,
         "animation": false,
-        "clearanimation": false
+        "clearanimation": false,
+        "tutorial": false
     },
     {
         "targetid": "#proplist",
         "downid": "#prop51",
         "lockslide": false,
         "animation": false,
-        "clearanimation": false
+        "clearanimation": false,
+        "tutorial": false
     },
     {
         "targetid": "#prop51",
@@ -59,7 +66,8 @@
         "downid": "#prop52",
         "lockslide": false,
         "animation": true,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": false
     },
     {
         "targetid": "#prop52",
@@ -67,7 +75,8 @@
         "downid": "#prop53",
         "lockslide": false,
         "animation": true,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": false
     },
     {
         "targetid": "#prop53",
@@ -75,7 +84,8 @@
         "downid": "#prop54",
         "lockslide": false,
         "animation": false,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": false
     },
     {
         "targetid": "#prop54",
@@ -83,7 +93,8 @@
         "downid": "#prop55",
         "lockslide": false,
         "animation": false,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": false
     },
     {
         "targetid": "#prop55",
@@ -91,7 +102,8 @@
         "downid": "#prop56",
         "lockslide": false,
         "animation": false,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": false
     },
     {
         "targetid": "#prop56",
@@ -100,7 +112,8 @@
         "downid": "#prop57",
         "lockslide": false,
         "animation": false,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": true
     },
     {
         "targetid": "#prop57",
@@ -108,7 +121,8 @@
         "downid": "#prop58",
         "lockslide": false,
         "animation": false,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": false
     },
     {
         "targetid": "#prop58",
@@ -116,7 +130,8 @@
         "downid": "#prop59",
         "lockslide": false,
         "animation": false,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": false
     },
     {
         "targetid": "#prop59",
@@ -125,7 +140,8 @@
         "downid": "#prop60",
         "lockslide": false,
         "animation": true,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": true
     },
     {
         "targetid": "#prop60",
@@ -133,7 +149,8 @@
         "downid": "#prop61",
         "lockslide": false,
         "animation": false,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": false
     },
     {
         "targetid": "#prop61",
@@ -141,7 +158,8 @@
         "downid": "#prop62",
         "lockslide": false,
         "animation": false,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": false
     },
     {
         "targetid": "#prop62",
@@ -149,7 +167,8 @@
         "downid": "#prop63",
         "lockslide": false,
         "animation": false,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": false
     },
     {
         "targetid": "#prop63",
@@ -157,7 +176,8 @@
         "downid": "#prop64",
         "lockslide": false,
         "animation": false,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": false
     },
     {
         "targetid": "#prop64",
@@ -165,7 +185,8 @@
         "downid": "#prop65",
         "lockslide": false,
         "animation": false,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": false
     },
     {
         "targetid": "#prop65",
@@ -173,6 +194,7 @@
         "downid": "#prop51",
         "lockslide": false,
         "animation": false,
-        "clearanimation": true
+        "clearanimation": true,
+        "tutorial": false
     }
 ]

@@ -52,18 +52,20 @@ h3 {
     z-index:1000;
 }
 
-	#menu>div:first-of-type {
+	#directions {
 		position: absolute;
-		width: 30px;
-	    right: 15px;
-	    cursor: pointer;
+	    width: 50%;
+	    left: 15px;
+	    color: #ddd;
+	    font-style: italic;
+	    display:none;
 	}
 
 	#menu>div:first-of-type i, #menu>div:last-of-type i {color: #ddd;}
 	#menu>div:first-of-type i {font-size: 2rem;}
 	#menu>div:last-of-type i {font-size: 2.3rem;}
 
-	#menu>div:first-of-type:hover i, #menu>div:last-of-type:hover i {
+	#menu>div:last-of-type:hover i {
     	color: #aaa;
 	}
 
@@ -491,16 +493,18 @@ _________________________________________*/
 }
 
 .circle {
-	width: 100px;
-    height: 100px;
-    background-color: #666;
+	width: 80px;
+    height: 80px;
+    background-color: #fff;
     border-radius: 50px;
-    position: relative;
+    position: absolute;    
+    top: 0;
+    right: 0;
 }
 
 .circle i {
 	font-size: 80px;
-    color: #fff;
+    color: #666;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -521,5 +525,11 @@ _________________________________________*/
 	    position: absolute;
 	    right: 0;
 	    top: 65px;
+	}
+
+	.circle {
+		width:100px;
+		height:100px;
+		top:50px;
 	}
 }
