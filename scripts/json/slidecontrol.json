@@ -1,0 +1,110 @@
+[
+    {
+        "targetid": "#intro",
+        "rightid": "#about"
+    },
+    {
+        "targetid": "#about",
+        "rightid": "#cookie",
+        "downid": "#whoweare"
+    },
+    {
+        "targetid": "#cookie",
+        "leftid": "#yescookie",
+        "rightid": "#nocookie"
+    },
+    {
+        "targetid": "#yescookie",
+        "leftid": "#proplist"
+    },
+    {
+        "targetid": "#nocookie",
+        "rightid": "#proplist"
+    },
+    {
+        "targetid": "#whoweare",
+        "rightid": "#cookie",
+        "upid": "#about"
+    },
+    {
+        "targetid": "#proplist",
+        "downid": "#prop51"
+    },
+    {
+        "targetid": "#prop51",
+        "upid": "#prop65",
+        "downid": "#prop52"
+    },
+    {
+        "targetid": "#prop52",
+        "upid": "#prop51",
+        "downid": "#prop53"
+    },
+    {
+        "targetid": "#prop53",
+        "upid": "#prop52",
+        "downid": "#prop54"
+    },
+    {
+        "targetid": "#prop54",
+        "upid": "#prop53",
+        "downid": "#prop55"
+    },
+    {
+        "targetid": "#prop55",
+        "upid": "#prop54",
+        "downid": "#prop56"
+    },
+    {
+        "targetid": "#prop56",
+        "rightid": "#tutorial",
+        "upid": "#prop55",
+        "downid": "#prop57"
+    },
+    {
+        "targetid": "#prop57",
+        "upid": "#prop56",
+        "downid": "#prop58"
+    },
+    {
+        "targetid": "#prop58",
+        "upid": "#prop57",
+        "downid": "#prop59"
+    },
+    {
+        "targetid": "#prop59",
+        "rightid": "#tutorial",
+        "upid": "#prop58",
+        "downid": "#prop60"
+    },
+    {
+        "targetid": "#prop60",
+        "upid": "#prop59",
+        "downid": "#prop61"
+    },
+    {
+        "targetid": "#prop61",
+        "upid": "#prop60",
+        "downid": "#prop62"
+    },
+    {
+        "targetid": "#prop62",
+        "upid": "#prop61",
+        "downid": "#prop63"
+    },
+    {
+        "targetid": "#prop63",
+        "upid": "#prop62",
+        "downid": "#prop64"
+    },
+    {
+        "targetid": "#prop64",
+        "upid": "#prop63",
+        "downid": "#prop65"
+    },
+    {
+        "targetid": "#prop65",
+        "upid": "#prop64",
+        "downid": "#prop51"
+    }
+]
