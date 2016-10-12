@@ -59,6 +59,7 @@ function grabCookie(cname) {
 function initializeJQuery(){
 	initTransitions();
 	initJSON();
+	initMenu();
 }
 
 function initTransitions(){
@@ -191,6 +192,26 @@ function initTransitions(){
 			slideControl('up');
 		}
 	})
+}
+
+function initMenu(){
+	$('#deets').on('click', function(){
+		if ($('#results').attr('state') == 'off'){
+			$('#results').attr('state', 'on').fadeIn(500);
+			$('#container').css({
+				'overflow': 'scroll',
+				'overflow-x': 'hidden'
+			});
+			$('html').css('background-color', '#fff');
+		}
+		else {
+			$('#results').attr('state', 'off').fadeOut(500);
+			$('#container').css({
+				'overflow': 'hidden',
+				'overflow-x': 'hidden'
+			});
+		}
+	});
 }
 
 function initJSON(){
