@@ -1,5 +1,6 @@
 /* ANIMATION CONTROL
 --------------------------------------------------------*/
+
 function clearAnimations(){
 	dropHammer(false);
 	moveCoins(false);
@@ -57,19 +58,20 @@ function noshCookie(){
 }
 
 function dropCookie(d){
-	$('#yescookie .cookie').animate({top:2000}, 2000, function(){
-		if (d == 'yes'){
+	if (d==true){
+		$('#yescookie .cookie').animate({top:2000}, 2000, function(){
 			$('#yescookie').animate({left:10000}, 300);
 			$('#proplist').animate({left:0},300);
 			configureSlides('left');
-		}
-		else {
+		});
+	}
+	else {
+		setTimeout(function(){
 			$('#nocookie').animate({left:-10000}, 300);
 			$('#proplist').animate({left:0},300);
 			configureSlides('right');
-		}
-		gimmeProps.slides.lockSlide = false;
-	});
+		}, 2000);
+	}
 }
 
 function rainingCoins(){
@@ -91,4 +93,13 @@ function destroyCoins(){
 	$('#prop59 svg:eq(3)').dequeue();
 	$('#prop59 svg:eq(4)').dequeue();
 	$('.coins').remove();
+}
+
+function toggleAnimation(s){
+	if (s == '#cookie'){setTimeout(noshCookie, 1300);}
+	else if (s == '#yescookie'){dropCookie(true);}
+	else if (s == '#nocookie'){dropCookie(false);}
+	else if (s == '#prop51'){dropHammer(true);}
+	else if (s == '#prop52'){moveCoins(true);}
+	else if (s == '#prop59'){rainingCoins();}
 }

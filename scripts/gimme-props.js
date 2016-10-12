@@ -3,8 +3,6 @@
 var gimmeProps = {
 	propstate:{
 		points: 0,
-		firstPropPass: false,
-		tutorial: false,
 		propID: 0,
 		propSelected: null,
 		returning: false,
@@ -17,7 +15,6 @@ var gimmeProps = {
 		downSlide: null,
 		leftSlide: null,
 		rightSlide: '#proplist',
-		propSlide: null,
 		lockSlide: false
 	},
 	data:{
@@ -70,7 +67,6 @@ function initTransitions(){
 	$(document).on('keydown', function(event){
 		if (gimmeProps.slides.rightSlide != null && gimmeProps.slides.lockSlide == false){
 			if (event.which == 39){
-				console.log('detected')
 				changeBackground();
 				$(gimmeProps.slides.curSlide).animate({
 					left:-10000
@@ -219,9 +215,16 @@ function initJSON(){
 function parseResources(k){
 	for (var i=0 ; i < gimmeProps.data.resources.length ; i++){
 		if (gimmeProps.data.resources[i].propid == k){
-			return gimmeProps.data.resources[i];
+			$('#resources a:eq(0)').attr('href', gimmeProps.data.resources[i].kqed);
+			$('#resources a:eq(1)').attr('href', gimmeProps.data.resources[i].ballotfyi);
+			$('#resources a:eq(2)').attr('href', gimmeProps.data.resources[i].ballotpedia);
+			break;
 		}
 	}
+
+
+
+	
 
 }
 

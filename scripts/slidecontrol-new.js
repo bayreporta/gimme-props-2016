@@ -8,9 +8,10 @@ function slideControl(direct){
 	if (p.propMode == true){configurePropSlides(s, p, direct);}
 	//returning
 	//etc
-	else { 
-		configureSlides(s, p, direct);
-	}
+	else {configureSlides(s, p, direct);}
+
+	//activate menu if proplist
+	if (s.curSlide == '#proplist'){$('#menu').fadeIn(300);}
 
 	//reset next slides position
 	resetSlidePosition(s);
@@ -92,6 +93,18 @@ function configureSlides(s, p, direct){
 
 	if ($thisSlide.attr('rightslide') != undefined){s.rightSlide = $($thisSlide.attr('rightslide'));$('.rightcaret').animate({opacity:.3}, 300);}
 	else {$('.rightcaret').animate({opacity:0}, 300);}
+
+	//lock slide if applicable
+	if ($($thisSlide).attr('lockslide') == 'true'){s.lockSlide = true;}
+
+	//clear animations if applicable
+	if ($($thisSlide).attr('clearanimation') == 'true'){clearAnimations();}
+
+	//animation control if applicable
+	if ($($thisSlide).attr('animation') == 'true'){toggleAnimation(s.curSlide);}
+
+	//load prop data if tutorial
+	if (s.curSlide == '#tutorial'){initProp($prevSlide.attr('id'),s,p);}
 }
 
 function populateSlides(d){
@@ -101,6 +114,9 @@ function populateSlides(d){
 		if (d[i].rightid != undefined){$(d[i].targetid).attr('rightslide', d[i].rightid);}		
 		if (d[i].upid != undefined){$(d[i].targetid).attr('upslide', d[i].upid);}		
 		if (d[i].downid != undefined){$(d[i].targetid).attr('downslide', d[i].downid);}
+		if (d[i].lockslide != false){$(d[i].targetid).attr('lockslide', 'true');}		
+		if (d[i].animation != false){$(d[i].targetid).attr('animation', 'true');}		
+		if (d[i].clearanimation != false){$(d[i].targetid).attr('clearanimation', 'true');}		
 	}
 }
 
@@ -112,3 +128,95 @@ function resetSlidePosition(s){
 	$(s.rightSlide).css({left:10000,top:0,'z-index':0});
 }
 
+function initProp(prev,s,p){
+	//configure prop data
+	prev = prev.split('#');
+	p.propSelected = prev[0]; //lock in which prop we are exploring
+	var d = gimmeProps.data.props[p.propSelected]; //grab data for selected prop
+	p.points = 0; //reset points for quiz
+	p.propID = 0; //first slide of the prop stack
+	p.propMode = true; //activate prop slide transitions
+
+	//configure next slide
+	s.rightSlide = '#' + p.propSelected + '0';	
+
+	//populate resources
+	parseResources(d[0].propID);
+	
+	//load prop slides
+	loadPropSlides(d, p.propSelected);
+}
+
+function loadPropSlides(d, p){
+	//add prop header
+	$('<div/>', {
+		'class': 'propheader'
+	}).appendTo('#container');
+
+	$('.propheader').append(gimmeProps.header[p].icon);
+	$('.propheader svg').css('fill', gimmeProps.header[p].color)
+
+	$('<h2/>', {
+		'text': gimmeProps.header[p].name 
+	}).appendTo('.propheader');
+
+
+	//build slides
+	for (var i = 0 ; i < d.length ; i++){
+		//check if obj exists
+		if (!d[i].hasOwnProperty('lefttext')){d[i]['lefttext'] = '';}
+		if (!d[i].hasOwnProperty('subtext')){d[i]['subtext'] = '';}
+		if (!d[i].hasOwnProperty('righttext')){d[i]['righttext'] = '';}
+		if (!d[i].hasOwnProperty('victoryslide')){d[i]['victoryslide'] = false;}
+
+		//base template
+			
+			//base section
+			$('<section/>', {
+				'id': 		d[i].slideid,
+				'class': 	'relative startpos ' + p,
+			}).appendTo('#container');	
+
+
+			//prop question shell
+			$('<div/>', {
+				'class': 'propquestion'
+			}).appendTo('#' + d[i].slideid);
+
+
+			//prop question type
+			if (d[i].victoryslide == true){				
+				$('<h2/>', {	
+					'text': d[i].maintext
+				}).appendTo('#' + d[i].slideid + ' .propquestion');
+			}	
+			else if (d[i].victoryslide == false){
+				$('<h1/>', {
+					'text': d[i].maintext
+				}).appendTo('#' + d[i].slideid + ' .propquestion');
+			}
+
+			//prop choice
+			$('<div/>', {
+				'class': 'propchoice'
+			}).appendTo('#' + d[i].slideid);
+
+			$('<h3/>', {
+				'text': d[i].lefttext
+			}).appendTo('#' + d[i].slideid + ' .propchoice');
+
+			$('<h3/>', {
+				'text': d[i].subtext
+			}).appendTo('#' + d[i].slideid + ' .propchoice');
+
+			$('<h3/>', {
+				'text': d[i].righttext
+			}).appendTo('#' + d[i].slideid + ' .propchoice');
+	}
+}
+
+
+	
+	
+
+	
