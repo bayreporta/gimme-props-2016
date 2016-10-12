@@ -37,7 +37,7 @@ h3 {
 #container {
 	width:100%;
 	height:100%;
-	overflow:hidden;
+	overflow-x: hidden;
 	position: relative;
 }
 
@@ -402,9 +402,7 @@ _________________________________________*/
 	.propquestion h1:last-of-type {
 		font-size: 4rem;
    	 	line-height: 5rem;
-	}
-
-	
+	}	
 
 .propchoice {
 	position: absolute;
@@ -442,3 +440,61 @@ _________________________________________*/
 	}
 }
 
+/* RESULTS CLASSES
+_________________________________________*/
+#results h1 {
+	text-align: center;
+	margin: 4rem 0;
+}
+
+.prop-result {
+	width: 70%;
+	max-width:800px;
+    margin: 0 auto;
+    max-height: 200px;
+    height: 20%;
+    position: relative;
+}
+
+.prop-result>div:first-of-type {
+	float: left;
+}
+
+.prop-result>div:last-of-type {
+	width: 100px;
+    float: right;
+}
+
+.circle {
+	width: 100px;
+    height: 100px;
+    background-color: #666;
+    border-radius: 50px;
+    position: relative;
+}
+
+.circle i {
+	font-size: 80px;
+    color: #fff;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+@media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
+	#results h1 {
+		margin: 6rem 0;
+		font-size: 7rem;
+	}
+
+	.prop-result {
+		margin:10rem auto;
+	}
+
+	.prop-result>div:last-of-type {	
+	    position: absolute;
+	    right: 0;
+	    top: 65px;
+	}
+}

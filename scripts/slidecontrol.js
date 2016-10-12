@@ -212,7 +212,8 @@ function loadPropSlides(d, p){
 			//prop question type
 			if (d[i].victoryslide == true){				
 				$('<h2/>', {	
-					'text': d[i].maintext
+					'text': d[i].maintext,
+					'class': 'txtcenter'
 				}).appendTo('#' + d[i].slideid + ' .propquestion');
 			}	
 			else if (d[i].victoryslide == false){
