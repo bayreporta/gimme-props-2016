@@ -17,6 +17,9 @@ function slideControl(direct){
 		s.curSlide = '#resources';		
 		s.leftSlide = '#' + p.propSelected;s.rightSlide = '#' + p.propSelected;
 
+		//destroy slides for prop
+		$('.' + p.propSelected).remove();
+
 		//configure resource elem
 		$('#resources').attr({
 			'leftslide': '#' + p.propSelected,
@@ -44,7 +47,6 @@ function configurePropSlides(s, p, direct){
 
 	//if first time in, switch up carets
 	if (s.curSlide == '#tutorial'){
-		console.log('ssdsd')
 		$('.rightcaret').animate({opacity:0}, 300);
 		$('.propcaretright').add('.propcaretleft').animate({opacity:.3}, 300);;
 	}
@@ -53,6 +55,25 @@ function configurePropSlides(s, p, direct){
 
 		//calculate points
 		calcPoints(d[p.propID], direct);
+
+		//determine which slide if applicaple in victory
+		if ($('#' + p.propSelected + d[p.propID].rightid).attr('special') == 'victory'){		
+
+			//Pick slide based on points
+			var search;
+			if (p.points < 0){search = 'oppose';}
+			else if (p.points > 0){search = 'support';}
+			else if (p.points == 0){search = 'default';}
+
+			//loop through to get slide
+			for (var i=0 ; i < d.length ; i++){
+				if (d[i].id == d[p.propID].rightid){
+					if (d[i].victorycond == search){
+						$('#' + p.propSelected + d[p.propID].rightid + ' h2').text(d[i].maintext);
+					}					
+				}			
+			}
+		}
 
 		//grab slide ids for next ones - establishes new p.propID
 		if (direct == 'left'){p.propID = parseInt(d[p.propID].leftid);}
@@ -193,6 +214,7 @@ function loadPropSlides(d, p){
 		if (!d[i].hasOwnProperty('subtext')){d[i]['subtext'] = '';}
 		if (!d[i].hasOwnProperty('righttext')){d[i]['righttext'] = '';}
 		if (!d[i].hasOwnProperty('victoryslide')){d[i]['victoryslide'] = false;}
+		if (!d[i].hasOwnProperty('special')){d[i]['special'] = false;}
 
 		//base template
 			
@@ -200,6 +222,7 @@ function loadPropSlides(d, p){
 			$('<section/>', {
 				'id': 		d[i].slideid,
 				'class': 	'relative startpos ' + p,
+				'special': 	d[i].special
 			}).appendTo('#container');	
 
 

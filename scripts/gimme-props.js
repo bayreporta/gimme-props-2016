@@ -241,11 +241,6 @@ function parseResources(k){
 			break;
 		}
 	}
-
-
-
-	
-
 }
 
 /* GENERAL CONTROL

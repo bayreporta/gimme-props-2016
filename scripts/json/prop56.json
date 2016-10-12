@@ -107,7 +107,7 @@
         "righttext": "No, not always.",
         "leftslide": "prop568",
         "leftid": 8,
-        "rightslide": "prop570",
+        "rightslide": "prop5610",
         "rightid": 10,
         "leftpoints": -1,
         "rightpoints": 1
@@ -121,7 +121,7 @@
         "righttext": "Cause they hurt the poor more so.",
         "leftslide": "prop569",
         "leftid": 9,
-        "rightslide": "prop570",
+        "rightslide": "prop5610",
         "rightid": 10,
         "leftpoints": -50,
         "rightpoints": 0
@@ -147,7 +147,13 @@
         "slideid": "prop5610",
         "maintext": "What if the tax money went toward breast cancer research?",
         "lefttext": "Sounds fine.",
-        "righttext": "Not down."
+        "righttext": "Not down.",
+        "leftslide": "prop5611",
+        "leftid": 11,
+        "rightslide": "prop5611",
+        "rightid": 11,
+        "leftpoints": 1,
+        "rightpoints": -1
     },
     {
         "propid": 56,
@@ -156,10 +162,10 @@
         "maintext": "How about if it went toward early childhood development programs?",
         "lefttext": "Gotta help the kids.",
         "righttext": "Not swayed.",
-        "leftslide": "prop5611",
-        "leftid": 11,
-        "rightslide": "prop5611",
-        "rightid": 11,
+        "leftslide": "prop5612",
+        "leftid": 12,
+        "rightslide": "prop5612",
+        "rightid": 12,
         "leftpoints": 1,
         "rightpoints": -1
     },
@@ -170,10 +176,10 @@
         "maintext": "Tobacco prevention programs?",
         "lefttext": "Yay.",
         "righttext": "Nay.",
-        "leftslide": "prop5612",
-        "leftid": 12,
-        "rightslide": "prop5612",
-        "rightid": 12,
+        "leftslide": "prop5613",
+        "leftid": 13,
+        "rightslide": "prop5613",
+        "rightid": 13,
         "leftpoints": 1,
         "rightpoints": -1
     },
@@ -184,10 +190,10 @@
         "maintext": "One more: how about if the tax money went toward healthcare for low-income Californians?",
         "lefttext": "Sure.",
         "righttext": "Nope.",
-        "leftslide": "prop5613",
-        "leftid": 13,
-        "rightslide": "prop5613",
-        "rightid": 13,
+        "leftslide": "prop5614",
+        "leftid": 14,
+        "rightslide": "prop5614",
+        "rightid": 14,
         "leftpoints": 1,
         "rightpoints": -1
     },
@@ -197,14 +203,19 @@
         "slideid": "prop5614",
         "maintext": "Hmm. You have some conflicted tax feelings here.",
         "subtext": "I'll think about it.",
-        "leftslide": "prop5614",
-        "leftid": 14,
-        "rightslide": "prop5614",
-        "rightid": 14
+        "leftslide": "resources",
+        "leftid": -1,
+        "rightslide": "resources",
+        "rightid": -1,
+        "leftpoints": 0,
+        "rightpoints": 0,
+        "victoryslide": true,
+        "victorycond": "default",
+        "special": "victory"
     },
     {
         "propid": 56,
-        "id": 15,
+        "id": 14,
         "slideid": "prop5615",
         "maintext": "Ch-ching! Looks like you and the tobacco taxes win. ",
         "subtext": "Huzah!",
@@ -215,11 +226,12 @@
         "leftpoints": 0,
         "rightpoints": 0,
         "victoryslide": true,
-        "victorycond": "support"
+        "victorycond": "support",
+        "special": "victory"
     },
     {
         "propid": 56,
-        "id": 16,
+        "id": 14,
         "slideid": "prop5616",
         "maintext": "Nope. No cigarette tax for you.",
         "subtext": "Smokin'!",
@@ -230,7 +242,8 @@
         "leftpoints": 0,
         "rightpoints": 0,
         "victoryslide": true,
-        "victorycond": "oppose"
+        "victorycond": "oppose",
+        "special": "victory"
     }
 ]
 }
