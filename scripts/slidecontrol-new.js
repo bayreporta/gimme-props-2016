@@ -8,7 +8,9 @@ function slideControl(direct){
 	if (p.propMode == true){configurePropSlides(s, p, direct);}
 	//returning
 	//etc
-	else { configureSlides(s, p, direct);}
+	else { 
+		configureSlides(s, p, direct);
+	}
 
 	//reset next slides position
 	resetSlidePosition(s);
@@ -76,19 +78,28 @@ function configureSlides(s, p, direct){
 	else if (direct == 'left'){s.curSlide = $prevSlide.attr('leftslide');}
 	else if (direct == 'right'){s.curSlide = $prevSlide.attr('rightslide');}
 
-	//update directional slides
+	//update directional slides and carets
 	var $thisSlide = $(s.curSlide);
-	if ($thisSlide.attr('upslide') != undefined){s.upSlide = $($thisSlide.attr('upslide'));}
-	if ($thisSlide.attr('downslide') != undefined){s.downSlide = $($thisSlide.attr('downslide'));}
-	if ($thisSlide.attr('leftslide') != undefined){s.leftSlide = $($thisSlide.attr('leftslide'));}
-	if ($thisSlide.attr('rightslide') != undefined){s.rightSlide = $($thisSlide.attr('rightslide'));}
+
+	if ($thisSlide.attr('upslide') != undefined){s.upSlide = $($thisSlide.attr('upslide'));$('.upcaret').animate({opacity:.3}, 300);}
+	else {$('.upcaret').animate({opacity:0}, 300);}
+
+	if ($thisSlide.attr('downslide') != undefined){s.downSlide = $($thisSlide.attr('downslide'));$('.downcaret').animate({opacity:.3}, 300);}
+	else {$('.downcaret').animate({opacity:0}, 300);}
+
+	if ($thisSlide.attr('leftslide') != undefined){s.leftSlide = $($thisSlide.attr('leftslide'));$('.leftcaret').animate({opacity:.3}, 300);}
+	else {$('.leftcaret').animate({opacity:0}, 300);}
+
+	if ($thisSlide.attr('rightslide') != undefined){s.rightSlide = $($thisSlide.attr('rightslide'));$('.rightcaret').animate({opacity:.3}, 300);}
+	else {$('.rightcaret').animate({opacity:0}, 300);}
 }
 
 function populateSlides(d){
+	//provide base slide elems directional slides
 	for (var i=0; i < d.length ; i++){
 		if (d[i].leftid != undefined){$(d[i].targetid).attr('leftslide', d[i].leftid);}
-		if (d[i].rightid != undefined){$(d[i].targetid).attr('rightslide', d[i].rightid);}
-		if (d[i].upid != undefined){$(d[i].targetid).attr('upslide', d[i].upid);}
+		if (d[i].rightid != undefined){$(d[i].targetid).attr('rightslide', d[i].rightid);}		
+		if (d[i].upid != undefined){$(d[i].targetid).attr('upslide', d[i].upid);}		
 		if (d[i].downid != undefined){$(d[i].targetid).attr('downslide', d[i].downid);}
 	}
 }
@@ -100,3 +111,4 @@ function resetSlidePosition(s){
 	$(s.leftSlide).css({left:-10000,top:0,'z-index':0});
 	$(s.rightSlide).css({left:10000,top:0,'z-index':0});
 }
+
