@@ -254,6 +254,9 @@ _________________________________________*/
 	font-size: 3rem;
 }
 
+/* PROP 51
+______________*/
+
 #prop51>div:first-of-type {
 	position: absolute;
     bottom: 0;
@@ -268,6 +271,9 @@ _________________________________________*/
     bottom: 10%;
     left: 50px;
 }
+
+/* PROP 52
+______________*/
 
 #prop52>div[data="hospital"]{
 	position: absolute;
@@ -297,6 +303,26 @@ _________________________________________*/
     max-width: 520px;
 }
 
+/* PROP 56
+______________*/
+.smoke {
+	position: absolute;    
+    background-color: #eee;
+    border-radius: 50%;    
+}
+
+
+.cig {
+	position: absolute;
+    bottom: 100px;
+    left: 100px;
+    width: 300px;
+    height: 42px;
+}
+
+/* PROP 59
+______________*/
+
 #prop59>div:first-of-type {
 	position: absolute;
     bottom: 0;
@@ -304,6 +330,9 @@ _________________________________________*/
     max-width:850px;
     right:0;
 }
+
+/* PROP GENERAL
+_________________*/
 	
 .proptitle-right {
 	position: absolute;
@@ -350,8 +379,6 @@ _________________________________________*/
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
 
 }
-
-
 
 
 /* TUTORIAL SLIDE

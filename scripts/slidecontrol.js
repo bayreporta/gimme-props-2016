@@ -186,8 +186,8 @@ function resetSlidePosition(s){
 
 function initProp(prev,s,p){
 	//configure prop data
-	prev = prev.split('#');
-	p.propSelected = prev[0]; //lock in which prop we are exploring
+	p.propSelected = prev; //lock in which prop we are exploring
+	console.log(p.propSelected)
 	var d = gimmeProps.data.props[p.propSelected]; //grab data for selected prop
 	p.points = 0; //reset points for quiz
 	p.propID = 0; //first slide of the prop stack
@@ -197,7 +197,7 @@ function initProp(prev,s,p){
 	s.rightSlide = '#' + p.propSelected + '0';	
 
 	//populate resources
-	parseResources(d[0].propID);
+	parseResources(d[0].propid);
 	
 	//load prop slides
 	loadPropSlides(d, p.propSelected);

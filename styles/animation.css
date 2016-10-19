@@ -101,3 +101,43 @@ _________________________________________*/
 	75% {left:20%;bottom:10%;}
 	100% {left: 20%;bottom: 35%;}
 }
+
+/* SMOKE ANIMATIONS - PROP 56
+_________________________________________*/
+.smoke {
+	-webkit-animation-name: smoke;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: smoke;
+
+	-ms-animation-name: smoke;
+	-ms-animation-duration:1s;
+	-ms-animation-iteration-count: infinite;
+
+	-moz-animation-name: smoke;
+	-moz-animation-duration: 1s;
+	-moz-animation-iteration-count: infinite;
+
+	animation-name: smoke;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes smoke {
+	0% {width: 10px;height: 10px;bottom: 145px;left: 400px;}
+	100% {width: 50px;height: 50px;bottom: 20%;left: 400px;}
+}
+
+@-ms-keyframes smoke {
+	0% {width: 10px;height: 10px;bottom: 145px;left: 400px;}
+	100% {width: 50px;height: 50px;bottom: 20%;left: 400px;}
+}
+
+@-moz-keyframes smoke {
+	0% {width: 10px;height: 10px;bottom: 145px;left: 400px;}
+	100% {width: 50px;height: 50px;bottom: 20%;left: 400px;}
+}
+
+@keyframes smoke {
+	0% {width: 10px;height: 10px;bottom: 145px;left: 400px;}
+	100% {width: 50px;height: 50px;bottom: 20%;left: 400px;}
+}

@@ -62,12 +62,13 @@
     },
     {
         "targetid": "#prop51",
+        "rightid": "#tutorial",
         "upid": "#prop65",
         "downid": "#prop52",
         "lockslide": false,
         "animation": true,
         "clearanimation": true,
-        "tutorial": false
+        "tutorial": true
     },
     {
         "targetid": "#prop52",

@@ -9,11 +9,11 @@ var gimmeProps = {
 		returning: false
 	},
 	slides:{
-		curSlide: '#intro',
+		curSlide: '#nocookie',
 		upSlide: null,
 		downSlide: null,
 		leftSlide: null,
-		rightSlide: '#about',
+		rightSlide: '#proplist',
 		lockSlide: false
 	},
 	data:{
@@ -21,6 +21,11 @@ var gimmeProps = {
 		resources: new Array
 	},
 	header:{
+		'prop51': {
+			name: 'Prop 51',
+			color: '',
+			icon: ''
+		},
 		'prop56': {
 			name: 'Prop 56',
 			color: '',
@@ -289,6 +294,10 @@ function initJSON(){
 		populateSlides(data);
 	});
 
+	$.getJSON('scripts/json/prop51.json', function(data){
+		gimmeProps.data.props['prop51'] = data.prop51;
+	});
+
 	$.getJSON('scripts/json/prop56.json', function(data){
 		gimmeProps.data.props['prop56'] = data.prop56;
 	});
@@ -304,7 +313,10 @@ function initJSON(){
 
 function parseResources(k){
 	for (var i=0 ; i < gimmeProps.data.resources.length ; i++){
+		console.log(k)
+			console.log(gimmeProps.data.resources[i].propid)
 		if (gimmeProps.data.resources[i].propid == k){
+
 			$('#resources a:eq(0)').attr('href', gimmeProps.data.resources[i].kqed);
 			$('#resources a:eq(1)').attr('href', gimmeProps.data.resources[i].ballotfyi);
 			$('#resources a:eq(2)').attr('href', gimmeProps.data.resources[i].ballotpedia);
