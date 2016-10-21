@@ -102,24 +102,74 @@ _________________________________________*/
 	100% {left: 20%;bottom: 35%;}
 }
 
+/* SMOKE ANIMATIONS - PROP 53
+_________________________________________*/
+
+/*.approved {
+	-webkit-animation-name: approved;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-play-state: paused;
+
+	-ms-animation-name: approved;
+	-ms-animation-duration:3s;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-play-state: paused;
+
+	-moz-animation-name: approved;
+	-moz-animation-duration: 3s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-play-state: paused;
+
+	animation-name: approved;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-play-state: paused;
+}
+
+@-webkit-keyframes approved {
+	0% {opacity:0;}
+
+}
+
+@-ms-keyframes approved {
+	0% {width: 10px;height: 10px;bottom: 145px;left: 400px;}
+	100% {width: 50px;height: 50px;bottom: 20%;left: 400px;}
+}
+
+@-moz-keyframes approved {
+	0% {width: 10px;height: 10px;bottom: 145px;left: 400px;}
+	100% {width: 50px;height: 50px;bottom: 20%;left: 400px;}
+}
+
+@keyframes approved {
+	0% {width: 10px;height: 10px;bottom: 145px;left: 400px;}
+	100% {width: 50px;height: 50px;bottom: 20%;left: 400px;}
+}*/
+
+
 /* SMOKE ANIMATIONS - PROP 56
 _________________________________________*/
 .smoke {
 	-webkit-animation-name: smoke;
 	-webkit-animation-duration: 1s;
-	-webkit-animation-iteration-count: smoke;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-play-state: paused;
 
 	-ms-animation-name: smoke;
 	-ms-animation-duration:1s;
 	-ms-animation-iteration-count: infinite;
+	-ms-animation-play-state: paused;
 
 	-moz-animation-name: smoke;
 	-moz-animation-duration: 1s;
 	-moz-animation-iteration-count: infinite;
+	-moz-animation-play-state: paused;
 
 	animation-name: smoke;
 	animation-duration: 1s;
 	animation-iteration-count: infinite;
+	animation-play-state: paused;
 }
 
 @-webkit-keyframes smoke {

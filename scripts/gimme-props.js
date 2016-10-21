@@ -298,6 +298,10 @@ function initJSON(){
 		gimmeProps.data.props['prop51'] = data.prop51;
 	});
 
+	$.getJSON('scripts/json/prop52.json', function(data){
+		gimmeProps.data.props['prop52'] = data.prop52;
+	});
+
 	$.getJSON('scripts/json/prop56.json', function(data){
 		gimmeProps.data.props['prop56'] = data.prop56;
 	});

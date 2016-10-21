@@ -303,6 +303,30 @@ ______________*/
     max-width: 520px;
 }
 
+/* PROP 53
+______________*/
+
+.approved path, .denied path {fill:#fff;}
+.approved rect, .denied rect {opacity:0.2;}
+
+.approved {
+	position: absolute;
+    width: 40%;
+    bottom: 40%;
+    left: 10%;
+    transform: rotate(-45deg);
+    max-width: 500px;
+}
+
+.denied {
+	position: absolute;
+    width: 40%;
+    bottom: 40%;
+    right: 10%;
+    transform: rotate(45deg);
+    max-width: 500px;
+}
+
 /* PROP 56
 ______________*/
 .smoke {

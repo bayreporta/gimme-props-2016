@@ -4,7 +4,27 @@
 function clearAnimations(){
 	dropHammer(false);
 	moveCoins(false);
+	smokin(false);
 	destroyCoins();
+}
+
+function smokin(t){
+	if (t == true){
+		$('.smoke').css({
+			'-webkit-animation-play-state': 'running',
+			'-ms-animation-play-state': 'running',
+			'-moz-animation-play-state': 'running',
+			'animation-play-state': 'running'
+		});
+	}
+	else {
+		$('.smoke').css({
+			'-webkit-animation-play-state': 'paused',
+			'-ms-animation-play-state': 'paused',
+			'-moz-animation-play-state': 'paused',
+			'animation-play-state': 'paused'
+		});
+	}
 }
 
 function moveCoins(t){
