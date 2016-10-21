@@ -138,7 +138,8 @@
         "leftpoints": 0,
         "rightpoints": 0,
         "victoryslide": true,
-        "victorycond": "support"
+        "victorycond": "support",
+        "special": "victory"
     },
     {
         "propid": 54,
@@ -153,7 +154,8 @@
         "leftpoints": 0,
         "rightpoints": 0,
         "victoryslide": true,
-        "victorycond": "oppose"
+        "victorycond": "oppose",
+        "special": "victory"
     },
     {
         "propid": 54,
@@ -168,7 +170,8 @@
         "leftpoints": 0,
         "rightpoints": 0,
         "victoryslide": true,
-        "victorycond": "default"
+        "victorycond": "default",
+        "special": "victory"
     }
 ]
 }
