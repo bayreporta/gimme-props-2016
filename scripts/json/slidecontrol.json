@@ -72,39 +72,43 @@
     },
     {
         "targetid": "#prop52",
+        "rightid": "#tutorial",
         "upid": "#prop51",
         "downid": "#prop53",
         "lockslide": false,
         "animation": true,
         "clearanimation": true,
-        "tutorial": false
+        "tutorial": true
     },
     {
         "targetid": "#prop53",
+        "rightid": "#tutorial",
         "upid": "#prop52",
         "downid": "#prop54",
         "lockslide": false,
         "animation": false,
         "clearanimation": true,
-        "tutorial": false
+        "tutorial": true
     },
     {
         "targetid": "#prop54",
+        "rightid": "#tutorial",
         "upid": "#prop53",
         "downid": "#prop55",
         "lockslide": false,
         "animation": false,
         "clearanimation": true,
-        "tutorial": false
+        "tutorial": true
     },
     {
         "targetid": "#prop55",
+        "rightid": "#tutorial",
         "upid": "#prop54",
         "downid": "#prop56",
         "lockslide": false,
         "animation": false,
         "clearanimation": true,
-        "tutorial": false
+        "tutorial": true
     },
     {
         "targetid": "#prop56",
@@ -118,21 +122,23 @@
     },
     {
         "targetid": "#prop57",
+        "rightid": "#tutorial",
         "upid": "#prop56",
         "downid": "#prop58",
         "lockslide": false,
         "animation": false,
         "clearanimation": true,
-        "tutorial": false
+        "tutorial": true
     },
     {
         "targetid": "#prop58",
+        "rightid": "#tutorial",
         "upid": "#prop57",
         "downid": "#prop59",
         "lockslide": false,
         "animation": false,
         "clearanimation": true,
-        "tutorial": false
+        "tutorial": true
     },
     {
         "targetid": "#prop59",
@@ -146,56 +152,82 @@
     },
     {
         "targetid": "#prop60",
+        "rightid": "#tutorial",
         "upid": "#prop59",
         "downid": "#prop61",
         "lockslide": false,
         "animation": false,
         "clearanimation": true,
-        "tutorial": false
+        "tutorial": true
     },
     {
         "targetid": "#prop61",
+        "rightid": "#tutorial",
         "upid": "#prop60",
         "downid": "#prop62",
         "lockslide": false,
         "animation": false,
         "clearanimation": true,
-        "tutorial": false
+        "tutorial": true
     },
     {
         "targetid": "#prop62",
+        "rightid": "#tutorial",
         "upid": "#prop61",
         "downid": "#prop63",
         "lockslide": false,
         "animation": false,
         "clearanimation": true,
-        "tutorial": false
+        "tutorial": true
     },
     {
         "targetid": "#prop63",
+        "rightid": "#tutorial",
         "upid": "#prop62",
         "downid": "#prop64",
         "lockslide": false,
         "animation": false,
         "clearanimation": true,
-        "tutorial": false
+        "tutorial": true
     },
     {
         "targetid": "#prop64",
+        "rightid": "#tutorial",
         "upid": "#prop63",
         "downid": "#prop65",
         "lockslide": false,
         "animation": false,
         "clearanimation": true,
-        "tutorial": false
+        "tutorial": true
     },
     {
         "targetid": "#prop65",
+        "rightid": "#tutorial",
         "upid": "#prop64",
+        "downid": "#prop66",
+        "lockslide": false,
+        "animation": false,
+        "clearanimation": true,
+        "tutorial": true
+    },
+    {
+        "targetid": "#prop66",
+        "rightid": "#tutorial",
+        "upid": "#prop65",
+        "downid": "#prop67",
+        "lockslide": false,
+        "animation": false,
+        "clearanimation": true,
+        "tutorial": true
+    },
+    {
+        "targetid": "#prop67",
+        "rightid": "#tutorial",
+        "upid": "#prop66",
         "downid": "#prop51",
         "lockslide": false,
         "animation": false,
         "clearanimation": true,
-        "tutorial": false
+        "tutorial": true
     }
 ]
