@@ -1,5 +1,5 @@
 {
-    "prop55":[
+    "prop55": [
     {
         "propid": 55,
         "id": 0,
@@ -178,5 +178,5 @@
         "victorycond": "default",
         "special": "victory"
     }
-] 
+]
 }
