@@ -20,7 +20,7 @@ function clearAnimations(){
 
 function spinningCondom(t){
 	if (t == true){
-		$('#prop60>div[data="condom"]').css({
+		$('#prop60 div[data="condom"]').css({
 			'-webkit-animation-play-state': 'running',
 			'-ms-animation-play-state': 'running',
 			'-moz-animation-play-state': 'running',
@@ -58,7 +58,7 @@ function smokin(t){
 
 function moveCoins(t){
 	if (t == true){
-		$('#prop52>div[data="coin"]').css({
+		$('#prop52 div[data="coin"]').css({
 			'-webkit-animation-play-state': 'running',
 			'-ms-animation-play-state': 'running',
 			'-moz-animation-play-state': 'running',
@@ -66,7 +66,7 @@ function moveCoins(t){
 		});
 	}
 	else {
-		$('#prop52>div[data="coin"]').css({
+		$('#prop52 div[data="coin"]').css({
 			'-webkit-animation-play-state': 'paused',
 			'-ms-animation-play-state': 'paused',
 			'-moz-animation-play-state': 'paused',

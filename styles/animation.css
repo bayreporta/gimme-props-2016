@@ -45,7 +45,7 @@ _________________________________________*/
 
 /* COIN ANIMATIONS - PROP 52
 _________________________________________*/
-#prop52>div[data="coin"] {
+#prop52 div[data="coin"] {
 	-webkit-animation-name: givetake;
 	-webkit-animation-duration: 2s;
 	-webkit-animation-iteration-count: infinite;
@@ -194,7 +194,7 @@ _________________________________________*/
 
 /* CONDOM ANIMATIONS - PROP 60
 _________________________________________*/
-#prop60>div[data="condom"] {
+#prop60 div[data="condom"] {
 	-webkit-animation-name: condom;
 	-webkit-animation-duration: 2s;
 	-webkit-animation-iteration-count: infinite;

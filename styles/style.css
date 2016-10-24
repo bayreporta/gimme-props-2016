@@ -46,7 +46,7 @@ h3 {
     top: 10px;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 100px;
     overflow: hidden;
     display:none;
     z-index:1000;
@@ -54,11 +54,12 @@ h3 {
 
 	#directions {
 		position: absolute;
-	    width: 50%;
-	    left: 15px;
+	    width: 100%;
 	    color: #ddd;
 	    font-style: italic;
 	    display:none;
+	    text-align: center;
+    	top: 40px;
 	}
 
 	#menu>div:first-of-type i, #menu>div:last-of-type i {color: #ddd;}
@@ -86,14 +87,13 @@ h3 {
 	#menu {height:100px;}
 
 	#directions {
-		width: 70%;
     	font-size: 2rem;
-    	top: 20px;
+    	top: 0px;
 	}
 
 	#menu>div:last-of-type {
 		width: 54px;
-    	right: 190px;
+    	right: 80px;
 	}
 
 	#menu>div:first-of-type i {font-size: 5rem;}
@@ -254,10 +254,18 @@ _________________________________________*/
 	font-size: 3rem;
 }
 
+.center {
+	position:relative;
+	width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
 /* PROP 51
 ______________*/
 
-#prop51>div[data="school"] {
+#prop51 div[data="school"] {
 	position: absolute;
     bottom: 0;
     width: 55%;
@@ -275,14 +283,14 @@ ______________*/
 /* PROP 52
 ______________*/
 
-#prop52>div[data="hospital"]{
+#prop52 div[data="hospital"]{
 	position: absolute;
     bottom: 0;
     width: 50%;
     max-width: 567px;
 }
 
-#prop52>div[data="coin"]{
+#prop52 div[data="coin"]{
 	position: absolute;
 	width:10%;
 	max-width: 100px;
@@ -291,11 +299,11 @@ ______________*/
 	z-index:-1;
 }
 
-#prop52>div[data="coin"] svg {
+#prop52 div[data="coin"] svg {
 	fill: #c5c558 !important;
 }
 
-#prop52>div[data="capitol"]{
+#prop52 div[data="capitol"]{
 	position: absolute;
     bottom: 40px;
     width: 40%;
@@ -330,7 +338,7 @@ ______________*/
 /* PROP 54
 ______________*/
 
-#prop54>div[data="eye"]{
+#prop54 div[data="eye"]{
 	position: absolute;
     width: 60%;
     max-width: 550px;
@@ -342,7 +350,7 @@ ______________*/
 /* PROP 55
 ______________*/ 
 
-#prop55>div[data="school"] {
+#prop55 div[data="school"] {
 	position: absolute;
     bottom: 0;
     width: 66%;
@@ -371,7 +379,7 @@ ______________*/
 /* PROP 57
 ______________*/ 
 
-#prop57>div[data="prisoner"] {
+#prop57 div[data="prisoner"] {
 	position: absolute;
     width: 60%;
     max-width: 750px;
@@ -382,7 +390,7 @@ ______________*/
 /* PROP 59
 ______________*/
 
-#prop59>div[data="capitol"] {
+#prop59 div[data="capitol"] {
 	position: absolute;
     bottom: 0;
     width: 50%;
@@ -393,7 +401,7 @@ ______________*/
 /* PROP 60
 ______________*/ 
 
-#prop60>div[data="condom"] {
+#prop60 div[data="condom"] {
 	position: absolute;
     width: 50%;
     max-width: 300px;
@@ -405,7 +413,7 @@ ______________*/
 /* PROP 61
 ______________*/ 
 
-#prop61>div[data="drugs"] {
+#prop61 div[data="drugs"] {
 	position: absolute;
    	width: 70%;
     max-width: 800px;
@@ -414,10 +422,10 @@ ______________*/
     bottom: 5%;
 }
 
-/* PROP 66
+/* PROP 62, 63, 64, 66
 ______________*/ 
 
-#prop66>div[data="syringe"] {		
+#prop62 div[data="deathrow"], #prop66 div[data="syringe"], #prop64 div[data="pot"], #prop63 div[data="ammo"] {		
 	position:absolute;
 	width: 50%;
 	max-width:625px;
@@ -461,7 +469,7 @@ _________________*/
 	    top: 10%;
 	}
 
-	#prop51>div[data="school"], #prop59>div[data="capitol"] {
+	#prop51 div[data="school"], #prop59 div[data="capitol"] {
 		width:100%;
 	}
 
@@ -470,9 +478,7 @@ _________________*/
 	    bottom: 50%;
 	}
 
-	
-	
-	#prop57>div[data="prisoner"] {
+	#prop57 div[data="prisoner"] {
 		width: 100%;
 	    bottom: 10%;
 	    right: 50%;
@@ -480,14 +486,14 @@ _________________*/
 
 	
 
-	#prop60>div[data="condom"]{
+	#prop60 div[data="condom"]{
 		width: 100%;
 	    max-width: 500px;
 	    top: 50%;
 	    left: 25%;
 	}
 
-	#prop61>div[data="drugs"], #prop66>div[data="syringe"] {		
+	#prop61 div[data="drugs"], #prop66 div[data="syringe"], #prop64 div[data="pot"], #prop62 div[data="deathrow"], #prop63 div[data="ammo"] {		
 		bottom: 25%;
 	}
 
