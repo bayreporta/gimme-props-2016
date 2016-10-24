@@ -1,3 +1,49 @@
+/* MARIJUANA ANIMATIONS - PROP 64
+_________________________________________*/
+#prop64 div[data="pot"] svg {
+	-webkit-animation-name: trip;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-play-state: paused;
+
+	-ms-animation-name: trip;
+	-ms-animation-duration:2s;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-play-state: paused;
+
+	-moz-animation-name: trip;
+	-moz-animation-duration: 2s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-play-state: paused;
+
+	animation-name: trip;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-play-state: paused;
+}
+
+@-webkit-keyframes trip {
+	
+}
+
+@-ms-keyframes trip {
+	
+}
+
+@-moz-keyframes trip {
+	
+}
+
+@keyframes trip {
+	0% {fill:#9400d3;}
+	17% {fill:#4b0082;}
+	34% {fill:#0000ff;}
+	51% {fill:#00ff00;}
+	68% {fill:#ffff00;}
+	85% {fill:#ff7f00;}
+	100% {fill:#ff0000;}
+}
+
 /* SMOKE ANIMATIONS - PROP 56
 _________________________________________*/
 .smoke {
@@ -202,25 +248,25 @@ _________________________________________*/
 _________________________________________*/
 #prop54 div[data="eye"] {
 	-webkit-animation-name: eye;
-	-webkit-animation-duration: 3s;
+	-webkit-animation-duration: 2s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-play-state: paused;
 	-webkit-animation-direction: alternate;
 
 	-ms-animation-name: eye;
-	-ms-animation-duration: 3s;
+	-ms-animation-duration: 2s;
 	-ms-animation-iteration-count: infinite;
 	-ms-animation-play-state: paused;
 	-ms-animation-direction: alternate;
 
 	-moz-animation-name: eye;
-	-moz-animation-duration: 3s;
+	-moz-animation-duration: 2s;
 	-moz-animation-iteration-count: infinite;
 	-moz-animation-play-state: paused;
 	-moz-animation-direction: alternate;
 
 	animation-name: eye;
-	animation-duration: 3s;
+	animation-duration: 2s;
 	animation-iteration-count: infinite;
 	animation-play-state: paused;
 	animation-direction: alternate;

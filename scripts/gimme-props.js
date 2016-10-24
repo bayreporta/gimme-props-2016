@@ -346,12 +346,20 @@ function initJSON(){
 		gimmeProps.data.props['prop56'] = data.prop56;
 	});
 
+	$.getJSON('scripts/json/prop57.json', function(data){
+		gimmeProps.data.props['prop57'] = data.prop57;
+	});
+
 	$.getJSON('scripts/json/prop58.json', function(data){
 		gimmeProps.data.props['prop58'] = data.prop58;
 	});
 
 	$.getJSON('scripts/json/prop59.json', function(data){
 		gimmeProps.data.props['prop59'] = data.prop59;
+	});
+
+	$.getJSON('scripts/json/prop60.json', function(data){
+		gimmeProps.data.props['prop60'] = data.prop60;
 	});
 
 	$.getJSON('scripts/json/prop61.json', function(data){
@@ -368,6 +376,18 @@ function initJSON(){
 
 	$.getJSON('scripts/json/prop64.json', function(data){
 		gimmeProps.data.props['prop64'] = data.prop64;
+	});
+
+	$.getJSON('scripts/json/prop65.json', function(data){
+		gimmeProps.data.props['prop65'] = data.prop65;
+	});
+
+	$.getJSON('scripts/json/prop66.json', function(data){
+		gimmeProps.data.props['prop66'] = data.prop66;
+	});
+
+	$.getJSON('scripts/json/prop67.json', function(data){
+		gimmeProps.data.props['prop67'] = data.prop67;
 	});
 
 	$.getJSON('scripts/json/resources.json', function(data){

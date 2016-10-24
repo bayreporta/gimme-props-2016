@@ -10,6 +10,7 @@ function toggleAnimation(s){
 	else if (s == '#prop56'){animationControl(true, '.smoke');}
 	else if (s == '#prop59'){rainingCoins('#prop59');}
 	else if (s == '#prop60'){animationControl(true, '#prop60 div[data="condom"]');}
+	else if (s == '#prop64'){animationControl(true, '#prop64 div[data="pot"] svg');}
 }
 
 function clearAnimations(){
@@ -18,6 +19,7 @@ function clearAnimations(){
 	animationControl(false, '#prop52 div[data="coin"]');
 	animationControl(false, '.smoke');
 	animationControl(false, '#prop60 div[data="condom"]');
+	animationControl(false, '#prop64 div[data="pot"] svg');
 	destroyCoins();
 }
 
