@@ -422,10 +422,10 @@ ______________*/
     bottom: 5%;
 }
 
-/* PROP 62, 63, 64, 66
-______________*/ 
+/* PROP 58, 62, 63, 64, 65, 66, 67
+________________________________*/ 
 
-#prop62 div[data="deathrow"], #prop66 div[data="syringe"], #prop64 div[data="pot"], #prop63 div[data="ammo"] {		
+#prop58 div[data="voices"], #prop67 div[data="bag"], #prop62 div[data="deathrow"], #prop66 div[data="syringe"], #prop64 div[data="pot"], #prop63 div[data="ammo"], #prop65 div[data="sneaky"] {		
 	position:absolute;
 	width: 50%;
 	max-width:625px;
@@ -433,6 +433,8 @@ ______________*/
     left: 50%;
     transform: translateX(-50%);
 }
+
+#prop67 div[data="bag"] {max-width:400px;}
 
 
 /* PROP GENERAL
@@ -493,7 +495,7 @@ _________________*/
 	    left: 25%;
 	}
 
-	#prop61 div[data="drugs"], #prop66 div[data="syringe"], #prop64 div[data="pot"], #prop62 div[data="deathrow"], #prop63 div[data="ammo"] {		
+	#prop58 div[data="voices"], #prop67 div[data="bag"], #prop61 div[data="drugs"], #prop65 div[data="sneaky"], #prop66 div[data="syringe"], #prop64 div[data="pot"], #prop62 div[data="deathrow"], #prop63 div[data="ammo"] {		
 		bottom: 25%;
 	}
 
