@@ -3,25 +3,27 @@
 function toggleAnimation(s){
 	if (s == '#cookie'){setTimeout(noshCookie, 1300);}
 	else if (s == '#yescookie'){dropCookie();}
-	else if (s == '#prop51'){dropHammer(true);}
-	else if (s == '#prop52'){moveCoins(true);}
+	else if (s == '#prop51'){animationControl(true, '.hammer');}
+	else if (s == '#prop52'){animationControl(true, '#prop52 div[data="coin"]');}
 	else if (s == '#prop54'){animationControl(true, '#prop54 div[data="eye"]');}
-	else if (s == '#prop56'){smokin(true);}
-	else if (s == '#prop59'){rainingCoins();}
-	else if (s == '#prop60'){spinningCondom(true);}
+	else if (s == '#prop55'){rainingCoins('#prop55');}	
+	else if (s == '#prop56'){animationControl(true, '.smoke');}
+	else if (s == '#prop59'){rainingCoins('#prop59');}
+	else if (s == '#prop60'){animationControl(true, '#prop60 div[data="condom"]');}
 }
 
 function clearAnimations(){
 	animationControl(false, '#prop54 div[data="eye"]');
-	dropHammer(false);
-	moveCoins(false);
-	smokin(false);
-	spinningCondom(false);
+	animationControl(false, '.hammer');
+	animationControl(false, '#prop52 div[data="coin"]');
+	animationControl(false, '.smoke');
+	animationControl(false, '#prop60 div[data="condom"]');
 	destroyCoins();
 }
 
-function animationControl(t ,e){
+function animationControl(t,e){
 	if (t == true){
+		console.log(e)
 		$(e).css({
 			'-webkit-animation-play-state': 'running',
 			'-ms-animation-play-state': 'running',
@@ -31,82 +33,6 @@ function animationControl(t ,e){
 	}
 	else {
 		$(e).css({
-			'-webkit-animation-play-state': 'paused',
-			'-ms-animation-play-state': 'paused',
-			'-moz-animation-play-state': 'paused',
-			'animation-play-state': 'paused'
-		});
-	}
-}
-
-function spinningCondom(t){
-	if (t == true){
-		$('#prop60 div[data="condom"]').css({
-			'-webkit-animation-play-state': 'running',
-			'-ms-animation-play-state': 'running',
-			'-moz-animation-play-state': 'running',
-			'animation-play-state': 'running'
-		});
-	}
-	else {
-		$('#prop60 div[data="condom"]').css({
-			'-webkit-animation-play-state': 'paused',
-			'-ms-animation-play-state': 'paused',
-			'-moz-animation-play-state': 'paused',
-			'animation-play-state': 'paused'
-		});
-	}
-}
-
-function smokin(t){
-	if (t == true){
-		$('.smoke').css({
-			'-webkit-animation-play-state': 'running',
-			'-ms-animation-play-state': 'running',
-			'-moz-animation-play-state': 'running',
-			'animation-play-state': 'running'
-		});
-	}
-	else {
-		$('.smoke').css({
-			'-webkit-animation-play-state': 'paused',
-			'-ms-animation-play-state': 'paused',
-			'-moz-animation-play-state': 'paused',
-			'animation-play-state': 'paused'
-		});
-	}
-}
-
-function moveCoins(t){
-	if (t == true){
-		$('#prop52 div[data="coin"]').css({
-			'-webkit-animation-play-state': 'running',
-			'-ms-animation-play-state': 'running',
-			'-moz-animation-play-state': 'running',
-			'animation-play-state': 'running'
-		});
-	}
-	else {
-		$('#prop52 div[data="coin"]').css({
-			'-webkit-animation-play-state': 'paused',
-			'-ms-animation-play-state': 'paused',
-			'-moz-animation-play-state': 'paused',
-			'animation-play-state': 'paused'
-		});
-	}
-}
-
-function dropHammer(t){
-	if (t == true){
-		$('.hammer').css({
-			'-webkit-animation-play-state': 'running',
-			'-ms-animation-play-state': 'running',
-			'-moz-animation-play-state': 'running',
-			'animation-play-state': 'running'
-		});
-	}
-	else {
-		$('.hammer').css({
 			'-webkit-animation-play-state': 'paused',
 			'-ms-animation-play-state': 'paused',
 			'-moz-animation-play-state': 'paused',
@@ -135,16 +61,17 @@ function noshCookie(){
 function dropCookie(){
 	$('#yescookie .cookie').animate({top:2000}, 2000);
 }
-function rainingCoins(){
+
+function rainingCoins(e){
 	var coin = '<svg class="coins" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="5" y="5" width="90" height="90" fill="none"/><path d="M89.6 33.3c-2.2-5.1-5.3-9.7-9.2-13.7 -3.9-3.9-8.5-7-13.7-9.2C61.4 8.2 55.8 7.1 50 7.1s-11.4 1.1-16.7 3.4c-5.1 2.2-9.7 5.3-13.7 9.2 -3.9 3.9-7 8.5-9.2 13.7 -2.2 5.3-3.4 10.9-3.4 16.7 0 5.8 1.1 11.4 3.4 16.7 2.2 5.1 5.3 9.7 9.2 13.7 3.9 3.9 8.5 7 13.7 9.2 5.3 2.2 10.9 3.4 16.7 3.4s11.4-1.1 16.7-3.4c5.1-2.2 9.7-5.3 13.7-9.2s7-8.5 9.2-13.7c2.2-5.3 3.4-10.9 3.4-16.7C93 44.2 91.8 38.6 89.6 33.3zM87.5 65.9c-2 4.8-5 9.2-8.7 12.9 -3.7 3.7-8.1 6.7-12.9 8.7 -5 2.1-10.3 3.2-15.8 3.2 -5.5 0-10.8-1.1-15.8-3.2 -4.8-2-9.2-5-12.9-8.7 -3.7-3.7-6.7-8.1-8.7-12.9 -2.1-5-3.2-10.3-3.2-15.8s1.1-10.8 3.2-15.8c2-4.8 5-9.2 8.7-12.9 3.7-3.7 8.1-6.7 12.9-8.7C39.2 10.5 44.5 9.4 50 9.4s10.8 1.1 15.8 3.2c4.8 2 9.2 5 12.9 8.7 3.7 3.7 6.7 8.1 8.7 12.9 2.1 5 3.2 10.3 3.2 15.8S89.6 60.8 87.5 65.9z"/><path d="M40.6 37.8c0 4.2 2.7 7.8 6.7 9l0-5.7 -0.1-12.3C43.3 30.1 40.6 33.7 40.6 37.8z"/><path d="M52.7 71.2c4-1.2 6.7-4.8 6.7-9 0-4.2-2.7-7.8-6.6-9L52.7 70.4V71.2z"/><path d="M76.1 23.9c-3.4-3.4-7.3-6.1-11.7-7.9 -4.6-1.9-9.4-2.9-14.4-2.9s-9.8 1-14.4 2.9c-4.4 1.9-8.3 4.5-11.7 7.9 -3.4 3.4-6.1 7.3-7.9 11.7 -1.9 4.6-2.9 9.4-2.9 14.4 0 5 1 9.8 2.9 14.4 1.9 4.4 4.5 8.4 7.9 11.7 3.4 3.4 7.3 6.1 11.7 7.9 4.6 1.9 9.4 2.9 14.4 2.9s9.8-1 14.4-2.9c4.4-1.9 8.4-4.5 11.7-7.9 3.4-3.4 6.1-7.3 7.9-11.7 1.9-4.6 2.9-9.4 2.9-14.4 0-5-1-9.8-2.9-14.4C82.2 31.3 79.5 27.3 76.1 23.9zM52.8 41.2l0 6.4c3.3 0.6 6.3 2.4 8.5 5 2.3 2.7 3.6 6.2 3.6 9.7 0 3.6-1.3 7.1-3.6 9.8 -2.2 2.6-5.3 4.3-8.6 4.9v2.6c0 1.5-1.2 2.8-2.8 2.8s-2.8-1.2-2.8-2.8v-2.6c-3.3-0.6-6.3-2.4-8.5-5 -2.3-2.7-3.6-6.2-3.6-9.7 0-1.5 1.2-2.8 2.8-2.8s2.8 1.2 2.8 2.8c0 4.1 2.7 7.7 6.6 9V70.4l0.1-17.9c-3.3-0.6-6.3-2.4-8.6-5 -2.3-2.7-3.6-6.2-3.6-9.7 0-3.6 1.3-7 3.6-9.7 2.2-2.6 5.2-4.3 8.5-5l0-2.6c0-1.5 1.2-2.8 2.8-2.8h0c1.5 0 2.8 1.2 2.8 2.8l0 2.6c3.3 0.6 6.4 2.4 8.6 5 2.3 2.7 3.6 6.2 3.6 9.8 0 1.5-1.2 2.8-2.8 2.8s-2.8-1.2-2.8-2.8c0-4.2-2.7-7.8-6.6-9L52.8 41.2z"/></svg>'
-	$('#prop59').append(coin).append(coin).append(coin).append(coin).append(coin);
-	$('#prop59 svg:eq(1)').css({top:-200, left:'80%'}).animate({top:3000},5500);
-	$('#prop59 svg:eq(2)').css({top:-200, left:'40%'}).animate({top:3000},6000);
-	$('#prop59 svg:eq(3)').css({top:-200, left:'50%'}).animate({top:3000},5000);
-	$('#prop59 svg:eq(4)').css({top:-200, left:'70%'}).animate({top:3000},6500, function(){
+	$(e).append(coin).append(coin).append(coin).append(coin).append(coin);
+	$(e + ' svg:eq(1)').css({top:-200, left:'80%'}).animate({top:3000},5500);
+	$(e + ' svg:eq(2)').css({top:-200, left:'40%'}).animate({top:3000},6000);
+	$(e + ' svg:eq(3)').css({top:-200, left:'50%'}).animate({top:3000},5000);
+	$(e + ' svg:eq(4)').css({top:-200, left:'70%'}).animate({top:3000},6500, function(){
 		$('.coins').remove();
 	});
-	$('#prop59 svg:last-of-type').css({top:-200, left:'20%'}).animate({top:3000},5000);
+	$(e + ' svg:last-of-type').css({top:-200, left:'20%'}).animate({top:3000},5000);
 }
 
 function destroyCoins(){
