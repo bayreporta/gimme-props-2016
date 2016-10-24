@@ -257,7 +257,7 @@ _________________________________________*/
 /* PROP 51
 ______________*/
 
-#prop51>div:first-of-type {
+#prop51>div[data="school"] {
 	position: absolute;
     bottom: 0;
     width: 55%;
@@ -265,7 +265,7 @@ ______________*/
     max-width: 650px;
 }
 
-#prop51>div:nth-of-type(2) {
+.hammer {
 	width: 25%;
     position: absolute;
     bottom: 10%;
@@ -382,7 +382,7 @@ ______________*/
 /* PROP 59
 ______________*/
 
-#prop59>div:first-of-type {
+#prop59>div[data="capitol"] {
 	position: absolute;
     bottom: 0;
     width: 50%;
@@ -401,6 +401,31 @@ ______________*/
     transform: translate(-50%,-50%);
     left: 40%;
 }
+
+/* PROP 61
+______________*/ 
+
+#prop61>div[data="drugs"] {
+	position: absolute;
+   	width: 70%;
+    max-width: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+}
+
+/* PROP 66
+______________*/ 
+
+#prop66>div[data="syringe"] {		
+	position:absolute;
+	width: 50%;
+	max-width:625px;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 
 /* PROP GENERAL
 _________________*/
@@ -427,8 +452,8 @@ _________________*/
 }
 
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
-	#prop59>div:first-of-type, #prop51>div:first-of-type {width:100%;}
-	.proptitle-right, .proptitle-left {s
+	
+	.proptitle-right, .proptitle-left {
 		position: absolute;
 	    left: 50%;
 	    transform: translateX(-50%);
@@ -436,17 +461,24 @@ _________________*/
 	    top: 10%;
 	}
 
+	#prop51>div[data="school"], #prop59>div[data="capitol"] {
+		width:100%;
+	}
+
+	.hammer {
+		width: 30%;
+	    bottom: 50%;
+	}
+
+	
+	
 	#prop57>div[data="prisoner"] {
 		width: 100%;
 	    bottom: 10%;
 	    right: 50%;
-	    transform: translateX(50%);
-	}
+	    transform: translateX(50%);	}
 
-	#prop51>div:nth-of-type(2) {
-		width: 30%;
-	    bottom: 50%;
-	}
+	
 
 	#prop60>div[data="condom"]{
 		width: 100%;
@@ -454,6 +486,15 @@ _________________*/
 	    top: 50%;
 	    left: 25%;
 	}
+
+	#prop61>div[data="drugs"], #prop66>div[data="syringe"] {		
+		bottom: 25%;
+	}
+
+
+}
+
+	
 
 }
 
