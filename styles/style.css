@@ -327,6 +327,20 @@ ______________*/
     max-width: 500px;
 }
 
+/* PROP 54
+______________*/
+
+#prop54>div[data="eye"]{
+	position: absolute;
+    width: 60%;
+    max-width: 550px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20%;
+}
+
+    
+
 /* PROP 56
 ______________*/
 .smoke {
