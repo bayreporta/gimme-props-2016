@@ -198,22 +198,25 @@ function initProp(prev,s,p){
 
 	//populate resources
 	parseResources(d[0].propid);
+
+	//populate header
+	var header = retreiveHeader(d[0].propid);
 	
 	//load prop slides
-	loadPropSlides(d, p.propSelected);
+	loadPropSlides(d, p.propSelected, header);
 }
 
-function loadPropSlides(d, p){
+function loadPropSlides(d, p, h){
 	//add prop header
 	$('<div/>', {
 		'class': 'propheader'
 	}).appendTo('#container');
 
-	$('.propheader').append(gimmeProps.header[p].icon);
-	$('.propheader svg').css('fill', gimmeProps.header[p].color)
+	$('.propheader').append(h.icon);
+	$('.propheader svg').css('fill', h.color)
 
 	$('<h2/>', {
-		'text': gimmeProps.header[p].name 
+		'text': h.name 
 	}).appendTo('.propheader');
 
 
