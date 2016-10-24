@@ -102,50 +102,54 @@ _________________________________________*/
 	100% {left: 20%;bottom: 35%;}
 }
 
-/* SMOKE ANIMATIONS - PROP 53
+/* COIN ANIMATIONS - PROP 54
 _________________________________________*/
-
-/*.approved {
-	-webkit-animation-name: approved;
+#prop54 div[data="eye"] {
+	-webkit-animation-name: eye;
 	-webkit-animation-duration: 3s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-play-state: paused;
+	-webkit-animation-direction: alternate;
 
-	-ms-animation-name: approved;
-	-ms-animation-duration:3s;
+	-ms-animation-name: eye;
+	-ms-animation-duration: 3s;
 	-ms-animation-iteration-count: infinite;
 	-ms-animation-play-state: paused;
+	-ms-animation-direction: alternate;
 
-	-moz-animation-name: approved;
+	-moz-animation-name: eye;
 	-moz-animation-duration: 3s;
 	-moz-animation-iteration-count: infinite;
 	-moz-animation-play-state: paused;
+	-moz-animation-direction: alternate;
 
-	animation-name: approved;
+	animation-name: eye;
 	animation-duration: 3s;
 	animation-iteration-count: infinite;
 	animation-play-state: paused;
-}
+	animation-direction: alternate;
 
-@-webkit-keyframes approved {
-	0% {opacity:0;}
 
 }
 
-@-ms-keyframes approved {
-	0% {width: 10px;height: 10px;bottom: 145px;left: 400px;}
-	100% {width: 50px;height: 50px;bottom: 20%;left: 400px;}
+@-webkit-keyframes eye {
+	0% {opacity:1;}
+	100% {opacity:0;}
 }
 
-@-moz-keyframes approved {
-	0% {width: 10px;height: 10px;bottom: 145px;left: 400px;}
-	100% {width: 50px;height: 50px;bottom: 20%;left: 400px;}
+@-ms-keyframes eye {
+	0% {opacity:1;}
+	100% {opacity:0;}
+
+@-moz-keyframes eye {
+	0% {opacity:1;}
+	100% {opacity:0;}
 }
 
-@keyframes approved {
-	0% {width: 10px;height: 10px;bottom: 145px;left: 400px;}
-	100% {width: 50px;height: 50px;bottom: 20%;left: 400px;}
-}*/
+@keyframes eye {
+	0% {opacity:1;}
+	100% {opacity:0;}
+}
 
 
 /* SMOKE ANIMATIONS - PROP 56
