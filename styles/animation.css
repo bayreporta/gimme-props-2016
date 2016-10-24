@@ -191,3 +191,55 @@ _________________________________________*/
 	0% {width: 10px;height: 10px;bottom: 145px;left: 400px;}
 	100% {width: 50px;height: 50px;bottom: 20%;left: 400px;}
 }
+
+/* CONDOM ANIMATIONS - PROP 60
+_________________________________________*/
+#prop60>div[data="condom"] {
+	-webkit-animation-name: condom;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-play-state: paused;
+	-webkit-animation-timing-function: linear;
+
+	-ms-animation-name: condom;
+	-ms-animation-duration:2s;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-play-state: paused;
+	-ms-animation-timing-function: linear;
+
+	-moz-animation-name: condom;
+	-moz-animation-duration: 2s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-play-state: paused;
+	-moz-animation-timing-function: linear;
+
+	animation-name: condom;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-play-state: paused;
+	animation-timing-function: linear;
+}
+
+@-webkit-keyframes condom {
+	0% {transform:rotate(0deg);}
+	50% {transform:rotate(180deg);}
+	100% {transform:rotate(0deg);}
+}
+
+@-ms-keyframes condom {
+	0% {transform:rotate(0deg);}
+	50% {transform:rotate(180deg);}
+	100% {transform:rotate(0deg);}
+}
+
+@-moz-keyframes condom {
+	0% {transform:rotate(0deg);}
+	50% {transform:rotate(180deg);}
+	100% {transform:rotate(0deg);}
+}
+
+@keyframes condom {
+	0% {transform:rotate(0deg);}
+	50% {transform:rotate(180deg);}
+	100% {transform:rotate(360deg);}
+}

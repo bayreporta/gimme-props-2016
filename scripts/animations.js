@@ -1,11 +1,40 @@
 /* ANIMATION CONTROL
 --------------------------------------------------------*/
+function toggleAnimation(s){
+	if (s == '#cookie'){setTimeout(noshCookie, 1300);}
+	else if (s == '#yescookie'){dropCookie();}
+	else if (s == '#prop51'){dropHammer(true);}
+	else if (s == '#prop52'){moveCoins(true);}
+	else if (s == '#prop56'){smokin(true);}
+	else if (s == '#prop59'){rainingCoins();}
+	else if (s == '#prop60'){spinningCondom(true);}
+}
 
 function clearAnimations(){
 	dropHammer(false);
 	moveCoins(false);
 	smokin(false);
+	spinningCondom(false);
 	destroyCoins();
+}
+
+function spinningCondom(t){
+	if (t == true){
+		$('#prop60>div[data="condom"]').css({
+			'-webkit-animation-play-state': 'running',
+			'-ms-animation-play-state': 'running',
+			'-moz-animation-play-state': 'running',
+			'animation-play-state': 'running'
+		});
+	}
+	else {
+		$('#prop60 div[data="condom"]').css({
+			'-webkit-animation-play-state': 'paused',
+			'-ms-animation-play-state': 'paused',
+			'-moz-animation-play-state': 'paused',
+			'animation-play-state': 'paused'
+		});
+	}
 }
 
 function smokin(t){
@@ -101,10 +130,3 @@ function destroyCoins(){
 	$('.coins').remove();
 }
 
-function toggleAnimation(s){
-	if (s == '#cookie'){setTimeout(noshCookie, 1300);}
-	else if (s == '#yescookie'){dropCookie();}
-	else if (s == '#prop51'){dropHammer(true);}
-	else if (s == '#prop52'){moveCoins(true);}
-	else if (s == '#prop59'){rainingCoins();}
-}
