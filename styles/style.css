@@ -226,6 +226,13 @@ _________________________________________*/
 _________________________________________*/
 #about p {width:75%;margin-left:auto;margin-right:auto;}
 
+/* WHO WE ARE
+_________________________________________*/
+#whoweare>div>div {margin: 5rem 0;}
+#whoweare p {margin:0;}
+#whoweare a {text-decoration: none;color:#e2dfa4;}
+#whoweare a:hover {color:#e0db75;text-decoration: underline;}
+
 
 /* COOKIE QUESTIONS
 _________________________________________*/
