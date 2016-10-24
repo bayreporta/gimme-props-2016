@@ -484,10 +484,10 @@ _________________*/
 		width: 100%;
 	    bottom: 10%;
 	    right: 50%;
-	    transform: translateX(50%);	}
+	    transform: translateX(50%);	
+	}
 
 	
-
 	#prop60 div[data="condom"]{
 		width: 100%;
 	    max-width: 500px;
@@ -498,11 +498,6 @@ _________________*/
 	#prop58 div[data="voices"], #prop67 div[data="bag"], #prop61 div[data="drugs"], #prop65 div[data="sneaky"], #prop66 div[data="syringe"], #prop64 div[data="pot"], #prop62 div[data="deathrow"], #prop63 div[data="ammo"] {		
 		bottom: 25%;
 	}
-
-
-}
-
-	
 
 }
 

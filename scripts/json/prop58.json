@@ -75,9 +75,9 @@
     },
     {
         "propid": 58,
-        "id": 5,
+        "id": 4,
         "slideid": "prop585",
-        "maintext": "This prop may night be up your alley if you want to require English in the classroom.",
+        "maintext": "This prop may not be up your alley if you want to require English in the classroom.",
         "subtext": "Good to know.",
         "leftslide": "resources",
         "leftid": -1,
@@ -91,7 +91,7 @@
     },
     {
         "propid": 58,
-        "id": 6,
+        "id": 4,
         "slideid": "prop586",
         "maintext": "You should look into this prop more.",
         "subtext": "Maybe I will.",
@@ -105,5 +105,5 @@
         "victorycond": "default",
         "special": "victory"
     }
-] 
+]
 }

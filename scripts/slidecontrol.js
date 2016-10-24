@@ -95,18 +95,24 @@ function configurePropSlides(s, p, direct){
 			text = "OPPOSE";
 			$(s.curSlide).addClass('darkred');
 			$('#' + p.propSelected + ' .circle i').css('color', '#7b272c').removeClass('fa-question').removeClass('fa-check').addClass('fa-times');
+			gimmeProps.score[p.propSelected] = -1;
 		}
 		else if (p.points > 0){
 			text = "SUPPORT";
 			$(s.curSlide).addClass('darkgreen');
 			$('#' + p.propSelected + ' .circle i').css('color', '#2c7b27').removeClass('fa-question').removeClass('fa-times').addClass('fa-check');
+			gimmeProps.score[p.propSelected] = 1;		
 		}
 		else if (p.points == 0){
 			text = "GO EITHER WAY";
 			$(s.curSlide).addClass('darkgray');
 			$('.prop-result[data="'+ p.propSelected +'"] .circle').css('background-color', '#666666');
 			$('.prop-result[data="'+ p.propSelected +'"] .circle i').removeClass('fa-times').removeClass('fa-check').addClass('fa-question');
+			gimmeProps.score[p.propSelected] = 0;			
 		}
+
+		//update cookie if it exists
+		if (gimmeProps.data.cookie == true){setCookie();}
 
 		//adding flavor text
 		$('<h1/>',{
@@ -121,10 +127,13 @@ function configurePropSlides(s, p, direct){
 }
 
 function configureSlides(s, p, direct){
-	//grab element of current slide
-	var $prevSlide = $(s.curSlide);
-
-	//update current slide
+	//grab element of current slide, special cookie consideration
+	if (s.curSlide == '#cookie' && gimmeProps.data.cookie == true){
+		var $prevSlide = $('#yescookie');
+	}
+	else {var $prevSlide = $(s.curSlide);}
+	
+	//update current slide, but do something special for cookie
 	if (direct == 'up'){s.curSlide = $prevSlide.attr('upslide');}
 	else if (direct == 'down'){s.curSlide = $prevSlide.attr('downslide');}
 	else if (direct == 'left'){s.curSlide = $prevSlide.attr('leftslide');}
@@ -160,6 +169,12 @@ function configureSlides(s, p, direct){
 
 	//load prop data if tutorial
 	if (s.curSlide == '#tutorial'){initProp($prevSlide.attr('id'),s,p);}
+
+
+	//if accepted cookie, set cookie
+	if ($($thisSlide).attr('id') == 'yescookie'){
+		setCookie();
+	}
 }
 
 function populateSlides(d){
@@ -187,7 +202,7 @@ function resetSlidePosition(s){
 function initProp(prev,s,p){
 	//configure prop data
 	p.propSelected = prev; //lock in which prop we are exploring
-	console.log(p.propSelected)
+
 	var d = gimmeProps.data.props[p.propSelected]; //grab data for selected prop
 	p.points = 0; //reset points for quiz
 	p.propID = 0; //first slide of the prop stack

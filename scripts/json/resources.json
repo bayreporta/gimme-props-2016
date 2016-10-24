@@ -1,102 +1,119 @@
 [
     {
         "propid": 51,
+        "propselect": "prop51",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_51,_Public_School_Facility_Bonds_(2016)",
         "ballotfyi": "http://ballot.fyi/51/",
         "kqed": "http://elections.kqed.org/measure/2014/info/proposition-51"
     },
     {
         "propid": 52,
+        "propselect": "prop52",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_52,_Voter_Approval_to_Divert_Hospital_Fee_Revenue_Dedicated_to_Medi-Cal_(2016)",
         "ballotfyi": "http://ballot.fyi/52",
         "kqed": "http://elections.kqed.org/measure/2015/info/proposition-52"
     },
     {
         "propid": 53,
+        "propselect": "prop53",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_53,_Voter_Approval_Requirement_for_Revenue_Bonds_above_$2_Billion_(2016)",
         "ballotfyi": "http://ballot.fyi/53",
         "kqed": "http://elections.kqed.org/measure/2016/info/proposition-53"
     },
     {
         "propid": 54,
+        "propselect": "prop54",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_54,_Public_Display_of_Legislative_Bills_Prior_to_Vote_(2016)",
         "ballotfyi": "http://ballot.fyi/54/",
         "kqed": "http://elections.kqed.org/measure/2017/info/proposition-54"
     },
     {
         "propid": 55,
+        "propselect": "prop55",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_55,_Extension_of_the_Proposition_30_Income_Tax_Increase_(2016)",
         "ballotfyi": "http://ballot.fyi/55/",
         "kqed": "http://elections.kqed.org/measure/2018/info/proposition-55"
     },
     {
         "propid": 56,
+        "propselect": "prop56",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_56,_Tobacco_Tax_Increase_(2016)",
         "ballotfyi": "http://ballot.fyi/56/",
         "kqed": "http://elections.kqed.org/measure/2019/info/proposition-56"
     },
     {
         "propid": 57,
+        "propselect": "prop57",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_57,_Parole_for_Non-Violent_Criminals_and_Juvenile_Court_Trial_Requirements_(2016)",
         "ballotfyi": "http://ballot.fyi/57",
         "kqed": "http://elections.kqed.org/measure/2020/info/proposition-57"
     },
     {
         "propid": 58,
+        "propselect": "prop58",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_58,_Non-English_Languages_Allowed_in_Public_Education_(2016)",
         "ballotfyi": "http://ballot.fyi/58",
         "kqed": "http://elections.kqed.org/measure/2021/info/proposition-58"
     },
     {
         "propid": 59,
+        "propselect": "prop59",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_59,_Overturn_of_Citizens_United_Act_Advisory_Question_(2016)",
         "ballotfyi": "http://ballot.fyi/59/",
         "kqed": "http://elections.kqed.org/measure/2022/info/proposition-59"
     },
     {
         "propid": 60,
+        "propselect": "prop60",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_60,_Condoms_in_Pornographic_Films_(2016)",
         "ballotfyi": "http://ballot.fyi/60/",
         "kqed": "http://elections.kqed.org/measure/2023/info/proposition-60"
     },
     {
         "propid": 61,
+        "propselect": "prop61",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_61,_Drug_Price_Standards_(2016)",
         "ballotfyi": "http://ballot.fyi/61",
         "kqed": "http://elections.kqed.org/measure/2024/info/proposition-61"
     },
     {
         "propid": 62,
+        "propselect": "prop62",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_62,_Repeal_of_the_Death_Penalty_(2016)",
         "ballotfyi": "http://ballot.fyi/62-66/",
         "kqed": "http://elections.kqed.org/measure/2025/info/proposition-62"
     },
     {
         "propid": 63,
+        "propselect": "prop63",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_63,_Background_Checks_for_Ammunition_Purchases_and_Large-Capacity_Ammunition_Magazine_Ban_(2016)",
         "ballotfyi": "http://ballot.fyi/63/",
         "kqed": "http://elections.kqed.org/measure/2026/info/proposition-63"
     },
     {
         "propid": 64,
+        "propselect": "prop64",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_64,_Marijuana_Legalization_(2016)",
         "ballotfyi": "http://ballot.fyi/64/",
         "kqed": "http://elections.kqed.org/measure/2027/info/proposition-64"
     },
     {
         "propid": 65,
+        "propselect": "prop65",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_65,_Dedication_of_Revenue_from_Disposable_Bag_Sales_to_Wildlife_Conservation_Fund_(2016)",
         "ballotfyi": "http://ballot.fyi/65-67/",
         "kqed": "http://elections.kqed.org/measure/2028/info/proposition-65"
     },
     {
         "propid": 66,
+        "propselect": "prop66",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_66,_Death_Penalty_Procedures_(2016)",
         "ballotfyi": "http://ballot.fyi/62-66/",
         "kqed": "http://elections.kqed.org/measure/2029/info/proposition-66"
     },
     {
         "propid": 67,
+        "propselect": "prop67",
         "ballotpedia": "https://ballotpedia.org/California_Proposition_67,_Plastic_Bag_Ban_Veto_Referendum_(2016)",
         "ballotfyi": "http://ballot.fyi/65-67/",
         "kqed": "http://elections.kqed.org/measure/2030/info/proposition-67"

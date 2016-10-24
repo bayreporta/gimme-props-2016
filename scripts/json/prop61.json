@@ -1,5 +1,6 @@
 {
-    "prop61": [
+    "prop61": 
+[
     {
         "propid": 61,
         "id": 0,
@@ -115,7 +116,7 @@
     },
     {
         "propid": 61,
-        "id": 8,
+        "id": 7,
         "slideid": "prop618",
         "maintext": "Looks like you want to push back against this attempt to maniuplate drug prices.",
         "subtext": "Free market will prevail.",
@@ -131,7 +132,7 @@
     },
     {
         "propid": 61,
-        "id": 9,
+        "id": 7,
         "slideid": "prop619",
         "maintext": "You may need to do more homework on this.",
         "subtext": "I hate homework.",

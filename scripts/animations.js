@@ -101,6 +101,11 @@ function noshCookie(){
 		$('#cookie>div:eq(1)').animate({top:2000},200, function(){
 			$('#cookie>div:eq(2)').fadeIn(1);
 			gimmeProps.slides.lockSlide = false;
+
+			//test for cookie, if true load cookie and go to another slide
+			var cookieTest = getCookie();
+			if (cookieTest == true){returnCustomer();}
+
 			$(this).remove();
 		});
 	},500);

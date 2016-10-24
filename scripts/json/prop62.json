@@ -132,7 +132,7 @@
     },
     {
         "propid": 62,
-        "id": 9,
+        "id": 8,
         "slideid": "prop629",
         "maintext": "Call me Mr. Quo, Status Quo. ",
         "subtext": "Moving on...",
@@ -148,7 +148,7 @@
     },
     {
         "propid": 62,
-        "id": 10,
+        "id": 8,
         "slideid": "prop6210",
         "maintext": "Time to put the death penalty to rest.",
         "subtext": "Long overdue.",
@@ -162,5 +162,5 @@
         "victorycond": "support",
         "special": "victory"
     }
-] 
+]
 }

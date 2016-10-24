@@ -9,39 +9,82 @@ var gimmeProps = {
 		returning: false
 	},
 	slides:{
-		curSlide: '#nocookie',
+		curSlide: '#intro',
 		upSlide: null,
 		downSlide: null,
 		leftSlide: null,
-		rightSlide: '#proplist',
+		rightSlide: '#about',
 		lockSlide: false
 	},
 	data:{
+		cookie: false,
 		props: new Object,
 		resources: new Array,
 		header: new Array	
+	},
+	score:{
+		prop51:null,
+		prop52:null,
+		prop53:null,
+		prop54:null,
+		prop55:null,
+		prop56:null,
+		prop57:null,
+		prop58:null,
+		prop59:null,
+		prop60:null,
+		prop61:null,
+		prop62:null,
+		prop63:null,
+		prop64:null,
+		prop65:null,
+		prop66:null,
+		prop67:null
 	}
-
 }
 
 /* COOKIE CONTROL
 --------------------------------------------------------*/
-function createCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
+function setCookie(){
+	Cookies.set('gimme props', gimmeProps.score, {expires: 30});
+	gimmeProps.data.cookie = true;
 }
 
-function grabCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-    }
-    return "";
+function getCookie(){
+	var cookie = Cookies.getJSON('gimme props');
+
+	if (cookie != undefined){
+		gimmeProps.data.cookie = true;
+		gimmeProps.score = cookie;
+		return true;
+	}
+}
+
+function returnCustomer(){
+	//change cookie slide text
+	$('#cookie h1').text('You haz cookie!');
+	$('#cookie p').text('');
+	$('#cookie h2').text('Looks like this isn\'t your first prop rodeo. We\'ve loaded your previous progress. Have a ball.');
+
+	//change next slides
+	gimmeProps.slides.curSlide = '#cookie';
+	gimmeProps.slides.leftSlide = '#proplist';
+	gimmeProps.slides.rightSlide = '#proplist';
+
+	//update prop positions on list screen
+	for (var i = 0 ; i < gimmeProps.data.resources.length; i++){
+		if (gimmeProps.score[gimmeProps.data.resources[i].propselect] == null){continue;}
+		else if (gimmeProps.score[gimmeProps.data.resources[i].propselect] == -1){
+			$('#prop' + gimmeProps.data.resources[i].propid + ' .circle i').css('color', '#7b272c').removeClass('fa-question').removeClass('fa-check').addClass('fa-times');
+		}
+		else if (gimmeProps.score[gimmeProps.data.resources[i].propselect] == 0){
+			$('#prop' + gimmeProps.data.resources[i].propid + ' .circle i').css('color', '#666').removeClass('fa-times').removeClass('fa-check').addClass('fa-question');
+		}
+		else if (gimmeProps.score[gimmeProps.data.resources[i].propselect] == 1){
+			$('#prop' + gimmeProps.data.resources[i].propid + ' .circle i').css('color', '#2c7b27').removeClass('fa-question').removeClass('fa-times').addClass('fa-check');
+		}
+	}
+
 }
 
 /* INITIALIZATION CONTROL

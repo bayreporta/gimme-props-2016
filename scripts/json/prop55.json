@@ -6,7 +6,7 @@
         "slideid": "prop550",
         "maintext": "Did you vote \"yes\" on Prop 30 in 2012?",
         "lefttext": "Sure did.",
-        "righttext": "I did not.",
+        "righttext": "I did not. OR...I didn't know.",
         "leftslide": "prop551",
         "leftid": 1,
         "rightslide": "prop552",
@@ -148,7 +148,7 @@
     },
     {
         "propid": 55,
-        "id": 11,
+        "id": 10,
         "slideid": "prop5511",
         "maintext": "I don't think this is the prop you were looking for.",
         "subtext": "Me neither.",
@@ -164,7 +164,7 @@
     },
     {
         "propid": 55,
-        "id": 12,
+        "id": 10,
         "slideid": "prop5512",
         "maintext": "I sense conflict in you. Read the resources, I suggest.",
         "subtext": "Grammar plz.",
