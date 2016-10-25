@@ -1,5 +1,5 @@
 {
-    "prop57":[
+    "prop57": [
     {
         "propid": 57,
         "id": 0,
@@ -48,7 +48,7 @@
         "slideid": "prop573",
         "maintext": "Do you think good behavior and education are good reasons to be released from prison early, or do you think crimes will be committed after release?",
         "lefttext": "Rehabilitation should be rewarded.",
-        "righttext": "More crimes will be committed by ex-con.",
+        "righttext": "More crimes will be committed by ex-cons.",
         "leftslide": "prop574",
         "leftid": 4,
         "rightslide": "prop574",
@@ -60,7 +60,7 @@
         "propid": 57,
         "id": 4,
         "slideid": "prop574",
-        "maintext": "So the feds say we have to reducethe  prison popultation here. Is releasing non-violent offenders a good starting place?",
+        "maintext": "So the feds say we have to reduce the prison population here. Is releasing non-violent offenders a good starting place?",
         "lefttext": "Makes sense.",
         "righttext": "Nope, sets a bad precedent.",
         "leftslide": "prop575",

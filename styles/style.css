@@ -246,6 +246,8 @@ _________________________________________*/
 
 #yescookie>div:last-of-type, #nocookie>div:last-of-type {top:115%;}
 
+#yescookie .abscenter:first-of-type, #nocookie .abscenter:first-of-type {top:20%;}
+
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
 	.cookie {width:70%;}
 }
@@ -586,7 +588,7 @@ _________________________________________*/
 	.propquestion h1:first-of-type {
 		text-align: center;
     	font-size: 10rem;
-    	margin: 10rem 0;
+    	margin:0;
 	}
 
 	.propquestion h1:last-of-type {
@@ -699,5 +701,82 @@ _________________________________________*/
 		width:100px;
 		height:100px;
 		top:20px;
+	}
+}
+
+/* MAC LAPTOP NON-RETINA AND RETINA TWEAKS */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
+	.propchoice {
+		bottom:12%;
+	}
+
+	#prop52 div[data="hospital"] {
+		max-width: 420px;
+	}
+
+	#prop52 div[data="capitol"] {
+		max-width: 380px;
+	}
+
+	.approved, .denied {
+		max-width:400px;
+		bottom:25%;
+	}
+
+	#prop54 div[data="eye"] {
+		max-width: 400px;
+		bottom:10%;
+	}
+
+	#prop57 div[data="prisoner"] {
+		max-width: 500px;
+		right:10%;
+	}
+
+	#prop58 div[data="voices"], #prop61 div[data="drugs"], #prop65 div[data="sneaky"], #prop66 div[data="syringe"], #prop64 div[data="pot"], #prop62 div[data="deathrow"], #prop63 div[data="ammo"] {
+		max-width: 500px;
+		bottom:5%;
+	}
+
+	#prop67 div[data="bag"] {
+		max-width: 300px;
+	}
+}
+
+@media screen and (min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) { 
+	.propchoice {
+		bottom:12%;
+	}
+
+	#prop52 div[data="hospital"] {
+		max-width: 420px;
+	}
+
+	#prop52 div[data="capitol"] {
+		max-width: 380px;
+	}
+
+	.approved, .denied {
+		max-width:400px;
+		bottom:25%;
+	}
+
+	#prop54 div[data="eye"] {
+		max-width: 400px;
+		bottom:10%;
+	}
+
+	#prop57 div[data="prisoner"] {
+		max-width: 500px;
+		right:10%;
+	}
+
+	#prop58 div[data="voices"], #prop61 div[data="drugs"], #prop65 div[data="sneaky"], #prop66 div[data="syringe"], #prop64 div[data="pot"], #prop62 div[data="deathrow"], #prop63 div[data="ammo"] {
+		max-width: 500px;
+		bottom:5%;
+	}
+
+	#prop67 div[data="bag"] {
+		max-width: 300px;
 	}
 }
