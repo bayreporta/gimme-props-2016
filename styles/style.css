@@ -233,6 +233,13 @@ _________________________________________*/
 #whoweare a {text-decoration: none;color:#e2dfa4;}
 #whoweare a:hover {color:#e0db75;text-decoration: underline;}
 
+#whoweare .bio>div:first-of-type {
+	float:left;
+	margin-right: 30px;
+}
+
+#whoweare .bio img {width:150px;}
+
 
 /* COOKIE QUESTIONS
 _________________________________________*/
