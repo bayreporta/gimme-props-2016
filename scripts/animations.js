@@ -11,6 +11,8 @@ function toggleAnimation(s){
 	else if (s == '#prop59'){rainingCoins('#prop59');}
 	else if (s == '#prop60'){animationControl(true, '#prop60 div[data="condom"]');}
 	else if (s == '#prop64'){animationControl(true, '#prop64 div[data="pot"] svg');}
+	else if (s == '#prop66'){animationControl(true, '.drip');}
+	else if (s == '#prop67'){animationControl(true, '#prop67 div[data="bag"]');}
 }
 
 function clearAnimations(){
@@ -20,6 +22,8 @@ function clearAnimations(){
 	animationControl(false, '.smoke');
 	animationControl(false, '#prop60 div[data="condom"]');
 	animationControl(false, '#prop64 div[data="pot"] svg');
+	animationControl(false, '#prop66 div[data="syringe"] svg>path:eq(0)');
+	animationControl(false, '#prop67 div[data="bag"]');
 	destroyCoins();
 }
 

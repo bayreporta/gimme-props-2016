@@ -216,7 +216,7 @@
         "upid": "#prop65",
         "downid": "#prop67",
         "lockslide": false,
-        "animation": false,
+        "animation": true,
         "clearanimation": true,
         "tutorial": true
     },
@@ -226,7 +226,7 @@
         "upid": "#prop66",
         "downid": "#prop51",
         "lockslide": false,
-        "animation": false,
+        "animation": true,
         "clearanimation": true,
         "tutorial": true
     }

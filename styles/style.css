@@ -132,7 +132,7 @@ _________________________________________*/
     position: absolute;
     opacity: 0;
     width: 50px;
-    z-index: 100;
+    z-index: 1001;
 }
 .rightcaret {
 	right: 0;
