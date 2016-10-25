@@ -33,7 +33,7 @@
         "id": 2,
         "slideid": "prop522",
         "maintext": "So you like Medi-Cal (but do you like-like Medi-Cal)!? Do you need to get to know it better?",
-        "lefttext": "No, just keep saving grammies. ",
+        "lefttext": "No, just keep saving grammys. ",
         "righttext": "Hmm...I need more info.",
         "leftslide": "prop524",
         "leftid": 3,
@@ -60,7 +60,7 @@
         "propid": 52,
         "id": 4,
         "slideid": "prop524",
-        "maintext": "You cool with making Medi-Cal secure through a permanant tax on hospitals? ",
+        "maintext": "You cool with making Medi-Cal secure through a permanent tax on hospitals? ",
         "lefttext": "Yeah totally!",
         "righttext": "Forever ever? Nope.",
         "leftslide": "prop527",
@@ -74,7 +74,7 @@
         "propid": 52,
         "id": 5,
         "slideid": "prop525",
-        "maintext": "Right now the tax scheme is termporary, but this ballot prop could make the system permanant.  ",
+        "maintext": "Right now the tax scheme is temporary, but this ballot prop could make the system permanent.  ",
         "lefttext": "Sounds legit.",
         "righttext": "That's shady. Not sure I like it.",
         "leftslide": "prop526",
@@ -175,5 +175,5 @@
         "leftpoints": 0,
         "rightpoints": 0
     }
-]
+] 
 }

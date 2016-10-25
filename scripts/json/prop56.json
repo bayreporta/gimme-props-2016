@@ -1,5 +1,5 @@
 {
-    "prop56": [
+    "prop56":  [
     {
         "propid": 56,
         "id": 0,
@@ -32,7 +32,7 @@
         "propid": 56,
         "id": 2,
         "slideid": "prop562",
-        "maintext": "You a vaper? You know, like e-cigs?",
+        "maintext": "You a vapor? You know, like e-cigs?",
         "lefttext": "Yup, got hella Ohms.",
         "righttext": "Nope.",
         "leftslide": "prop563",

@@ -29,7 +29,6 @@ function clearAnimations(){
 
 function animationControl(t,e){
 	if (t == true){
-		console.log(e)
 		$(e).css({
 			'-webkit-animation-play-state': 'running',
 			'-ms-animation-play-state': 'running',

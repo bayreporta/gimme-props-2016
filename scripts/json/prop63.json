@@ -1,5 +1,5 @@
 {
-    "prop63":[
+    "prop63": [
     {
         "propid": 63,
         "id": 0,
@@ -131,7 +131,7 @@
         "propid": 63,
         "id": 9,
         "slideid": "prop639",
-        "maintext": "And finally, do you support settign up a court process to take guns away from prohibited people, like ex-cons and those deemed mentally unfit to own one?",
+        "maintext": "And finally, do you support setting up a court process to take guns away from prohibited people, like ex-cons and those deemed mentally unfit to own one?",
         "lefttext": "Yup.",
         "righttext": "Nope.",
         "leftslide": "prop640",
@@ -177,7 +177,7 @@
         "propid": 63,
         "id": 10,
         "slideid": "prop642",
-        "maintext": "You're swiming in the gray zone. ",
+        "maintext": "You're swimming in the gray zone. ",
         "subtext": "I need to learn more about this.",
         "leftslide": "resources",
         "leftid": -1,
@@ -189,5 +189,5 @@
         "victorycond": "default",
         "special": "victory"
     }
-]
+]      
 }

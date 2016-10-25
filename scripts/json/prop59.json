@@ -1,5 +1,5 @@
 {
-    "prop59":[
+    "prop59": [
     {
         "propid": 59,
         "id": 0,
@@ -133,7 +133,7 @@
         "propid": 59,
         "id": 9,
         "slideid": "prop599",
-        "maintext": "\"Social welfare\" non-profits that don't have to disclosure their donors?",
+        "maintext": "\"Social welfare\" nonprofits that don't have to disclosure their donors?",
         "lefttext": "OK.",
         "righttext": "No thanks.",
         "leftslide": "prop5910",
@@ -188,5 +188,5 @@
         "victoryslide": true,
         "victorycond": "default"
     }
-]
+]    
 }

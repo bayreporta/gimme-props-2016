@@ -1,5 +1,5 @@
 {
-    "prop55": [
+    "prop55":  [
     {
         "propid": 55,
         "id": 0,
@@ -74,7 +74,7 @@
         "propid": 55,
         "id": 5,
         "slideid": "prop555",
-        "maintext": "In some years, up to $2 billion will go to healthcare programs.",
+        "maintext": "In some years, up to $2 billion will go to health care programs.",
         "lefttext": "Sounds good.",
         "righttext": "Don't like that.",
         "leftpoints": 1,
@@ -95,7 +95,7 @@
         "id": 7,
         "slideid": "prop557",
         "maintext": "Oh, and this time the taxes would last until 2030.",
-        "lefttext": "Whoa! That's way to long.",
+        "lefttext": "Whoa! That's way too long.",
         "righttext": "Good.",
         "leftpoints": -1,
         "rightpoints": 1

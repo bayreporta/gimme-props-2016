@@ -1,6 +1,5 @@
 {
-    "prop61": 
-[
+    "prop61": [
     {
         "propid": 61,
         "id": 0,
@@ -118,7 +117,7 @@
         "propid": 61,
         "id": 7,
         "slideid": "prop618",
-        "maintext": "Looks like you want to push back against this attempt to maniuplate drug prices.",
+        "maintext": "Looks like you want to push back against this attempt to manipulate drug prices.",
         "subtext": "Free market will prevail.",
         "leftslide": "resources",
         "leftid": -1,
@@ -146,5 +145,5 @@
         "victorycond": "default",
         "special": "victory"
     }
-]
+]    
 }

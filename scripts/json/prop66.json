@@ -1,12 +1,12 @@
 {
-    "prop66":[
+    "prop66": [
     {
         "propid": 66,
         "id": 0,
         "slideid": "prop660",
         "maintext": "Do you support Prop 62 or fundamentally oppose the death penalty (DP)?",
         "lefttext": "Absolutely. Scrap it.",
-        "righttext": "Not sure.",
+        "righttext": "No- I supported the repeal (prop 62)",
         "leftslide": "prop661",
         "leftid": 1,
         "rightslide": "prop662",
@@ -161,5 +161,5 @@
         "victorycond": "default",
         "special": "victory"
     }
-]
+]         
 }

@@ -204,7 +204,7 @@
         "propid": 64,
         "id": 13,
         "slideid": "prop6414",
-        "maintext": "Either this prop is too bueauocratic for you, or you just plain as pumpkin prefer pot prohibition. ",
+        "maintext": "Either this prop is too bureaucratic for you, or you just plain as pumpkin prefer pot prohibition. ",
         "subtext": "Either way, you do what you.",
         "leftslide": "resources",
         "leftid": -1,
@@ -232,5 +232,5 @@
         "victorycond": "default",
         "special": "victory"
     }
-] 
+]       
 }

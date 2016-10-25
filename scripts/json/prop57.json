@@ -6,7 +6,7 @@
         "slideid": "prop570",
         "maintext": "Do convicted non-violent felons deserve a break?",
         "lefttext": "Yes! ",
-        "righttext": "No, crime desrerves punishment.",
+        "righttext": "No, crime deserves punishment.",
         "leftslide": "prop571",
         "leftid": 1,
         "rightslide": "prop571",
@@ -32,7 +32,7 @@
         "propid": 57,
         "id": 2,
         "slideid": "prop572",
-        "maintext": "Do longer jail sentences prevent worse cirmes?",
+        "maintext": "Do longer jail sentences prevent worse crimes?",
         "lefttext": "Yes, and it keeps society in order.",
         "righttext": "Nope, sentencing is not crime prevention.",
         "leftslide": "prop573",
@@ -146,5 +146,5 @@
         "victorycond": "default",
         "special": "victory"
     }
-]
+]  
 }

@@ -4,7 +4,7 @@
         "propid": 65,
         "id": 0,
         "slideid": "prop650",
-        "maintext": "CA banned stores from using plastic carryout bags. Your thoughts?",
+        "maintext": "The CA legislature banned stores from using plastic carryout bags (ban is on hold, pending Prop 67). Your thoughts?",
         "lefttext": "Totally support it.",
         "righttext": "Oppose government regulation.",
         "leftslide": "prop651",
@@ -18,7 +18,7 @@
         "propid": 65,
         "id": 1,
         "slideid": "prop651",
-        "maintext": "It should be noted the plastic bag industry is funding this, along with Prop 67, which seeks to overturn plastic bag ban.",
+        "maintext": "It should be noted the plastic bag industry is funding this, along with Prop 67, which seeks to overturn the plastic bag ban.",
         "lefttext": "It's their right to do so.",
         "righttext": "Hmm, sounds shady.",
         "leftslide": "prop652",
@@ -151,5 +151,5 @@
         "maintext": "And there is language in this prop that could overturn the ban even if voters approve Prop 67.",
         "lefttext": "Oh that's BS. Screw this prop."
     }
-]
+]        
 }

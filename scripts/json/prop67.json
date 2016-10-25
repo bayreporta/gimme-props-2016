@@ -18,8 +18,8 @@
         "propid": 67,
         "id": 1,
         "slideid": "prop671",
-        "maintext": "Don't buy the veto hype. Uphold the ban.",
-        "subtext": "Nice try plastic bag industry.",
+        "maintext": "Affirmative. Plastic-bag-ban ratification will commence with your approval.    ",
+        "subtext": "Sorry Plastic-industry...",
         "leftslide": "resources",
         "leftid": -1,
         "rightslide": "resources",
@@ -33,9 +33,9 @@
         "propid": 67,
         "id": 2,
         "slideid": "prop672",
-        "maintext": "So, CA banned stores from using plastic carryout bags. Plastic bag industry is trying to veto that with this prop.",
+        "maintext": "In 2015 the CA legislature passed a ban on single-use plastic carryout bags. Then the Plastic bag industry launched this referendum Prop in an effort to overturn the ban. ",
         "lefttext": "Tell me more.",
-        "righttext": "Look, I totally oppose this ban. No debate.",
+        "righttext": "I like my single-use plastic bags, what can I say?",
         "leftslide": "prop674",
         "leftid": 4,
         "rightslide": "prop673",
@@ -47,7 +47,7 @@
         "propid": 67,
         "id": 3,
         "slideid": "prop673",
-        "maintext": "Looks like you're on Team Plastic. Ban should go.",
+        "maintext": "Looks like you're on Team Plastic, team convenient. Ban should go.",
         "subtext": "Damn straight.",
         "leftslide": "resources",
         "leftid": -1,
@@ -118,7 +118,7 @@
         "propid": 67,
         "id": 8,
         "slideid": "prop678",
-        "maintext": "Plastic bags will live another day! BTW, you may want to look at Prop 65.",
+        "maintext": "Plastic bags will live another day! Note: Prop 65 is related (and would overturn any bag ban) so you would most likley support 65 instead of this one.",
         "subtext": "No bans for you today. ",
         "leftslide": "resources",
         "leftid": -1,
@@ -134,7 +134,7 @@
         "propid": 67,
         "id": 8,
         "slideid": "prop679",
-        "maintext": "Enviornment 1. Plastic Industry 0. Oh, don't forget about Prop 65 too.",
+        "maintext": "Environment 1. Plastic Industry 0. Oh, don't forget about Prop 65 too.",
         "subtext": "Baaaan the baaaag!",
         "leftslide": "resources",
         "leftid": -1,
@@ -162,5 +162,5 @@
         "victorycond": "default",
         "special": "victory"
     }
-]
+]          
 }

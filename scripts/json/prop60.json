@@ -1,5 +1,5 @@
 {
-    "prop60":[
+    "prop60": [
     {
         "propid": 60,
         "id": 0,
@@ -18,8 +18,8 @@
         "propid": 60,
         "id": 1,
         "slideid": "prop601",
-        "maintext": "What if they are married or consenting partners making their own porn?",
-        "lefttext": "If they are in the industry, yes.",
+        "maintext": "What if they are amateurs, including married couples, making their own porn films?",
+        "lefttext": "Uhh- Guess so. It'll be the law.",
         "righttext": "It should be their choice.",
         "leftslide": "prop602",
         "leftid": 2,
@@ -118,7 +118,7 @@
         "propid": 60,
         "id": 7,
         "slideid": "prop608",
-        "maintext": "You are in good company: the Dems,  GOP, and all the porn industry (quite a coaltion!) oppose too.",
+        "maintext": "You are in good company: the Dems,  GOP, and all the porn industry (quite a coalition!) oppose too.",
         "subtext": "Dems and GOP? Wowzer.",
         "leftslide": "resources",
         "leftid": -1,
@@ -146,5 +146,5 @@
         "victorycond": "default",
         "special": "victory"
     }
-]
+]   
 }
