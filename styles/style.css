@@ -161,6 +161,8 @@ _________________________________________*/
 @media only screen and (min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2){
 	.abscenter {width: 90%;}
 
+	.nomobile {display:none;}
+
 	.rightcaret, .leftcaret, .upcaret, .downcaret, .propcaretleft, .propcaretright {
 	    width: 140px;
 	}
@@ -617,8 +619,8 @@ _________________________________________*/
 
 	.propchoice h3:first-of-type {left:0;}
 	.propchoice h3:nth-of-type(2) {
-		left: 50%;
-   		transform: translateX(-50%);
+		width: 100%;
+    	text-align: center;
    	}
 	.propchoice h3:last-of-type {right:0;}
 
@@ -637,6 +639,14 @@ _________________________________________*/
 	.propchoice {
 	    bottom: 9%;	    
 	}
+
+	.propchoice h3:first-of-type,. .propchoice h3:last-of-type {
+		width: 49%;
+    	top: -20;
+	}
+	.propchoice h3:last-of-type {text-align: right;}
+
+
 }
 
 /* RESULTS CLASSES
@@ -753,6 +763,14 @@ _________________________________________*/
 @media screen and (min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) { 
 	.propchoice {
 		bottom:12%;
+	}
+
+	.propheader {
+		top:-20px;
+	}
+
+	.propheader h2 {
+	    font-size: 2rem;
 	}
 
 	#prop52 div[data="hospital"] {
