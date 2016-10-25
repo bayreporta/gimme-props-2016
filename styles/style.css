@@ -59,7 +59,7 @@ h3 {
 	    font-style: italic;
 	    display:none;
 	    text-align: center;
-    	top: 40px;
+    	top: 35px;
 	}
 
 	#menu>div:first-of-type i, #menu>div:last-of-type i {color: #ddd;}
@@ -457,14 +457,8 @@ ________________________________*/
 
 /* PROP GENERAL
 _________________*/
-	
-.proptitle-right {
-	position: absolute;
-    right: 2%;
-    top: 10%;
-}
 
-.proptitle-left {
+.proptitle-left, .proptitle-right {
 	position: absolute;
     left: 2%;
     top: 10%;
@@ -495,7 +489,7 @@ _________________*/
 
 	.hammer {
 		width: 30%;
-	    bottom: 50%;
+	    bottom: 30%;
 	}
 
 	#prop57 div[data="prisoner"] {
@@ -789,6 +783,10 @@ _________________________________________*/
 	#prop54 div[data="eye"] {
 		max-width: 400px;
 		bottom:10%;
+	}
+
+	#prop55 div[data="school"]{
+		max-width:400px;
 	}
 
 	#prop57 div[data="prisoner"] {
