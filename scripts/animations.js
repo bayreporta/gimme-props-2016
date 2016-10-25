@@ -5,6 +5,7 @@ function toggleAnimation(s){
 	else if (s == '#yescookie'){dropCookie();}
 	else if (s == '#prop51'){animationControl(true, '.hammer');}
 	else if (s == '#prop52'){animationControl(true, '#prop52 div[data="coin"]');}
+	else if (s == '#prop53'){animationControl(true, '.approved');animationControl(true, '.denied');}
 	else if (s == '#prop54'){animationControl(true, '#prop54 div[data="eye"]');}
 	else if (s == '#prop55'){rainingCoins('#prop55');}	
 	else if (s == '#prop56'){animationControl(true, '.smoke');}
@@ -19,6 +20,8 @@ function clearAnimations(){
 	animationControl(false, '#prop54 div[data="eye"]');
 	animationControl(false, '.hammer');
 	animationControl(false, '#prop52 div[data="coin"]');
+	animationControl(false, '.approved');
+	animationControl(false, '.denied');
 	animationControl(false, '.smoke');
 	animationControl(false, '#prop60 div[data="condom"]');
 	animationControl(false, '#prop64 div[data="pot"] svg');

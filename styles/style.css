@@ -640,7 +640,7 @@ _________________________________________*/
 	    bottom: 9%;	    
 	}
 
-	.propchoice h3:first-of-type,. .propchoice h3:last-of-type {
+	.propchoice h3:first-of-type, .propchoice h3:last-of-type {
 		width: 49%;
     	top: -20;
 	}
