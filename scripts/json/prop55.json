@@ -77,6 +77,10 @@
         "maintext": "In some years, up to $2 billion will go to health care programs.",
         "lefttext": "Sounds good.",
         "righttext": "Don't like that.",
+        "leftslide": "prop556",
+        "leftid": 6,
+        "rightslide": "prop556",
+        "rightid": 6,
         "leftpoints": 1,
         "rightpoints": -1
     },
@@ -87,6 +91,10 @@
         "maintext": "But overall, the tax cash goes to K-12 and community colleges.",
         "lefttext": "Totally cool.",
         "righttext": "Don't support that.",
+        "leftslide": "prop557",
+        "leftid": 7,
+        "rightslide": "prop557",
+        "rightid": 7,
         "leftpoints": 1,
         "rightpoints": -1
     },
@@ -97,6 +105,10 @@
         "maintext": "Oh, and this time the taxes would last until 2030.",
         "lefttext": "Whoa! That's way too long.",
         "righttext": "Good.",
+        "leftslide": "prop5510",
+        "leftid": 10,
+        "rightslide": "prop5510",
+        "rightid": 10,
         "leftpoints": -1,
         "rightpoints": 1
     },

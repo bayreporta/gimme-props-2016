@@ -144,7 +144,7 @@
     {
         "propid": 63,
         "id": 10,
-        "slideid": "prop640",
+        "slideid": "prop6310",
         "maintext": "Regulate that shit.",
         "subtext": "Gun reform now. ",
         "leftslide": "resources",
@@ -160,7 +160,7 @@
     {
         "propid": 63,
         "id": 10,
-        "slideid": "prop641",
+        "slideid": "prop6311",
         "maintext": "Push back against the #2A assault.",
         "subtext": "It's out of control.",
         "leftslide": "resources",
@@ -176,7 +176,7 @@
     {
         "propid": 63,
         "id": 10,
-        "slideid": "prop642",
+        "slideid": "prop6312",
         "maintext": "You're swimming in the gray zone. ",
         "subtext": "I need to learn more about this.",
         "leftslide": "resources",
@@ -189,5 +189,5 @@
         "victorycond": "default",
         "special": "victory"
     }
-]      
+]
 }
