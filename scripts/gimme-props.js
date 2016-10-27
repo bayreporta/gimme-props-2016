@@ -1,4 +1,4 @@
-/* GLOBAL VARIABLES
+/* GLOBAL VARIABLES - GIMME PROPS 2016
 --------------------------------------------------------*/
 var gimmeProps = {
 	propstate:{
@@ -17,29 +17,13 @@ var gimmeProps = {
 		lockSlide: false
 	},
 	data:{
+		master: new Array,
 		cookie: false,
 		props: new Object,
 		resources: new Array,
 		header: new Array	
 	},
 	score:{
-		prop51:null,
-		prop52:null,
-		prop53:null,
-		prop54:null,
-		prop55:null,
-		prop56:null,
-		prop57:null,
-		prop58:null,
-		prop59:null,
-		prop60:null,
-		prop61:null,
-		prop62:null,
-		prop63:null,
-		prop64:null,
-		prop65:null,
-		prop66:null,
-		prop67:null
 	}
 }
 
@@ -317,77 +301,24 @@ function initMenu(){
 	});
 }
 
+function initData(id){
+	$.getJSON('scripts/json/' + id + '.json', function(d){
+		gimmeProps.data.props[id] = d[id];
+		gimmeProps.score[id] = null;
+	});
+}
+
 function initJSON(){
+	$.getJSON('scripts/json/master.json', function(data){
+		gimmeProps.data.master = data;
+
+		for (var i = 0 ; i < gimmeProps.data.master.length; i++){
+			initData(data[i].slideid);
+		}
+	});
+
 	$.getJSON('scripts/json/slidecontrol.json', function(data){
 		populateSlides(data);
-	});
-
-	$.getJSON('scripts/json/prop51.json', function(data){
-		gimmeProps.data.props['prop51'] = data.prop51;
-	});
-
-	$.getJSON('scripts/json/prop52.json', function(data){
-		gimmeProps.data.props['prop52'] = data.prop52;
-	});
-
-	$.getJSON('scripts/json/prop53.json', function(data){
-		gimmeProps.data.props['prop53'] = data.prop53;
-	});
-
-	$.getJSON('scripts/json/prop54.json', function(data){
-		gimmeProps.data.props['prop54'] = data.prop54;
-	});
-
-	$.getJSON('scripts/json/prop55.json', function(data){
-		gimmeProps.data.props['prop55'] = data.prop55;
-	});
-
-	$.getJSON('scripts/json/prop56.json', function(data){
-		gimmeProps.data.props['prop56'] = data.prop56;
-	});
-
-	$.getJSON('scripts/json/prop57.json', function(data){
-		gimmeProps.data.props['prop57'] = data.prop57;
-	});
-
-	$.getJSON('scripts/json/prop58.json', function(data){
-		gimmeProps.data.props['prop58'] = data.prop58;
-	});
-
-	$.getJSON('scripts/json/prop59.json', function(data){
-		gimmeProps.data.props['prop59'] = data.prop59;
-	});
-
-	$.getJSON('scripts/json/prop60.json', function(data){
-		gimmeProps.data.props['prop60'] = data.prop60;
-	});
-
-	$.getJSON('scripts/json/prop61.json', function(data){
-		gimmeProps.data.props['prop61'] = data.prop61;
-	});
-
-	$.getJSON('scripts/json/prop62.json', function(data){
-		gimmeProps.data.props['prop62'] = data.prop62;
-	});
-
-	$.getJSON('scripts/json/prop63.json', function(data){
-		gimmeProps.data.props['prop63'] = data.prop63;
-	});
-
-	$.getJSON('scripts/json/prop64.json', function(data){
-		gimmeProps.data.props['prop64'] = data.prop64;
-	});
-
-	$.getJSON('scripts/json/prop65.json', function(data){
-		gimmeProps.data.props['prop65'] = data.prop65;
-	});
-
-	$.getJSON('scripts/json/prop66.json', function(data){
-		gimmeProps.data.props['prop66'] = data.prop66;
-	});
-
-	$.getJSON('scripts/json/prop67.json', function(data){
-		gimmeProps.data.props['prop67'] = data.prop67;
 	});
 
 	$.getJSON('scripts/json/resources.json', function(data){
