@@ -49,7 +49,7 @@
         "slideid": "prop583",
         "maintext": "How about banning bilingual programs in the classroom?",
         "lefttext": "English only.",
-        "righttext": "Totally support that.",
+        "righttext": "No thanks.",
         "leftslide": "prop584",
         "leftid": 4,
         "rightslide": "prop584",
@@ -105,5 +105,5 @@
         "victorycond": "default",
         "special": "victory"
     }
-]   
+]
 }

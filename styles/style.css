@@ -722,6 +722,14 @@ _________________________________________*/
 		bottom:12%;
 	}
 
+	.propheader {
+		top:-20px;
+	}
+
+	.propheader h2 {
+	    font-size: 2rem;
+	}
+
 	#prop52 div[data="hospital"] {
 		max-width: 420px;
 	}
