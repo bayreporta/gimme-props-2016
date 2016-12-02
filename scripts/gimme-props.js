@@ -17,15 +17,14 @@ var gimmeProps = {
 		lockSlide: false
 	},
 	data:{
-		master: new Array,
+		master: [],
 		cookie: false,
-		props: new Object,
-		resources: new Array,
-		header: new Array	
+		props: {},
+		resources: [],
+		header: []
 	},
-	score:{
-	}
-}
+	score:{}
+};
 
 /* COOKIE CONTROL
 --------------------------------------------------------*/
@@ -37,7 +36,7 @@ function setCookie(){
 function getCookie(){
 	var cookie = Cookies.getJSON('gimme props');
 
-	if (cookie != undefined){
+	if (cookie !== undefined){
 		gimmeProps.data.cookie = true;
 		gimmeProps.score = cookie;
 		return true;
@@ -57,11 +56,11 @@ function returnCustomer(){
 
 	//update prop positions on list screen
 	for (var i = 0 ; i < gimmeProps.data.resources.length; i++){
-		if (gimmeProps.score[gimmeProps.data.resources[i].propselect] == null){continue;}
+		if (gimmeProps.score[gimmeProps.data.resources[i].propselect] === null){continue;}
 		else if (gimmeProps.score[gimmeProps.data.resources[i].propselect] == -1){
 			$('#prop' + gimmeProps.data.resources[i].propid + ' .circle i').css('color', '#7b272c').removeClass('fa-question').removeClass('fa-check').addClass('fa-times');
 		}
-		else if (gimmeProps.score[gimmeProps.data.resources[i].propselect] == 0){
+		else if (gimmeProps.score[gimmeProps.data.resources[i].propselect] === 0){
 			$('#prop' + gimmeProps.data.resources[i].propid + ' .circle i').css('color', '#666').removeClass('fa-times').removeClass('fa-check').addClass('fa-question');
 		}
 		else if (gimmeProps.score[gimmeProps.data.resources[i].propselect] == 1){
@@ -82,15 +81,15 @@ function initializeJQuery(){
 function initTransitions(){
 	// key right
 	$(document).on('keydown', function(event){
-		if (gimmeProps.slides.rightSlide != null && gimmeProps.slides.lockSlide == false){
+		if (gimmeProps.slides.rightSlide !== null && gimmeProps.slides.lockSlide === false){
 			if (event.which == 39){
 				changeBackground();
 				$(gimmeProps.slides.curSlide).animate({
 					left:-10000
-				}, 300)
+				}, 300);
 				$(gimmeProps.slides.rightSlide).animate({
 					left:0
-				}, 300)
+				}, 300);
 				event.preventDefault();
 				slideControl('right');
 			}
@@ -99,15 +98,15 @@ function initTransitions(){
 
 	// key left
 	$(document).on('keydown', function(event){
-		if (gimmeProps.slides.leftSlide != null && gimmeProps.slides.lockSlide == false){
+		if (gimmeProps.slides.leftSlide !== null && gimmeProps.slides.lockSlide === false){
 			if (event.which == 37){
 				changeBackground();
 				$(gimmeProps.slides.curSlide).animate({
 					left:10000
-				}, 300)
+				}, 300);
 				$(gimmeProps.slides.leftSlide).animate({
 					left:0
-				}, 300)
+				}, 300);
 				event.preventDefault();
 				slideControl('left');				
 			}
@@ -116,15 +115,15 @@ function initTransitions(){
 
 	// key up
 	$(document).on('keydown', function(event){
-		if (gimmeProps.slides.upSlide != null && gimmeProps.slides.lockSlide == false){
+		if (gimmeProps.slides.upSlide !== null && gimmeProps.slides.lockSlide === false){
 			if (event.which == 38){
 				changeBackground();
 				$(gimmeProps.slides.curSlide).animate({
 					top:10000
-				}, 300)
+				}, 300);
 				$(gimmeProps.slides.upSlide).animate({
 					top:0
-				}, 300)
+				}, 300);
 				event.preventDefault();
 				slideControl('up');				
 			}
@@ -133,15 +132,15 @@ function initTransitions(){
 
 	// key down
 	$(document).on('keydown', function(event){
-		if (gimmeProps.slides.downSlide != null && gimmeProps.slides.lockSlide == false){
+		if (gimmeProps.slides.downSlide !== null && gimmeProps.slides.lockSlide === false){
 			if (event.which == 40){
 				changeBackground();
 				$(gimmeProps.slides.curSlide).animate({
 					top:-10000
-				}, 300)
+				}, 300);
 				$(gimmeProps.slides.downSlide).animate({
 					top:0
-				}, 300)
+				}, 300);
 				event.preventDefault();
 				slideControl('down');				
 			}
@@ -150,123 +149,123 @@ function initTransitions(){
 
 	//swipe left
 	$(window).on('swipeleft', function(event){
-		if (gimmeProps.slides.rightSlide != null && gimmeProps.slides.lockSlide == false){
+		if (gimmeProps.slides.rightSlide !== null && gimmeProps.slides.lockSlide === false){
 			changeBackground();
 			$(gimmeProps.slides.curSlide).animate({
 				left:-10000
-			}, 300)
+			}, 300);
 			$(gimmeProps.slides.rightSlide).animate({
 				left:0
-			}, 300)
+			}, 300);
 			event.preventDefault();
 			slideControl('right');
 		}
-	})
+	});
 
 	//swipe right
 	$(window).on('swiperight', function(event){
-		if (gimmeProps.slides.leftSlide != null && gimmeProps.slides.lockSlide == false){
+		if (gimmeProps.slides.leftSlide !== null && gimmeProps.slides.lockSlide === false){
 			changeBackground();
 			$(gimmeProps.slides.curSlide).animate({
 				left:10000
-			}, 300)
+			}, 300);
 			$(gimmeProps.slides.leftSlide).animate({
 				left:0
-			}, 300)
+			}, 300);
 			event.preventDefault();
 			slideControl('left');
 
 		}
-	})
+	});
 	
 	//swipe up
 	$(window).on('swipeup', function(event){
-		if (gimmeProps.slides.downSlide != null && gimmeProps.slides.lockSlide == false){
+		if (gimmeProps.slides.downSlide !== null && gimmeProps.slides.lockSlide === false){
 			changeBackground();
 			$(gimmeProps.slides.curSlide).animate({
 				top:-10000
-			}, 300)
+			}, 300);
 			$(gimmeProps.slides.downSlide).animate({
 				top:0
-			}, 300)
+			}, 300);
 			slideControl('down');
 
 		}
-	})
+	});
 
 	//swipe down
 	$(window).on('swipedown', function(event){
-		if (gimmeProps.slides.upSlide != null && gimmeProps.slides.lockSlide == false){
+		if (gimmeProps.slides.upSlide !== null && gimmeProps.slides.lockSlide === false){
 			changeBackground();
 			$(gimmeProps.slides.curSlide).animate({
 				top:10000
-			}, 300)
+			}, 300);
 			$(gimmeProps.slides.upSlide).animate({
 				top:0
-			}, 300)
+			}, 300);
 			slideControl('up');
 		}
-	})
+	});
 
 	//click right
 	$('.rightcaret').add('.propcaretright').on('click', function(event){
-		if (gimmeProps.slides.rightSlide != null && gimmeProps.slides.lockSlide == false){
+		if (gimmeProps.slides.rightSlide !== null && gimmeProps.slides.lockSlide === false){
 			changeBackground();
 			$(gimmeProps.slides.curSlide).animate({
 				left:-10000
-			}, 300)
+			}, 300);
 			$(gimmeProps.slides.rightSlide).animate({
 				left:0
-			}, 300)
+			}, 300);
 			event.preventDefault();
 			slideControl('right');
 		}
-	})
+	});
 
 	//click left
 	$('.leftcaret').add('.propcaretleft').on('click', function(event){
-		if (gimmeProps.slides.leftSlide != null && gimmeProps.slides.lockSlide == false){
+		if (gimmeProps.slides.leftSlide !== null && gimmeProps.slides.lockSlide === false){
 			changeBackground();
 			$(gimmeProps.slides.curSlide).animate({
 				left:10000
-			}, 300)
+			}, 300);
 			$(gimmeProps.slides.leftSlide).animate({
 				left:0
-			}, 300)
+			}, 300);
 			event.preventDefault();
 			slideControl('left');
 
 		}
-	})
+	});
 	
 	//click down
 	$('.downcaret').on('click', function(event){
-		if (gimmeProps.slides.downSlide != null && gimmeProps.slides.lockSlide == false){
+		if (gimmeProps.slides.downSlide !== null && gimmeProps.slides.lockSlide === false){
 			changeBackground();
 			$(gimmeProps.slides.curSlide).animate({
 				top:-10000
-			}, 300)
+			}, 300);
 			$(gimmeProps.slides.downSlide).animate({
 				top:0
-			}, 300)
+			}, 300);
 			slideControl('down');
 
 		}
-	})
+	});
 
 	//click up
 	$('.upcaret').on('click', function(event){
-		if (gimmeProps.slides.upSlide != null && gimmeProps.slides.lockSlide == false){
+		if (gimmeProps.slides.upSlide !== null && gimmeProps.slides.lockSlide === false){
 			changeBackground();
 			$(gimmeProps.slides.curSlide).animate({
 				top:10000
-			}, 300)
+			}, 300);
 			$(gimmeProps.slides.upSlide).animate({
 				top:0
-			}, 300)
+			}, 300);
 			slideControl('up');
 		}
-	})
+	});
 }
 
 function initMenu(){
@@ -286,7 +285,7 @@ function initMenu(){
 		//next slides
 		gimmeProps.slides.curSlide = '#proplist';
 		gimmeProps.slides.downSlide = '#prop51';
-		$('.downcaret').animate({opacity:.3}, 300);$('.rightcaret').add('.leftcaret').add('.upcaret').css('opacity', 0)
+		$('.downcaret').animate({opacity:0.3}, 300);$('.rightcaret').add('.leftcaret').add('.upcaret').css('opacity', 0);
 		$('.propcaretleft').add('.propcaretright').animate({opacity:0}, 300);
 
 
@@ -346,8 +345,8 @@ function retreiveHeader(k){
 		if (gimmeProps.data.header[i].propid == k){
 			
 			//init vals if dont exist
-			if (!gimmeProps.data.header[i].hasOwnProperty('icon')){gimmeProps.data.header[i]['icon'] = '';}
-			if (!gimmeProps.data.header[i].hasOwnProperty('color')){gimmeProps.data.header[i]['color'] = '';}
+			if (!gimmeProps.data.header[i].hasOwnProperty('icon')){gimmeProps.data.header[i].icon = '';}
+			if (!gimmeProps.data.header[i].hasOwnProperty('color')){gimmeProps.data.header[i].color = '';}
 			return gimmeProps.data.header[i];
 		}
 	}
@@ -362,8 +361,8 @@ function changeBackground(){
 }
 
 function calcPoints(d, direct){
-	if (direct == 'left'){gimmeProps.propstate.points += parseInt(d.leftpoints)}
-	else if (direct == 'right'){gimmeProps.propstate.points += parseInt(d.rightpoints)}
+	if (direct == 'left'){gimmeProps.propstate.points += parseInt(d.leftpoints);}
+	else if (direct == 'right'){gimmeProps.propstate.points += parseInt(d.rightpoints);}
 }
 
 
@@ -371,4 +370,4 @@ function calcPoints(d, direct){
 --------------------------------------------------------*/
 window.onload = function(){
 	initializeJQuery();
-}
+};
