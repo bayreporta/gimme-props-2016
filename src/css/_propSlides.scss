@@ -1,0 +1,322 @@
+/* PROP LIST
+_________________________________________*/
+#proplist {
+    p {
+        margin:2rem 0;
+    }
+
+
+    i {
+        font-size: 3rem;
+    }
+}
+
+/* PROP 51
+______________*/
+
+#prop51 div[data="school"] {
+	position: absolute;
+    bottom: 0;
+    width: 55%;
+   	right: 10%;
+    max-width: 650px;
+
+    @include media($mobile){
+        width:100%;
+    }
+}
+
+.hammer {
+	width: 25%;
+    position: absolute;
+    bottom: 10%;
+    left: 50px;
+
+    @include media($mobile){
+        width: 30%;
+        bottom: 30%;
+    }
+}
+
+/* PROP 52
+______________*/
+
+#prop52 div[data="hospital"]{
+	position: absolute;
+    bottom: 0;
+    width: 50%;
+    max-width: 567px;
+
+    @include media($mac){
+        max-width: 420px;
+    }
+
+    @include media($retina){
+        max-width: 420px;
+    }
+}
+
+#prop52 div[data="coin"]{
+	position: absolute;
+	width:10%;
+	max-width: 100px;
+	bottom: 50%;	
+	left:0;
+	z-index:-1;
+
+    svg {
+        fill: #c5c558 !important;
+    }
+}
+
+#prop52 div[data="capitol"]{
+	position: absolute;
+    bottom: 40px;
+    width: 40%;
+    right: 5%;
+    max-width: 520px;
+
+    @include media($mobile){
+        width:100%;
+    }
+
+    @include media($retina){
+        max-width: 380px;
+    }
+
+    @include media($mac){
+        max-width: 380px;
+    }
+}
+
+/* PROP 53
+______________*/
+
+.approved path, .denied path {
+    fill:#fff;
+}
+.approved rect, .denied rect {
+    opacity:0.2;
+}
+
+.approved {
+	position: absolute;
+    width: 40%;
+    bottom: 40%;
+    left: 10%;
+    transform: rotate(-45deg);
+    max-width: 500px;
+}
+
+.denied {
+	position: absolute;
+    width: 40%;
+    bottom: 40%;
+    right: 10%;
+    transform: rotate(45deg);
+    max-width: 500px;
+}
+
+.approved, .denied {
+    @include media($mac){
+        max-width:400px;
+        bottom:25%;
+    }
+
+    @include media($retina){
+        max-width:400px;
+        bottom:25%;
+    }
+}
+
+/* PROP 54
+______________*/
+
+#prop54 div[data="eye"]{
+	position: absolute;
+    width: 60%;
+    max-width: 550px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20%;
+
+    @include media($mac){
+        max-width: 400px;
+        bottom:10%;
+    }
+
+    @include media($retina){
+        max-width: 400px;
+        bottom:10%;
+    }
+}
+
+/* PROP 55
+______________*/ 
+
+#prop55 div[data="school"] {
+	position: absolute;
+    bottom: 0;
+    width: 66%;
+   	right: 10%;
+    max-width: 650px;
+
+    @include media($retina){
+        max-width:400px;
+    }
+}
+
+
+/* PROP 56
+______________*/
+.smoke {
+	position: absolute;    
+    background-color: #eee;
+    border-radius: 50%;    
+}
+
+
+.cig {
+	position: absolute;
+    bottom: 100px;
+    left: 100px;
+    width: 300px;
+    height: 42px;
+}
+
+/* PROP 57
+______________*/ 
+
+#prop57 div[data="prisoner"] {
+	position: absolute;
+    width: 60%;
+    max-width: 750px;
+    bottom: 0;
+    right: 5%;
+
+    @include media($mobile){
+        width: 100%;
+        bottom: 10%;
+        right: 50%;
+        transform: translateX(50%); 
+    }
+
+    @include media($mac){
+        max-width: 500px;
+        right:10%;
+    }
+
+    @include media($retina){
+        max-width: 500px;
+        right:10%;
+    }
+}
+
+/* PROP 59
+______________*/
+
+#prop59 div[data="capitol"] {
+	position: absolute;
+    bottom: 0;
+    width: 50%;
+    max-width:850px;
+    right:0;
+}
+
+/* PROP 60
+______________*/ 
+
+#prop60 div[data="condom"] {
+	position: absolute;
+    width: 50%;
+    max-width: 300px;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    left: 40%;
+
+    @include media($mobile){
+        width: 100%;
+        max-width: 500px;
+        top: 50%;
+        left: 25%;
+    }
+}
+
+/* PROP 61
+______________*/ 
+
+#prop61 div[data="drugs"] {
+	position: absolute;
+   	width: 70%;
+    max-width: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+}
+
+/* PROP 58, 62, 63, 64, 65, 66, 67
+________________________________*/ 
+
+#prop58 div[data="voices"], #prop67 div[data="bag"], #prop62 div[data="deathrow"], #prop66 div[data="syringe"], #prop64 div[data="pot"], #prop63 div[data="ammo"], #prop65 div[data="sneaky"] {		
+	position:absolute;
+	width: 50%;
+	max-width:625px;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include media($mobile){
+        bottom: 25%;
+    }
+
+    @include media($mac){
+        max-width: 500px;
+        bottom:5%;
+    }
+
+    @include media($retina){
+        max-width: 500px;
+        bottom:5%;
+    }
+}
+
+#prop67 div[data="bag"] {
+    max-width:400px;
+
+    @include media($mac){
+        max-width: 300px;
+    }
+
+    @include media($retina){
+        max-width: 300px;
+    }
+}
+
+
+/* PROP GENERAL
+_________________*/
+
+.proptitle-left, .proptitle-right {
+	position: absolute;
+    left: 2%;
+    top: 10%;
+
+    h1 {
+        min-width: 450px;
+    }
+
+    @include media($mobile){
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        top: 10%;
+    }
+}
+
+.coins {
+	width: 100px;
+    fill: #c5c558 !important;
+    position: absolute;
+    z-index: 50;
+}

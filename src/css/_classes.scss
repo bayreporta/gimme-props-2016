@@ -1,0 +1,98 @@
+/* SPECIAL CLASSES USED THROUGHOUT - NOT INCLUDING ANIMATION CLASSES
+__________________________________________________________________________________________________________*/
+.hide {
+    display: none;
+}
+.txtcenter {
+    text-align: center;
+}
+.relative {
+	position:absolute;
+	height:100%;
+	width:100%;
+}
+.abscenter {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    top: 50%;
+    width: 80%;
+    max-width:950px;
+    @include media($mobile){
+        width: 90%;
+    }    
+}
+.xcenter {
+	position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top:15px;
+    height:100%;
+}
+.startpos {
+    left:10000;
+}
+.higher {
+    z-index:50;
+}
+.center {
+    position:relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.nodesktop {
+    display:none;
+}
+.nomobile {
+    @include media($mobile){
+        display:none;
+    }
+}
+
+
+/* CARETS */
+.rightcaret, .leftcaret, .upcaret, .downcaret, .propcaretleft, .propcaretright {
+    position: absolute;
+    opacity: 0;
+    width: 50px;
+    z-index: 1001;
+}
+.rightcaret {
+	right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display:block;
+    opacity:.3;
+}
+.upcaret {
+	top: 0;
+    left: 50%;
+    transform: translateX(-50%);    
+}
+.downcaret {
+	bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.leftcaret {
+	left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+} 
+.propcaretleft {
+    left: 0;
+    bottom: 5%;
+    opacity:0;
+}
+.propcaretright {
+    right: 0;
+    bottom: 5%;
+    opacity:0;
+}
+.rightcaret, .leftcaret, .upcaret, .downcaret, .propcaretleft, .propcaretright {
+    @include media($mobile){
+        width: 140px;
+    }
+}

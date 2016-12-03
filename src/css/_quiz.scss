@@ -1,0 +1,207 @@
+/* RESOURCES SLIDE
+_________________________________________*/
+#resources {
+	h3 {
+		margin:2em 0;
+	}
+}
+
+
+/* TUTORIAL SLIDE
+_________________________________________*/
+
+#tutorial {
+	h1 {
+		margin-bottom: 5rem;
+	}
+}
+
+/* PROP QUESTIONS
+_________________________________________*/
+.propheader {
+	position: absolute;
+    z-index: 100;
+    width: 100%;
+
+    @include media($mac){
+		top:-20px;
+	}
+
+	@include media($retina){
+		top:-20px;
+	}
+
+    h2 {
+		text-align: center;
+		text-transform: uppercase;
+	    font-family: 'merriweather',san-serif;
+	    color: #9c9797;
+	    margin-top: 1.5rem;
+	    font-size: 3rem;
+
+	    @include media($mac){
+			font-size: 2rem;
+		}
+
+		@include media($retina){
+			font-size: 2rem;
+		}
+	}
+
+    svg {
+		width: 10%;
+	    position: absolute;
+	    left: 50%;
+	    z-index: -1;
+	    transform: translateX(-50%);
+	    opacity: .4;
+	    top: 0;
+	    max-width: 100px;
+
+	    @include media($mobile){
+			width: 15%;	    
+		    top: 25px;
+		}
+	}
+}
+
+.propquestion {
+	width: 90%;
+	max-width:950px;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    position: absolute;
+
+    h1:first-of-type {
+		text-align: center;
+    	font-size: 10rem;
+    	margin:0;
+	}
+
+	h1:last-of-type {
+		font-size: 4rem;
+   	 	line-height: 5rem;
+
+   	 	@include media($mobile){
+			font-size: 5rem;
+	   	 	line-height: 7rem;
+		}
+	}	
+}
+
+.propchoice {
+	position: absolute;
+    width: 90%;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include media($mobile){
+		bottom: 9%;	
+	}
+
+	@include media($mac){
+		bottom:12%;
+	}
+
+	@include media($retina){
+		bottom:12%;
+	}
+
+    h3 {
+		position: absolute;
+	}
+	h3:first-of-type {
+		left:0;
+
+		@include media($mobile){
+			width: 49%;
+	    	top: -20;
+		}
+	}
+	h3:nth-of-type(2) {
+		width: 100%;
+    	text-align: center;
+   	}
+   	h3:last-of-type {
+   		right:0;
+
+   		@include media($mobile){
+			width: 49%;
+	    	top: -20;
+	    	text-align: right;
+		}
+   	}   	
+}
+
+
+/* RESULTS CLASSES
+_________________________________________*/
+#results {
+	display:none;
+	z-index:10;
+
+	h1 {
+		text-align: center;
+		margin: 4rem 0;
+
+		@include media($mobile){
+			margin: 12rem 0 6rem 0;
+			font-size: 7rem;
+		}
+	}
+}
+
+.prop-result {
+	width: 70%;
+	max-width:800px;
+    margin: 0 auto;
+    max-height: 200px;
+    height: 20%;
+    position: relative;
+
+    @include media($mobile){
+		margin:10rem auto;
+	}
+
+    &>div:first-of-type {
+		float: left;
+	}
+
+	&>div:last-of-type {
+		width: 100px;
+	    float: right;
+
+	    @include media($mobile){
+			position: absolute;
+		    right: 0;
+		    top: 65px;
+		}
+	}
+}
+
+.circle {
+	width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 50px;
+    position: absolute;    
+    top: 0;
+    right: 0;
+
+    @include media($mobile){
+		width:100px;
+		height:100px;
+		top:20px;
+	}
+
+	i {
+		font-size: 80px;
+	    color: #666;
+	    left: 50%;
+	    position: absolute;
+	    transform: translate(-50%, -50%);
+	    top: 50%;
+	}    
+}

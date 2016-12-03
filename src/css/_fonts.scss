@@ -1,0 +1,26 @@
+/* FONT IMPORTS
+------------------------------------------------*/
+@mixin importFont($font, $src, $weight, $style){
+	@font-face {
+		font-family: $font;
+		src: url($src);
+		@if $weight != 400 {
+			font-weight: $weight;
+		} 
+		@if $style != 'norm'{
+			font-style: $style;
+		}
+	}
+
+}
+
+@include importFont('raleway', 'fonts/raleway/Raleway-Regular.ttf', 400, 'norm');
+@include importFont('raleway', 'fonts/raleway/Raleway-Bold.ttf', 700, 'norm');
+@include importFont('raleway', 'fonts/raleway/Raleway-Black.ttf', 900, 'norm');
+@include importFont('raleway', 'fonts/raleway/Raleway-Italic.ttf', 400, italic);
+@include importFont('merriweather', 'fonts/merriweather/MerriweatherSans-Regular.ttf', 400, 'norm');
+@include importFont('merriweather', 'fonts/merriweather/MerriweatherSans-Light.ttf', 300, 'norm');
+@include importFont('merriweather', 'fonts/merriweather/MerriweatherSans-Bold.ttf', 700, 'norm');
+@include importFont('merriweather', 'fonts/merriweather/MerriweatherSans-Italic.ttf', 400, italic);
+@include importFont('merriweather', 'fonts/merriweather/MerriweatherSans-Regular.ttf', 400, 'norm');
+@include importFont('merriweather', 'fonts/merriweather/MerriweatherSans-Regular.ttf', 400, 'norm');

@@ -1,0 +1,85 @@
+/* INTRO SLIDE
+_________________________________________*/
+#intro img {
+	width: 40%;
+    display: block;
+    margin: 60 auto;
+    @include media($mobile){
+    	#intro img {width: 75%;}
+    }
+}
+
+/* ABOUT SLIDE
+_________________________________________*/
+#about  {
+	p {
+		width:75%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+}
+
+/* WHO WE ARE
+_________________________________________*/
+#whoweare {
+	&>div>div {
+		margin: 5rem 0;
+	}
+
+	p {
+		margin:0;
+	}
+
+	a {
+		text-decoration: none;
+		color:#e2dfa4;
+		&:hover {
+			color:#e0db75;
+			text-decoration: underline;
+		}
+	}
+
+	.bio {
+		&>div:first-of-type {
+			float:left;
+			margin-right: 30px;
+		}
+		img {
+			width:150px;
+		}
+	}
+}
+
+/* COOKIE QUESTIONS
+_________________________________________*/
+#yescookie .cookie, #nocookie .cookie {
+	width:30%;
+    top: -200px;
+}
+
+#yescookie>div:last-of-type, #nocookie>div:last-of-type {
+	top:115%;
+}
+
+#yescookie .abscenter:first-of-type, #nocookie .abscenter:first-of-type {
+	top:20%;
+}
+
+.cookie {
+	width:50%;
+
+	svg {
+		fill: rgba(123, 76, 39,1);
+	}
+
+	@include media($mobile){
+		width:70%;
+	}
+
+}
+
+
+
+
+
+

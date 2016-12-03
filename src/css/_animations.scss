@@ -1,0 +1,173 @@
+/* BASE CSS - ALL ANIMATIONS
+_________________________________________*/
+.animation {
+	@each $v in $vendors {
+		#{$v}animation-iteration-count: infinite;
+		#{$v}animation-play-state: paused;
+		#{$v}animation-timing-function: linear;
+	}
+}
+
+@mixin keyframes($animation){
+	@-webkit-keyframes #{$animation} {
+		@content;
+	}
+
+	@-ms-keyframes #{$animation} {
+		@content;
+	}
+
+	@-moz-keyframes #{$animation} {
+		@content;
+	}
+
+	@-o-keyframes #{$animation} {
+		@content;
+	}
+
+	@keyframes #{$animation} {
+		@content;
+	}
+}
+
+
+/* MARIJUANA ANIMATIONS - PROP 64
+_________________________________________*/
+#prop64 div[data="pot"] svg {
+	@each $v in $vendors {
+		#{$v}animation-name: trip;
+		#{$v}animation-duration: 2s;
+	}	
+}
+
+@include keyframes(trip){
+	0% {fill:#9400d3;}
+	17% {fill:#4b0082;}
+	34% {fill:#0000ff;}
+	51% {fill:#00ff00;}
+	68% {fill:#ffff00;}
+	85% {fill:#ff7f00;}
+	100% {fill:#ff0000;}
+}
+
+
+/* SMOKE ANIMATIONS - PROP 56
+_________________________________________*/
+.smoke {
+	@each $v in $vendors {
+		#{$v}animation-name: smoke;
+		#{$v}animation-duration: 1s;
+	}	
+}
+
+@include keyframes(smoke){
+	0% {width: 10px;height: 10px;bottom: 145px;left: 400px;}
+	100% {width: 50px;height: 50px;bottom: 20%;left: 400px;}
+}
+
+
+/* CONDOM ANIMATIONS - PROP 60
+_________________________________________*/
+#prop60 div[data="condom"] {
+	@each $v in $vendors {
+		#{$v}animation-name: condom;
+		#{$v}animation-duration: 2s;
+	}	
+}
+
+@include keyframes(condom){
+	0% {transform:rotate(0deg);}
+	50% {transform:rotate(180deg);}
+	100% {transform:rotate(0deg);}
+}
+
+/* HAMMER ANIMATION - PROP 51
+_________________________________________*/
+.hammer {
+	@each $v in $vendors {
+		#{$v}animation-name: hammer;
+		#{$v}animation-duration: 0.5s;
+		#{$v}animation-direction: alternate;
+	}	
+}
+
+@include keyframes(hammer){
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(90deg);}
+}
+
+/* COIN ANIMATIONS - PROP 52
+_________________________________________*/
+#prop52 div[data="coin"] {
+	@each $v in $vendors {
+		#{$v}animation-name: givetake;
+		#{$v}animation-duration: 2s;
+	}
+}
+
+@include keyframes(givetake){
+	0% {left: 20%;bottom: 35%;}
+	25% {left: 75%;bottom: 35%;}
+	50% {left: 75%;bottom: 10%;}
+	75% {left:20%;bottom:10%;}
+	100% {left: 20%;bottom: 35%;}
+}
+
+/* COIN ANIMATIONS - PROP 54
+_________________________________________*/
+.approved {
+	@each $v in $vendors {
+		#{$v}animation-name: stamp;
+		#{$v}animation-duration: 5s;
+	}
+}
+
+@include keyframes(stamp){
+	0% {opacity:0;}
+	49% {opacity:0;}
+	50% {opacity:1;}
+	100% {opacity:0;}
+}
+
+.denied {
+	@each $v in $vendors {
+		#{$v}animation-name: stamptwo;
+		#{$v}animation-duration: 2s;
+	}	
+}
+
+@include keyframes(stamptwo){
+	0% {opacity:1;}
+	50% {opacity:0;}
+	99% {opacity:0;}
+	100% {opacity:1;}
+}
+
+/* DRIP ANIMATIONS - PROP 66
+_________________________________________*/
+.drip {
+	@each $v in $vendors {
+		#{$v}animation-name: drip;
+		#{$v}animation-duration: 2s;
+	}
+}
+
+@include keyframes(drip){
+	0% {transform: translateY(-100%);}
+	100% {transform: translateY(300%);}
+}
+
+/* VANISH ANIMATIONS - PROP 54, 67
+_________________________________________*/
+#prop67 div[data="bag"], #prop54 div[data="eye"] {
+	@each $v in $vendors {
+		#{$v}animation-name: vanish;
+		#{$v}animation-duration: 2s;
+		#{$v}animation-direction: alternate;
+	}
+}
+
+@include keyframes(vanish){
+	0% {opacity:1;}
+	100% {opacity:0;}
+}

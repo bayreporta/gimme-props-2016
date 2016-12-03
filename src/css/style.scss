@@ -1,0 +1,24 @@
+$vendors: "" "-webkit-" "-moz-" "-ms-" "-o-";
+$mobile: "(min-device-width:320px) and (max-device-width:767px) and (-webkit-min-device-pixel-ratio:2)";
+$mac: "(min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1)";
+$retina: "(min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi)";
+
+@mixin media($query){
+	@media #{$query} {
+		@content;
+	}
+}
+
+@import '_reset';
+@import '_fonts';
+@import '_colors';
+@import '_general';
+@import '_menu';
+@import '_classes';
+@import '_slides';
+@import '_propSlides';
+@import '_quiz';
+@import '_animations';
+
+
+

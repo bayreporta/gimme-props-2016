@@ -1,0 +1,73 @@
+/* BASE CSS STYLES
+_________________________________________*/
+body, html {
+	font-size:100%;
+}
+html {
+	@each $v in $vendors {
+		#{$v}user-select: none;
+	}
+}
+section {
+	background-color:$white;
+}
+strong {
+	font-weight:700;
+} 
+em {
+	font-style:italic;
+}
+h1,h2,h3,h4 {
+	font-family: 'raleway',san-serif;
+}
+p, li, ol, span, a {
+	font-family: merriweather, sans-serif;
+    font-size: 1rem;
+    margin: 1rem 0;
+    font-weight:300;
+    line-height: 1.6rem;
+    color:#111;
+    @include media($mobile){
+    	font-size: 2rem;
+    	line-height: 3rem;
+    }
+}
+p {
+	margin: 5rem 0;
+	@include media($mobile){
+    	margin: 9rem 0;
+    }
+}
+h1 {
+	font-size: 5rem;    
+    font-weight:900;
+    @include media($mobile){
+    	font-size: 8rem;
+    }
+}
+h2 {
+	margin: 1rem 0;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    @include media($mobile){
+    	font-size: 4rem;
+    	margin:4rem 0;
+    	line-height: 5rem;
+    }
+}
+h3 {
+	font-size: 1.4rem;
+	margin: 1rem 0;
+	line-height: 1.8rem;
+	@include media($mobile){
+    	font-size:2rem;
+    	line-height: 3rem;
+    }
+}
+
+#container {
+	width:100%;
+	height:100%;
+	overflow: hidden;
+	position: relative;
+}

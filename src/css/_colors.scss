@@ -1,0 +1,50 @@
+/* COLORS STYLES
+_________________________________________*/
+$white: #fff;
+$darkBlue: #27567b;
+$darkRed:#7b272c;
+$darkGreen:#2c7b27;
+$darkGray:#555;
+$darkPurple:#272c7b;
+$darkOrange:#ffa500;
+$darkPink:#b5397f;
+$yellow:#e2dfa4;
+
+.svg-white svg {
+	fill:$white;
+}
+
+.darkblue, .darkblue a, .darkblue p, .darkblue li, .darkblue span {
+	background-color:$darkBlue;
+	color:$white;
+}
+.darkred, .darkred a, .darkred p, .darkred li, .darkred span {
+	background-color:$darkRed;
+	color:$white;
+}
+.darkgreen, .darkgreen a, .darkgreen p, .darkgreen li, .darkgreen span {
+	background-color:$darkGreen;
+	color:$white;
+}
+
+.darkgray, .darkgray a, .darkgray p, .darkgray li, .darkgray span {
+	background-color:$darkGray;
+	color:$white;
+}
+
+.darkpurple, .darkpurple a, .darkpurple p, .darkpurple li, .darkpurple span {
+	background-color:$darkPurple;
+	color:$white;
+}
+
+.darkorange, .darkorange a, .darkorange p, .darkorange li, .darkorange span {
+	background-color:$darkOrange;
+	color:$white;
+}
+
+.darkpink, .darkpink a, .darkpink p, .darkpink li, .darkpink span {
+	background-color:$darkPink;
+	color:$white;
+}
+
+.yellowtxt {color:$yellow;}
